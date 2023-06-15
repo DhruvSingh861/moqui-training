@@ -1,0 +1,474 @@
+--- 2023-06-13 00:51:04.499 [   RequireNewTx] ERROR         org.moqui.impl.entity.EntityDataLoaderImpl [] []
+ Skipping to next file after error: org.moqui.BaseException: Error loading entity data from file:/home/dhruv/snadbox2/moqui/runtime/component/mantle-udm/data/OrderHeaderJSONData.json Error creating OrderHeader [orderId:100051]: record already exists or related record does not exist [23000]
+--- 2023-06-13 00:51:04.500 [   RequireNewTx] ERROR         org.moqui.impl.entity.EntityDataLoaderImpl [] []
+ Error parsing HTTP request body JSON: groovy.json.JsonException: expecting '}' or ',' but got current char '"' with an int value of 34
+
+The current character read is '"' with an int value of 34
+expecting '}' or ',' but got current char '"' with an int value of 34
+line number 96
+index number 2455
+    "unitAmount": 2.33,
+....^
+groovy.json.JsonException: expecting '}' or ',' but got current char '"' with an int value of 34
+
+The current character read is '"' with an int value of 34
+expecting '}' or ',' but got current char '"' with an int value of 34
+line number 96
+index number 2455
+    "unitAmount": 2.33,
+....^
+	at org.apache.groovy.json.internal.JsonParserCharArray.complain(JsonParserCharArray.java:149) ~[moqui_temp2451096963490667852WEB-INF_lib_groovy-json-3.0.9.jar.:3.0.9]
+	at org.apache.groovy.json.internal.JsonParserCharArray.decodeJsonObject(JsonParserCharArray.java:140) ~[moqui_temp2451096963490667852WEB-INF_lib_groovy-json-3.0.9.jar.:3.0.9]
+	at org.apache.groovy.json.internal.JsonParserCharArray.decodeValueInternal(JsonParserCharArray.java:182) ~[moqui_temp2451096963490667852WEB-INF_lib_groovy-json-3.0.9.jar.:3.0.9]
+	at org.apache.groovy.json.internal.JsonParserCharArray.decodeJsonArray(JsonParserCharArray.java:322) ~[moqui_temp2451096963490667852WEB-INF_lib_groovy-json-3.0.9.jar.:3.0.9]
+	at org.apache.groovy.json.internal.JsonParserCharArray.decodeValueInternal(JsonParserCharArray.java:178) ~[moqui_temp2451096963490667852WEB-INF_lib_groovy-json-3.0.9.jar.:3.0.9]
+	at org.apache.groovy.json.internal.JsonParserCharArray.decodeValue(JsonParserCharArray.java:153) ~[moqui_temp2451096963490667852WEB-INF_lib_groovy-json-3.0.9.jar.:3.0.9]
+	at org.apache.groovy.json.internal.JsonParserCharArray.decodeFromChars(JsonParserCharArray.java:43) ~[moqui_temp2451096963490667852WEB-INF_lib_groovy-json-3.0.9.jar.:3.0.9]
+	at org.apache.groovy.json.internal.JsonParserCharArray.parse(JsonParserCharArray.java:380) ~[moqui_temp2451096963490667852WEB-INF_lib_groovy-json-3.0.9.jar.:3.0.9]
+	at org.apache.groovy.json.internal.BaseJsonParser.parse(BaseJsonParser.java:134) ~[moqui_temp2451096963490667852WEB-INF_lib_groovy-json-3.0.9.jar.:3.0.9]
+	at groovy.json.JsonSlurper.parse(JsonSlurper.java:220) ~[moqui_temp2451096963490667852WEB-INF_lib_groovy-json-3.0.9.jar.:3.0.9]
+	at org.moqui.impl.entity.EntityDataLoaderImpl$EntityJsonHandler.loadFile(EntityDataLoaderImpl.groovy:1049) ~[moqui_temp10809867745062548002WEB-INF_lib_moqui-framework-3.1.0-rc1.jar.:3.1.0-rc1]
+	at org.moqui.impl.entity.EntityDataLoaderImpl.loadSingleFile(EntityDataLoaderImpl.groovy:365) ~[moqui_temp10809867745062548002WEB-INF_lib_moqui-framework-3.1.0-rc1.jar.:3.1.0-rc1]
+	at org.moqui.impl.entity.EntityDataLoaderImpl$_internalRun_closure1.doCall(EntityDataLoaderImpl.groovy:317) ~[moqui_temp10809867745062548002WEB-INF_lib_moqui-framework-3.1.0-rc1.jar.:3.1.0-rc1]
+	at org.moqui.impl.entity.EntityDataLoaderImpl$_internalRun_closure1.call(EntityDataLoaderImpl.groovy) ~[moqui_temp10809867745062548002WEB-INF_lib_moqui-framework-3.1.0-rc1.jar.:3.1.0-rc1]
+	at org.moqui.impl.context.TransactionFacadeImpl$_runRequireNew_closure1.doCall(TransactionFacadeImpl.groovy:211) ~[moqui_temp10809867745062548002WEB-INF_lib_moqui-framework-3.1.0-rc1.jar.:3.1.0-rc1]
+	at org.moqui.impl.context.TransactionFacadeImpl$_runRequireNew_closure1.call(TransactionFacadeImpl.groovy) ~[moqui_temp10809867745062548002WEB-INF_lib_moqui-framework-3.1.0-rc1.jar.:3.1.0-rc1]
+	at groovy.lang.Closure.run(Closure.java:493) ~[moqui_temp14962418522331250337WEB-INF_lib_groovy-3.0.9.jar.:3.0.9]
+	at java.lang.Thread.run(Thread.java:829) ~[?:?]
+--- 2023-06-13 00:51:04.502 [   RequireNewTx] ERROR         org.moqui.impl.entity.EntityDataLoaderImpl [] []
+ Skipping to next file after error: org.moqui.BaseException: Error loading entity data from file:/home/dhruv/snadbox2/moqui/runtime/component/mantle-udm/data/OrderItemJSONData.json org.moqui.BaseException: Error parsing HTTP request body JSON: groovy.json.JsonException: expecting '}' or ',' but got current char '"' with an int value of 34
+
+The current character read is '"' with an int value of 34
+expecting '}' or ',' but got current char '"' with an int value of 34
+line number 96
+index number 2455
+    "unitAmount": 2.33,
+....^
+--- 2023-06-13 00:51:04.502 [   RequireNewTx] ERROR         org.moqui.impl.entity.EntityDataLoaderImpl [] []
+ Error parsing HTTP request body JSON: groovy.json.JsonException: expecting '}' or ',' but got current char '"' with an int value of 34
+
+The current character read is '"' with an int value of 34
+expecting '}' or ',' but got current char '"' with an int value of 34
+line number 55
+index number 1423
+    "partName": "#105",
+....^
+groovy.json.JsonException: expecting '}' or ',' but got current char '"' with an int value of 34
+
+The current character read is '"' with an int value of 34
+expecting '}' or ',' but got current char '"' with an int value of 34
+line number 55
+index number 1423
+    "partName": "#105",
+....^
+	at org.apache.groovy.json.internal.JsonParserCharArray.complain(JsonParserCharArray.java:149) ~[moqui_temp2451096963490667852WEB-INF_lib_groovy-json-3.0.9.jar.:3.0.9]
+	at org.apache.groovy.json.internal.JsonParserCharArray.decodeJsonObject(JsonParserCharArray.java:140) ~[moqui_temp2451096963490667852WEB-INF_lib_groovy-json-3.0.9.jar.:3.0.9]
+	at org.apache.groovy.json.internal.JsonParserCharArray.decodeValueInternal(JsonParserCharArray.java:182) ~[moqui_temp2451096963490667852WEB-INF_lib_groovy-json-3.0.9.jar.:3.0.9]
+	at org.apache.groovy.json.internal.JsonParserCharArray.decodeJsonArray(JsonParserCharArray.java:322) ~[moqui_temp2451096963490667852WEB-INF_lib_groovy-json-3.0.9.jar.:3.0.9]
+	at org.apache.groovy.json.internal.JsonParserCharArray.decodeValueInternal(JsonParserCharArray.java:178) ~[moqui_temp2451096963490667852WEB-INF_lib_groovy-json-3.0.9.jar.:3.0.9]
+	at org.apache.groovy.json.internal.JsonParserCharArray.decodeValue(JsonParserCharArray.java:153) ~[moqui_temp2451096963490667852WEB-INF_lib_groovy-json-3.0.9.jar.:3.0.9]
+	at org.apache.groovy.json.internal.JsonParserCharArray.decodeFromChars(JsonParserCharArray.java:43) ~[moqui_temp2451096963490667852WEB-INF_lib_groovy-json-3.0.9.jar.:3.0.9]
+	at org.apache.groovy.json.internal.JsonParserCharArray.parse(JsonParserCharArray.java:380) ~[moqui_temp2451096963490667852WEB-INF_lib_groovy-json-3.0.9.jar.:3.0.9]
+	at org.apache.groovy.json.internal.BaseJsonParser.parse(BaseJsonParser.java:134) ~[moqui_temp2451096963490667852WEB-INF_lib_groovy-json-3.0.9.jar.:3.0.9]
+	at groovy.json.JsonSlurper.parse(JsonSlurper.java:220) ~[moqui_temp2451096963490667852WEB-INF_lib_groovy-json-3.0.9.jar.:3.0.9]
+	at org.moqui.impl.entity.EntityDataLoaderImpl$EntityJsonHandler.loadFile(EntityDataLoaderImpl.groovy:1049) ~[moqui_temp10809867745062548002WEB-INF_lib_moqui-framework-3.1.0-rc1.jar.:3.1.0-rc1]
+	at org.moqui.impl.entity.EntityDataLoaderImpl.loadSingleFile(EntityDataLoaderImpl.groovy:365) ~[moqui_temp10809867745062548002WEB-INF_lib_moqui-framework-3.1.0-rc1.jar.:3.1.0-rc1]
+	at org.moqui.impl.entity.EntityDataLoaderImpl$_internalRun_closure1.doCall(EntityDataLoaderImpl.groovy:317) ~[moqui_temp10809867745062548002WEB-INF_lib_moqui-framework-3.1.0-rc1.jar.:3.1.0-rc1]
+	at org.moqui.impl.entity.EntityDataLoaderImpl$_internalRun_closure1.call(EntityDataLoaderImpl.groovy) ~[moqui_temp10809867745062548002WEB-INF_lib_moqui-framework-3.1.0-rc1.jar.:3.1.0-rc1]
+	at org.moqui.impl.context.TransactionFacadeImpl$_runRequireNew_closure1.doCall(TransactionFacadeImpl.groovy:211) ~[moqui_temp10809867745062548002WEB-INF_lib_moqui-framework-3.1.0-rc1.jar.:3.1.0-rc1]
+	at org.moqui.impl.context.TransactionFacadeImpl$_runRequireNew_closure1.call(TransactionFacadeImpl.groovy) ~[moqui_temp10809867745062548002WEB-INF_lib_moqui-framework-3.1.0-rc1.jar.:3.1.0-rc1]
+	at groovy.lang.Closure.run(Closure.java:493) ~[moqui_temp14962418522331250337WEB-INF_lib_groovy-3.0.9.jar.:3.0.9]
+	at java.lang.Thread.run(Thread.java:829) ~[?:?]
+--- 2023-06-13 00:51:04.504 [   RequireNewTx] ERROR         org.moqui.impl.entity.EntityDataLoaderImpl [] []
+ Skipping to next file after error: org.moqui.BaseException: Error loading entity data from file:/home/dhruv/snadbox2/moqui/runtime/component/mantle-udm/data/OrderPartJSONData.json org.moqui.BaseException: Error parsing HTTP request body JSON: groovy.json.JsonException: expecting '}' or ',' but got current char '"' with an int value of 34
+
+The current character read is '"' with an int value of 34
+expecting '}' or ',' but got current char '"' with an int value of 34
+line number 55
+index number 1423
+    "partName": "#105",
+....^
+--- 2023-06-13 01:01:26.904 [   RequireNewTx] ERROR         org.moqui.impl.entity.EntityDataLoaderImpl [] []
+ Skipping to next file after error: org.moqui.BaseException: Error loading entity data from file:/home/dhruv/snadbox2/moqui/runtime/component/mantle-udm/data/OrderHeaderJSONData.json Error creating OrderHeader [orderId:100051]: record already exists or related record does not exist [23000]
+--- 2023-06-13 01:01:26.906 [   RequireNewTx] ERROR         org.moqui.impl.entity.EntityDataLoaderImpl [] []
+ Error parsing HTTP request body JSON: groovy.json.JsonException: expecting '}' or ',' but got current char '"' with an int value of 34
+
+The current character read is '"' with an int value of 34
+expecting '}' or ',' but got current char '"' with an int value of 34
+line number 96
+index number 2455
+    "unitAmount": 2.33,
+....^
+groovy.json.JsonException: expecting '}' or ',' but got current char '"' with an int value of 34
+
+The current character read is '"' with an int value of 34
+expecting '}' or ',' but got current char '"' with an int value of 34
+line number 96
+index number 2455
+    "unitAmount": 2.33,
+....^
+	at org.apache.groovy.json.internal.JsonParserCharArray.complain(JsonParserCharArray.java:149) ~[moqui_temp12855349918902461959WEB-INF_lib_groovy-json-3.0.9.jar.:3.0.9]
+	at org.apache.groovy.json.internal.JsonParserCharArray.decodeJsonObject(JsonParserCharArray.java:140) ~[moqui_temp12855349918902461959WEB-INF_lib_groovy-json-3.0.9.jar.:3.0.9]
+	at org.apache.groovy.json.internal.JsonParserCharArray.decodeValueInternal(JsonParserCharArray.java:182) ~[moqui_temp12855349918902461959WEB-INF_lib_groovy-json-3.0.9.jar.:3.0.9]
+	at org.apache.groovy.json.internal.JsonParserCharArray.decodeJsonArray(JsonParserCharArray.java:322) ~[moqui_temp12855349918902461959WEB-INF_lib_groovy-json-3.0.9.jar.:3.0.9]
+	at org.apache.groovy.json.internal.JsonParserCharArray.decodeValueInternal(JsonParserCharArray.java:178) ~[moqui_temp12855349918902461959WEB-INF_lib_groovy-json-3.0.9.jar.:3.0.9]
+	at org.apache.groovy.json.internal.JsonParserCharArray.decodeValue(JsonParserCharArray.java:153) ~[moqui_temp12855349918902461959WEB-INF_lib_groovy-json-3.0.9.jar.:3.0.9]
+	at org.apache.groovy.json.internal.JsonParserCharArray.decodeFromChars(JsonParserCharArray.java:43) ~[moqui_temp12855349918902461959WEB-INF_lib_groovy-json-3.0.9.jar.:3.0.9]
+	at org.apache.groovy.json.internal.JsonParserCharArray.parse(JsonParserCharArray.java:380) ~[moqui_temp12855349918902461959WEB-INF_lib_groovy-json-3.0.9.jar.:3.0.9]
+	at org.apache.groovy.json.internal.BaseJsonParser.parse(BaseJsonParser.java:134) ~[moqui_temp12855349918902461959WEB-INF_lib_groovy-json-3.0.9.jar.:3.0.9]
+	at groovy.json.JsonSlurper.parse(JsonSlurper.java:220) ~[moqui_temp12855349918902461959WEB-INF_lib_groovy-json-3.0.9.jar.:3.0.9]
+	at org.moqui.impl.entity.EntityDataLoaderImpl$EntityJsonHandler.loadFile(EntityDataLoaderImpl.groovy:1049) ~[moqui_temp7791332223623326904WEB-INF_lib_moqui-framework-3.1.0-rc1.jar.:3.1.0-rc1]
+	at org.moqui.impl.entity.EntityDataLoaderImpl.loadSingleFile(EntityDataLoaderImpl.groovy:365) ~[moqui_temp7791332223623326904WEB-INF_lib_moqui-framework-3.1.0-rc1.jar.:3.1.0-rc1]
+	at org.moqui.impl.entity.EntityDataLoaderImpl$_internalRun_closure1.doCall(EntityDataLoaderImpl.groovy:317) ~[moqui_temp7791332223623326904WEB-INF_lib_moqui-framework-3.1.0-rc1.jar.:3.1.0-rc1]
+	at org.moqui.impl.entity.EntityDataLoaderImpl$_internalRun_closure1.call(EntityDataLoaderImpl.groovy) ~[moqui_temp7791332223623326904WEB-INF_lib_moqui-framework-3.1.0-rc1.jar.:3.1.0-rc1]
+	at org.moqui.impl.context.TransactionFacadeImpl$_runRequireNew_closure1.doCall(TransactionFacadeImpl.groovy:211) ~[moqui_temp7791332223623326904WEB-INF_lib_moqui-framework-3.1.0-rc1.jar.:3.1.0-rc1]
+	at org.moqui.impl.context.TransactionFacadeImpl$_runRequireNew_closure1.call(TransactionFacadeImpl.groovy) ~[moqui_temp7791332223623326904WEB-INF_lib_moqui-framework-3.1.0-rc1.jar.:3.1.0-rc1]
+	at groovy.lang.Closure.run(Closure.java:493) ~[moqui_temp4815633710371440081WEB-INF_lib_groovy-3.0.9.jar.:3.0.9]
+	at java.lang.Thread.run(Thread.java:829) ~[?:?]
+--- 2023-06-13 01:01:26.907 [   RequireNewTx] ERROR         org.moqui.impl.entity.EntityDataLoaderImpl [] []
+ Skipping to next file after error: org.moqui.BaseException: Error loading entity data from file:/home/dhruv/snadbox2/moqui/runtime/component/mantle-udm/data/OrderItemJSONData.json org.moqui.BaseException: Error parsing HTTP request body JSON: groovy.json.JsonException: expecting '}' or ',' but got current char '"' with an int value of 34
+
+The current character read is '"' with an int value of 34
+expecting '}' or ',' but got current char '"' with an int value of 34
+line number 96
+index number 2455
+    "unitAmount": 2.33,
+....^
+--- 2023-06-13 01:01:26.909 [   RequireNewTx] ERROR         org.moqui.impl.entity.EntityDataLoaderImpl [] []
+ Error parsing HTTP request body JSON: groovy.json.JsonException: expecting '}' or ',' but got current char '"' with an int value of 34
+
+The current character read is '"' with an int value of 34
+expecting '}' or ',' but got current char '"' with an int value of 34
+line number 55
+index number 1423
+    "partName": "#105",
+....^
+groovy.json.JsonException: expecting '}' or ',' but got current char '"' with an int value of 34
+
+The current character read is '"' with an int value of 34
+expecting '}' or ',' but got current char '"' with an int value of 34
+line number 55
+index number 1423
+    "partName": "#105",
+....^
+	at org.apache.groovy.json.internal.JsonParserCharArray.complain(JsonParserCharArray.java:149) ~[moqui_temp12855349918902461959WEB-INF_lib_groovy-json-3.0.9.jar.:3.0.9]
+	at org.apache.groovy.json.internal.JsonParserCharArray.decodeJsonObject(JsonParserCharArray.java:140) ~[moqui_temp12855349918902461959WEB-INF_lib_groovy-json-3.0.9.jar.:3.0.9]
+	at org.apache.groovy.json.internal.JsonParserCharArray.decodeValueInternal(JsonParserCharArray.java:182) ~[moqui_temp12855349918902461959WEB-INF_lib_groovy-json-3.0.9.jar.:3.0.9]
+	at org.apache.groovy.json.internal.JsonParserCharArray.decodeJsonArray(JsonParserCharArray.java:322) ~[moqui_temp12855349918902461959WEB-INF_lib_groovy-json-3.0.9.jar.:3.0.9]
+	at org.apache.groovy.json.internal.JsonParserCharArray.decodeValueInternal(JsonParserCharArray.java:178) ~[moqui_temp12855349918902461959WEB-INF_lib_groovy-json-3.0.9.jar.:3.0.9]
+	at org.apache.groovy.json.internal.JsonParserCharArray.decodeValue(JsonParserCharArray.java:153) ~[moqui_temp12855349918902461959WEB-INF_lib_groovy-json-3.0.9.jar.:3.0.9]
+	at org.apache.groovy.json.internal.JsonParserCharArray.decodeFromChars(JsonParserCharArray.java:43) ~[moqui_temp12855349918902461959WEB-INF_lib_groovy-json-3.0.9.jar.:3.0.9]
+	at org.apache.groovy.json.internal.JsonParserCharArray.parse(JsonParserCharArray.java:380) ~[moqui_temp12855349918902461959WEB-INF_lib_groovy-json-3.0.9.jar.:3.0.9]
+	at org.apache.groovy.json.internal.BaseJsonParser.parse(BaseJsonParser.java:134) ~[moqui_temp12855349918902461959WEB-INF_lib_groovy-json-3.0.9.jar.:3.0.9]
+	at groovy.json.JsonSlurper.parse(JsonSlurper.java:220) ~[moqui_temp12855349918902461959WEB-INF_lib_groovy-json-3.0.9.jar.:3.0.9]
+	at org.moqui.impl.entity.EntityDataLoaderImpl$EntityJsonHandler.loadFile(EntityDataLoaderImpl.groovy:1049) ~[moqui_temp7791332223623326904WEB-INF_lib_moqui-framework-3.1.0-rc1.jar.:3.1.0-rc1]
+	at org.moqui.impl.entity.EntityDataLoaderImpl.loadSingleFile(EntityDataLoaderImpl.groovy:365) ~[moqui_temp7791332223623326904WEB-INF_lib_moqui-framework-3.1.0-rc1.jar.:3.1.0-rc1]
+	at org.moqui.impl.entity.EntityDataLoaderImpl$_internalRun_closure1.doCall(EntityDataLoaderImpl.groovy:317) ~[moqui_temp7791332223623326904WEB-INF_lib_moqui-framework-3.1.0-rc1.jar.:3.1.0-rc1]
+	at org.moqui.impl.entity.EntityDataLoaderImpl$_internalRun_closure1.call(EntityDataLoaderImpl.groovy) ~[moqui_temp7791332223623326904WEB-INF_lib_moqui-framework-3.1.0-rc1.jar.:3.1.0-rc1]
+	at org.moqui.impl.context.TransactionFacadeImpl$_runRequireNew_closure1.doCall(TransactionFacadeImpl.groovy:211) ~[moqui_temp7791332223623326904WEB-INF_lib_moqui-framework-3.1.0-rc1.jar.:3.1.0-rc1]
+	at org.moqui.impl.context.TransactionFacadeImpl$_runRequireNew_closure1.call(TransactionFacadeImpl.groovy) ~[moqui_temp7791332223623326904WEB-INF_lib_moqui-framework-3.1.0-rc1.jar.:3.1.0-rc1]
+	at groovy.lang.Closure.run(Closure.java:493) ~[moqui_temp4815633710371440081WEB-INF_lib_groovy-3.0.9.jar.:3.0.9]
+	at java.lang.Thread.run(Thread.java:829) ~[?:?]
+--- 2023-06-13 01:01:26.910 [   RequireNewTx] ERROR         org.moqui.impl.entity.EntityDataLoaderImpl [] []
+ Skipping to next file after error: org.moqui.BaseException: Error loading entity data from file:/home/dhruv/snadbox2/moqui/runtime/component/mantle-udm/data/OrderPartJSONData.json org.moqui.BaseException: Error parsing HTTP request body JSON: groovy.json.JsonException: expecting '}' or ',' but got current char '"' with an int value of 34
+
+The current character read is '"' with an int value of 34
+expecting '}' or ',' but got current char '"' with an int value of 34
+line number 55
+index number 1423
+    "partName": "#105",
+....^
+--- 2023-06-13 01:09:36.067 [qtp348055829-49] ERROR                   org.moqui.impl.actions.XmlAction [] []
+ Error running groovy script (Error creating OrderHeader [orderId:100051]: record already exists or related record does not exist [23000]): 
+1 : import static org.moqui.util.ObjectUtilities.*
+2 : import static org.moqui.util.CollectionUtilities.*
+3 : import static org.moqui.util.StringUtilities.*
+4 : import java.sql.Timestamp
+5 : import java.sql.Time
+6 : import java.time.*
+7 : // these are in the context by default: ExecutionContext ec, Map<String, Object> context, Map<String, Object> result
+8 : 
+9 : // begin inline script
+10 : org.moqui.entity.EntityDataLoader edl = ec.entity.makeDataLoader()
+11 :             String source = ""
+12 :             if (types || components) {
+13 :                 if (types) edl.dataTypes(new HashSet(Arrays.asList(types.split(","))))
+14 :                 if (components) edl.componentNameList(Arrays.asList(components.split(",")))
+15 :                 source = "Types: ${types?:'N/A'}, Components: ${components?:'N/A'}"
+16 :             } else if (location) {
+17 :                 edl.location(location)
+18 :                 source = location
+19 :             } else if (csvText) {
+20 :                 edl.csvText(csvText)
+21 :                 source = "CSV Text Box"
+22 :             } else if (jsonText) {
+23 :                 edl.jsonText(jsonText)
+24 :                 source = "JSON Text Box"
+25 :             } else if (xmlText) {
+26 :                 edl.xmlText(xmlText)
+27 :                 source = "XML Text Box"
+28 :             } else {
+29 :                 ec.message.addMessage(ec.l10n.localize("No parameters specified, not loading data"))
+30 :                 return
+31 :             }
+32 :             if (timeout) edl.transactionTimeout(timeout as Integer)
+33 :             if (dummyFks) edl.dummyFks(true)
+34 :             if (useTryInsert) edl.useTryInsert(true)
+35 :             if (hideNoActionFiles) edl.messageNoActionFiles(false)
+36 : 
+37 :             if (checkOnly) {
+38 :                 // do nothing, checkOnly handled in screen actions before render
+39 :             } else if (onlyCreate) {
+40 :                 edl.onlyCreate(true)
+41 :                 List<String> messages = new LinkedList<>()
+42 :                 long recordsLoaded = edl.load(messages)
+43 :                 ec.message.addMessage("Loaded ${recordsLoaded} records from [${source}]")
+44 :                 ec.web.session.setAttribute("DataImport.messages", messages)
+45 :             } else {
+46 :                 List<String> messages = new LinkedList<>()
+47 :                 long recordsLoaded = edl.load(messages)
+48 :                 ec.message.addMessage("Loaded ${recordsLoaded} records from [${source}]")
+49 :                 ec.web.session.setAttribute("DataImport.messages", messages)
+50 :             }
+51 : // end inline script
+52 : // make sure the last statement is not considered the return value
+53 : return;
+
+
+--- 2023-06-13 01:09:36.070 [qtp348055829-49] ERROR                 org.moqui.impl.webapp.MoquiServlet [] []
+ Internal error processing request: Error creating OrderHeader [orderId:100051]: record already exists or related record does not exist [23000]
+org.moqui.impl.entity.EntitySqlException: Error creating OrderHeader [orderId:100051]: record already exists or related record does not exist [23000]
+	at org.moqui.impl.entity.EntityValueBase.create(EntityValueBase.java:1543) ~[moqui_temp10513659187894834220WEB-INF_lib_moqui-framework-3.1.0-rc1.jar.:3.1.0-rc1]
+	at org.moqui.impl.entity.EntityDataLoaderImpl$LoadValueHandler.handlePlainMap(EntityDataLoaderImpl.groovy:574) ~[moqui_temp10513659187894834220WEB-INF_lib_moqui-framework-3.1.0-rc1.jar.:3.1.0-rc1]
+	at org.moqui.impl.entity.EntityDataLoaderImpl$EntityJsonHandler.loadFile(EntityDataLoaderImpl.groovy:1106) ~[moqui_temp10513659187894834220WEB-INF_lib_moqui-framework-3.1.0-rc1.jar.:3.1.0-rc1]
+	at org.moqui.impl.entity.EntityDataLoaderImpl$_internalRun_closure1$_closure4.doCall(EntityDataLoaderImpl.groovy:308) ~[moqui_temp10513659187894834220WEB-INF_lib_moqui-framework-3.1.0-rc1.jar.:3.1.0-rc1]
+	at org.moqui.impl.context.TransactionFacadeImpl.runUseOrBegin(TransactionFacadeImpl.groovy:181) ~[moqui_temp10513659187894834220WEB-INF_lib_moqui-framework-3.1.0-rc1.jar.:3.1.0-rc1]
+	at org.moqui.impl.entity.EntityDataLoaderImpl$_internalRun_closure1.doCall(EntityDataLoaderImpl.groovy:308) ~[moqui_temp10513659187894834220WEB-INF_lib_moqui-framework-3.1.0-rc1.jar.:3.1.0-rc1]
+	at org.moqui.impl.context.TransactionFacadeImpl$_runRequireNew_closure1.doCall(TransactionFacadeImpl.groovy:211) ~[moqui_temp10513659187894834220WEB-INF_lib_moqui-framework-3.1.0-rc1.jar.:3.1.0-rc1]
+	at java.lang.Thread.run(Thread.java:829) ~[?:?]
+Caused by: com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException: Cannot add or update a child row: a foreign key constraint fails (`moquidatamodel2`.`order_header`, CONSTRAINT `order_header_ibfk_6` FOREIGN KEY (`PRODUCT_STORE_ID`) REFERENCES `product_store` (`PRODUCT_STORE_ID`))
+	at jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62) ~[?:?]
+	at jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45) ~[?:?]
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:490) ~[?:?]
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:425) ~[mysql-connector-java-5.1.47.jar:5.1.47]
+	at com.mysql.jdbc.Util.getInstance(Util.java:408) ~[mysql-connector-java-5.1.47.jar:5.1.47]
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:936) ~[mysql-connector-java-5.1.47.jar:5.1.47]
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3978) ~[mysql-connector-java-5.1.47.jar:5.1.47]
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3914) ~[mysql-connector-java-5.1.47.jar:5.1.47]
+	at com.mysql.jdbc.MysqlIO.sendCommand(MysqlIO.java:2530) ~[mysql-connector-java-5.1.47.jar:5.1.47]
+	at com.mysql.jdbc.ServerPreparedStatement.serverExecute(ServerPreparedStatement.java:1288) ~[mysql-connector-java-5.1.47.jar:5.1.47]
+	at com.mysql.jdbc.ServerPreparedStatement.executeInternal(ServerPreparedStatement.java:788) ~[mysql-connector-java-5.1.47.jar:5.1.47]
+	at com.mysql.jdbc.PreparedStatement.executeUpdateInternal(PreparedStatement.java:2124) ~[mysql-connector-java-5.1.47.jar:5.1.47]
+	at com.mysql.jdbc.PreparedStatement.executeUpdateInternal(PreparedStatement.java:2058) ~[mysql-connector-java-5.1.47.jar:5.1.47]
+	at com.mysql.jdbc.PreparedStatement.executeLargeUpdate(PreparedStatement.java:5158) ~[mysql-connector-java-5.1.47.jar:5.1.47]
+	at com.mysql.jdbc.PreparedStatement.executeUpdate(PreparedStatement.java:2043) ~[mysql-connector-java-5.1.47.jar:5.1.47]
+	at com.mysql.jdbc.jdbc2.optional.PreparedStatementWrapper.executeUpdate(PreparedStatementWrapper.java:543) ~[mysql-connector-java-5.1.47.jar:5.1.47]
+	at bitronix.tm.resource.jdbc.proxy.PreparedStatementJavassistProxy.executeUpdate(PreparedStatementJavassistProxy.java) ~[?:?]
+	at org.moqui.impl.entity.EntityQueryBuilder.run(EntityQueryBuilder.java:113) ~[moqui_temp10513659187894834220WEB-INF_lib_moqui-framework-3.1.0-rc1.jar.:3.1.0-rc1]
+	at org.moqui.impl.entity.EntityQueryBuilder.executeUpdate(EntityQueryBuilder.java:174) ~[moqui_temp10513659187894834220WEB-INF_lib_moqui-framework-3.1.0-rc1.jar.:3.1.0-rc1]
+	at org.moqui.impl.entity.EntityValueImpl.createExtended(EntityValueImpl.java:96) ~[moqui_temp10513659187894834220WEB-INF_lib_moqui-framework-3.1.0-rc1.jar.:3.1.0-rc1]
+	at org.moqui.impl.entity.EntityValueBase.basicCreate(EntityValueBase.java:1571) ~[moqui_temp10513659187894834220WEB-INF_lib_moqui-framework-3.1.0-rc1.jar.:3.1.0-rc1]
+	at org.moqui.impl.entity.EntityValueBase.create(EntityValueBase.java:1532) ~[moqui_temp10513659187894834220WEB-INF_lib_moqui-framework-3.1.0-rc1.jar.:3.1.0-rc1]
+	at org.moqui.impl.entity.EntityDataLoaderImpl$LoadValueHandler.handlePlainMap(EntityDataLoaderImpl.groovy:574) ~[moqui_temp10513659187894834220WEB-INF_lib_moqui-framework-3.1.0-rc1.jar.:3.1.0-rc1]
+	at org.moqui.impl.entity.EntityDataLoaderImpl$EntityJsonHandler.loadFile(EntityDataLoaderImpl.groovy:1106) ~[moqui_temp10513659187894834220WEB-INF_lib_moqui-framework-3.1.0-rc1.jar.:3.1.0-rc1]
+	at org.moqui.impl.entity.EntityDataLoaderImpl$_internalRun_closure1$_closure4.doCall(EntityDataLoaderImpl.groovy:308) ~[moqui_temp10513659187894834220WEB-INF_lib_moqui-framework-3.1.0-rc1.jar.:3.1.0-rc1]
+	at org.moqui.impl.entity.EntityDataLoaderImpl$_internalRun_closure1$_closure4.call(EntityDataLoaderImpl.groovy) ~[moqui_temp10513659187894834220WEB-INF_lib_moqui-framework-3.1.0-rc1.jar.:3.1.0-rc1]
+	at org.moqui.impl.context.TransactionFacadeImpl.runUseOrBegin(TransactionFacadeImpl.groovy:181) ~[moqui_temp10513659187894834220WEB-INF_lib_moqui-framework-3.1.0-rc1.jar.:3.1.0-rc1]
+	at org.moqui.impl.entity.EntityDataLoaderImpl$_internalRun_closure1.doCall(EntityDataLoaderImpl.groovy:308) ~[moqui_temp10513659187894834220WEB-INF_lib_moqui-framework-3.1.0-rc1.jar.:3.1.0-rc1]
+	at org.moqui.impl.entity.EntityDataLoaderImpl$_internalRun_closure1.call(EntityDataLoaderImpl.groovy) ~[moqui_temp10513659187894834220WEB-INF_lib_moqui-framework-3.1.0-rc1.jar.:3.1.0-rc1]
+	at org.moqui.impl.context.TransactionFacadeImpl$_runRequireNew_closure1.doCall(TransactionFacadeImpl.groovy:211) ~[moqui_temp10513659187894834220WEB-INF_lib_moqui-framework-3.1.0-rc1.jar.:3.1.0-rc1]
+	at org.moqui.impl.context.TransactionFacadeImpl$_runRequireNew_closure1.call(TransactionFacadeImpl.groovy) ~[moqui_temp10513659187894834220WEB-INF_lib_moqui-framework-3.1.0-rc1.jar.:3.1.0-rc1]
+	at groovy.lang.Closure.run(Closure.java:493) ~[moqui_temp2674917533277227530WEB-INF_lib_groovy-3.0.9.jar.:3.0.9]
+	... 1 more
+--- 2023-06-13 01:10:54.388 [qtp348055829-48] ERROR                   org.moqui.impl.actions.XmlAction [] []
+ Error running groovy script (Error creating OrderHeader [orderId:100051]: record already exists or related record does not exist [23000]): 
+1 : import static org.moqui.util.ObjectUtilities.*
+2 : import static org.moqui.util.CollectionUtilities.*
+3 : import static org.moqui.util.StringUtilities.*
+4 : import java.sql.Timestamp
+5 : import java.sql.Time
+6 : import java.time.*
+7 : // these are in the context by default: ExecutionContext ec, Map<String, Object> context, Map<String, Object> result
+8 : 
+9 : // begin inline script
+10 : org.moqui.entity.EntityDataLoader edl = ec.entity.makeDataLoader()
+11 :             String source = ""
+12 :             if (types || components) {
+13 :                 if (types) edl.dataTypes(new HashSet(Arrays.asList(types.split(","))))
+14 :                 if (components) edl.componentNameList(Arrays.asList(components.split(",")))
+15 :                 source = "Types: ${types?:'N/A'}, Components: ${components?:'N/A'}"
+16 :             } else if (location) {
+17 :                 edl.location(location)
+18 :                 source = location
+19 :             } else if (csvText) {
+20 :                 edl.csvText(csvText)
+21 :                 source = "CSV Text Box"
+22 :             } else if (jsonText) {
+23 :                 edl.jsonText(jsonText)
+24 :                 source = "JSON Text Box"
+25 :             } else if (xmlText) {
+26 :                 edl.xmlText(xmlText)
+27 :                 source = "XML Text Box"
+28 :             } else {
+29 :                 ec.message.addMessage(ec.l10n.localize("No parameters specified, not loading data"))
+30 :                 return
+31 :             }
+32 :             if (timeout) edl.transactionTimeout(timeout as Integer)
+33 :             if (dummyFks) edl.dummyFks(true)
+34 :             if (useTryInsert) edl.useTryInsert(true)
+35 :             if (hideNoActionFiles) edl.messageNoActionFiles(false)
+36 : 
+37 :             if (checkOnly) {
+38 :                 // do nothing, checkOnly handled in screen actions before render
+39 :             } else if (onlyCreate) {
+40 :                 edl.onlyCreate(true)
+41 :                 List<String> messages = new LinkedList<>()
+42 :                 long recordsLoaded = edl.load(messages)
+43 :                 ec.message.addMessage("Loaded ${recordsLoaded} records from [${source}]")
+44 :                 ec.web.session.setAttribute("DataImport.messages", messages)
+45 :             } else {
+46 :                 List<String> messages = new LinkedList<>()
+47 :                 long recordsLoaded = edl.load(messages)
+48 :                 ec.message.addMessage("Loaded ${recordsLoaded} records from [${source}]")
+49 :                 ec.web.session.setAttribute("DataImport.messages", messages)
+50 :             }
+51 : // end inline script
+52 : // make sure the last statement is not considered the return value
+53 : return;
+
+
+--- 2023-06-13 01:10:54.393 [qtp348055829-48] ERROR                 org.moqui.impl.webapp.MoquiServlet [] []
+ Internal error processing request: Error creating OrderHeader [orderId:100051]: record already exists or related record does not exist [23000]
+org.moqui.impl.entity.EntitySqlException: Error creating OrderHeader [orderId:100051]: record already exists or related record does not exist [23000]
+	at org.moqui.impl.entity.EntityValueBase.create(EntityValueBase.java:1543) ~[moqui_temp10513659187894834220WEB-INF_lib_moqui-framework-3.1.0-rc1.jar.:3.1.0-rc1]
+	at org.moqui.impl.entity.EntityDataLoaderImpl$LoadValueHandler.handlePlainMap(EntityDataLoaderImpl.groovy:574) ~[moqui_temp10513659187894834220WEB-INF_lib_moqui-framework-3.1.0-rc1.jar.:3.1.0-rc1]
+	at org.moqui.impl.entity.EntityDataLoaderImpl$EntityJsonHandler.loadFile(EntityDataLoaderImpl.groovy:1106) ~[moqui_temp10513659187894834220WEB-INF_lib_moqui-framework-3.1.0-rc1.jar.:3.1.0-rc1]
+	at org.moqui.impl.entity.EntityDataLoaderImpl$_internalRun_closure1$_closure4.doCall(EntityDataLoaderImpl.groovy:308) ~[moqui_temp10513659187894834220WEB-INF_lib_moqui-framework-3.1.0-rc1.jar.:3.1.0-rc1]
+	at org.moqui.impl.context.TransactionFacadeImpl.runUseOrBegin(TransactionFacadeImpl.groovy:181) ~[moqui_temp10513659187894834220WEB-INF_lib_moqui-framework-3.1.0-rc1.jar.:3.1.0-rc1]
+	at org.moqui.impl.entity.EntityDataLoaderImpl$_internalRun_closure1.doCall(EntityDataLoaderImpl.groovy:308) ~[moqui_temp10513659187894834220WEB-INF_lib_moqui-framework-3.1.0-rc1.jar.:3.1.0-rc1]
+	at org.moqui.impl.context.TransactionFacadeImpl$_runRequireNew_closure1.doCall(TransactionFacadeImpl.groovy:211) ~[moqui_temp10513659187894834220WEB-INF_lib_moqui-framework-3.1.0-rc1.jar.:3.1.0-rc1]
+	at java.lang.Thread.run(Thread.java:829) ~[?:?]
+Caused by: com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException: Cannot add or update a child row: a foreign key constraint fails (`moquidatamodel2`.`order_header`, CONSTRAINT `order_header_ibfk_6` FOREIGN KEY (`PRODUCT_STORE_ID`) REFERENCES `product_store` (`PRODUCT_STORE_ID`))
+	at jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62) ~[?:?]
+	at jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45) ~[?:?]
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:490) ~[?:?]
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:425) ~[mysql-connector-java-5.1.47.jar:5.1.47]
+	at com.mysql.jdbc.Util.getInstance(Util.java:408) ~[mysql-connector-java-5.1.47.jar:5.1.47]
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:936) ~[mysql-connector-java-5.1.47.jar:5.1.47]
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3978) ~[mysql-connector-java-5.1.47.jar:5.1.47]
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3914) ~[mysql-connector-java-5.1.47.jar:5.1.47]
+	at com.mysql.jdbc.MysqlIO.sendCommand(MysqlIO.java:2530) ~[mysql-connector-java-5.1.47.jar:5.1.47]
+	at com.mysql.jdbc.ServerPreparedStatement.serverExecute(ServerPreparedStatement.java:1288) ~[mysql-connector-java-5.1.47.jar:5.1.47]
+	at com.mysql.jdbc.ServerPreparedStatement.executeInternal(ServerPreparedStatement.java:788) ~[mysql-connector-java-5.1.47.jar:5.1.47]
+	at com.mysql.jdbc.PreparedStatement.executeUpdateInternal(PreparedStatement.java:2124) ~[mysql-connector-java-5.1.47.jar:5.1.47]
+	at com.mysql.jdbc.PreparedStatement.executeUpdateInternal(PreparedStatement.java:2058) ~[mysql-connector-java-5.1.47.jar:5.1.47]
+	at com.mysql.jdbc.PreparedStatement.executeLargeUpdate(PreparedStatement.java:5158) ~[mysql-connector-java-5.1.47.jar:5.1.47]
+	at com.mysql.jdbc.PreparedStatement.executeUpdate(PreparedStatement.java:2043) ~[mysql-connector-java-5.1.47.jar:5.1.47]
+	at com.mysql.jdbc.jdbc2.optional.PreparedStatementWrapper.executeUpdate(PreparedStatementWrapper.java:543) ~[mysql-connector-java-5.1.47.jar:5.1.47]
+	at bitronix.tm.resource.jdbc.proxy.PreparedStatementJavassistProxy.executeUpdate(PreparedStatementJavassistProxy.java) ~[?:?]
+	at org.moqui.impl.entity.EntityQueryBuilder.run(EntityQueryBuilder.java:113) ~[moqui_temp10513659187894834220WEB-INF_lib_moqui-framework-3.1.0-rc1.jar.:3.1.0-rc1]
+	at org.moqui.impl.entity.EntityQueryBuilder.executeUpdate(EntityQueryBuilder.java:174) ~[moqui_temp10513659187894834220WEB-INF_lib_moqui-framework-3.1.0-rc1.jar.:3.1.0-rc1]
+	at org.moqui.impl.entity.EntityValueImpl.createExtended(EntityValueImpl.java:96) ~[moqui_temp10513659187894834220WEB-INF_lib_moqui-framework-3.1.0-rc1.jar.:3.1.0-rc1]
+	at org.moqui.impl.entity.EntityValueBase.basicCreate(EntityValueBase.java:1571) ~[moqui_temp10513659187894834220WEB-INF_lib_moqui-framework-3.1.0-rc1.jar.:3.1.0-rc1]
+	at org.moqui.impl.entity.EntityValueBase.create(EntityValueBase.java:1532) ~[moqui_temp10513659187894834220WEB-INF_lib_moqui-framework-3.1.0-rc1.jar.:3.1.0-rc1]
+	at org.moqui.impl.entity.EntityDataLoaderImpl$LoadValueHandler.handlePlainMap(EntityDataLoaderImpl.groovy:574) ~[moqui_temp10513659187894834220WEB-INF_lib_moqui-framework-3.1.0-rc1.jar.:3.1.0-rc1]
+	at org.moqui.impl.entity.EntityDataLoaderImpl$EntityJsonHandler.loadFile(EntityDataLoaderImpl.groovy:1106) ~[moqui_temp10513659187894834220WEB-INF_lib_moqui-framework-3.1.0-rc1.jar.:3.1.0-rc1]
+	at org.moqui.impl.entity.EntityDataLoaderImpl$_internalRun_closure1$_closure4.doCall(EntityDataLoaderImpl.groovy:308) ~[moqui_temp10513659187894834220WEB-INF_lib_moqui-framework-3.1.0-rc1.jar.:3.1.0-rc1]
+	at org.moqui.impl.entity.EntityDataLoaderImpl$_internalRun_closure1$_closure4.call(EntityDataLoaderImpl.groovy) ~[moqui_temp10513659187894834220WEB-INF_lib_moqui-framework-3.1.0-rc1.jar.:3.1.0-rc1]
+	at org.moqui.impl.context.TransactionFacadeImpl.runUseOrBegin(TransactionFacadeImpl.groovy:181) ~[moqui_temp10513659187894834220WEB-INF_lib_moqui-framework-3.1.0-rc1.jar.:3.1.0-rc1]
+	at org.moqui.impl.entity.EntityDataLoaderImpl$_internalRun_closure1.doCall(EntityDataLoaderImpl.groovy:308) ~[moqui_temp10513659187894834220WEB-INF_lib_moqui-framework-3.1.0-rc1.jar.:3.1.0-rc1]
+	at org.moqui.impl.entity.EntityDataLoaderImpl$_internalRun_closure1.call(EntityDataLoaderImpl.groovy) ~[moqui_temp10513659187894834220WEB-INF_lib_moqui-framework-3.1.0-rc1.jar.:3.1.0-rc1]
+	at org.moqui.impl.context.TransactionFacadeImpl$_runRequireNew_closure1.doCall(TransactionFacadeImpl.groovy:211) ~[moqui_temp10513659187894834220WEB-INF_lib_moqui-framework-3.1.0-rc1.jar.:3.1.0-rc1]
+	at org.moqui.impl.context.TransactionFacadeImpl$_runRequireNew_closure1.call(TransactionFacadeImpl.groovy) ~[moqui_temp10513659187894834220WEB-INF_lib_moqui-framework-3.1.0-rc1.jar.:3.1.0-rc1]
+	at groovy.lang.Closure.run(Closure.java:493) ~[moqui_temp2674917533277227530WEB-INF_lib_groovy-3.0.9.jar.:3.0.9]
+	... 1 more
+--- 2023-06-13 01:31:01.386 [   RequireNewTx] ERROR         org.moqui.impl.entity.EntityDataLoaderImpl [] []
+ Error parsing HTTP request body JSON: groovy.json.JsonException: expecting '}' or ',' but got current char '"' with an int value of 34
+
+The current character read is '"' with an int value of 34
+expecting '}' or ',' but got current char '"' with an int value of 34
+line number 96
+index number 2455
+    "unitAmount": 2.33,
+....^
+groovy.json.JsonException: expecting '}' or ',' but got current char '"' with an int value of 34
+
+The current character read is '"' with an int value of 34
+expecting '}' or ',' but got current char '"' with an int value of 34
+line number 96
+index number 2455
+    "unitAmount": 2.33,
+....^
+	at org.apache.groovy.json.internal.JsonParserCharArray.complain(JsonParserCharArray.java:149) ~[moqui_temp8841157519985107800WEB-INF_lib_groovy-json-3.0.9.jar.:3.0.9]
+	at org.apache.groovy.json.internal.JsonParserCharArray.decodeJsonObject(JsonParserCharArray.java:140) ~[moqui_temp8841157519985107800WEB-INF_lib_groovy-json-3.0.9.jar.:3.0.9]
+	at org.apache.groovy.json.internal.JsonParserCharArray.decodeValueInternal(JsonParserCharArray.java:182) ~[moqui_temp8841157519985107800WEB-INF_lib_groovy-json-3.0.9.jar.:3.0.9]
+	at org.apache.groovy.json.internal.JsonParserCharArray.decodeJsonArray(JsonParserCharArray.java:322) ~[moqui_temp8841157519985107800WEB-INF_lib_groovy-json-3.0.9.jar.:3.0.9]
+	at org.apache.groovy.json.internal.JsonParserCharArray.decodeValueInternal(JsonParserCharArray.java:178) ~[moqui_temp8841157519985107800WEB-INF_lib_groovy-json-3.0.9.jar.:3.0.9]
+	at org.apache.groovy.json.internal.JsonParserCharArray.decodeValue(JsonParserCharArray.java:153) ~[moqui_temp8841157519985107800WEB-INF_lib_groovy-json-3.0.9.jar.:3.0.9]
+	at org.apache.groovy.json.internal.JsonParserCharArray.decodeFromChars(JsonParserCharArray.java:43) ~[moqui_temp8841157519985107800WEB-INF_lib_groovy-json-3.0.9.jar.:3.0.9]
+	at org.apache.groovy.json.internal.JsonParserCharArray.parse(JsonParserCharArray.java:380) ~[moqui_temp8841157519985107800WEB-INF_lib_groovy-json-3.0.9.jar.:3.0.9]
+	at org.apache.groovy.json.internal.BaseJsonParser.parse(BaseJsonParser.java:134) ~[moqui_temp8841157519985107800WEB-INF_lib_groovy-json-3.0.9.jar.:3.0.9]
+	at groovy.json.JsonSlurper.parse(JsonSlurper.java:220) ~[moqui_temp8841157519985107800WEB-INF_lib_groovy-json-3.0.9.jar.:3.0.9]
+	at org.moqui.impl.entity.EntityDataLoaderImpl$EntityJsonHandler.loadFile(EntityDataLoaderImpl.groovy:1049) ~[moqui_temp15831701731768152205WEB-INF_lib_moqui-framework-3.1.0-rc1.jar.:3.1.0-rc1]
+	at org.moqui.impl.entity.EntityDataLoaderImpl.loadSingleFile(EntityDataLoaderImpl.groovy:365) ~[moqui_temp15831701731768152205WEB-INF_lib_moqui-framework-3.1.0-rc1.jar.:3.1.0-rc1]
+	at org.moqui.impl.entity.EntityDataLoaderImpl$_internalRun_closure1.doCall(EntityDataLoaderImpl.groovy:317) ~[moqui_temp15831701731768152205WEB-INF_lib_moqui-framework-3.1.0-rc1.jar.:3.1.0-rc1]
+	at org.moqui.impl.entity.EntityDataLoaderImpl$_internalRun_closure1.call(EntityDataLoaderImpl.groovy) ~[moqui_temp15831701731768152205WEB-INF_lib_moqui-framework-3.1.0-rc1.jar.:3.1.0-rc1]
+	at org.moqui.impl.context.TransactionFacadeImpl$_runRequireNew_closure1.doCall(TransactionFacadeImpl.groovy:211) ~[moqui_temp15831701731768152205WEB-INF_lib_moqui-framework-3.1.0-rc1.jar.:3.1.0-rc1]
+	at org.moqui.impl.context.TransactionFacadeImpl$_runRequireNew_closure1.call(TransactionFacadeImpl.groovy) ~[moqui_temp15831701731768152205WEB-INF_lib_moqui-framework-3.1.0-rc1.jar.:3.1.0-rc1]
+	at groovy.lang.Closure.run(Closure.java:493) ~[moqui_temp3615108483837414053WEB-INF_lib_groovy-3.0.9.jar.:3.0.9]
+	at java.lang.Thread.run(Thread.java:829) ~[?:?]
+--- 2023-06-13 01:31:01.406 [   RequireNewTx] ERROR         org.moqui.impl.entity.EntityDataLoaderImpl [] []
+ Skipping to next file after error: org.moqui.BaseException: Error loading entity data from file:/home/dhruv/snadbox2/moqui/runtime/component/mantle-udm/data/OrderItemJSONData.json org.moqui.BaseException: Error parsing HTTP request body JSON: groovy.json.JsonException: expecting '}' or ',' but got current char '"' with an int value of 34
+
+The current character read is '"' with an int value of 34
+expecting '}' or ',' but got current char '"' with an int value of 34
+line number 96
+index number 2455
+    "unitAmount": 2.33,
+....^
+--- 2023-06-13 01:31:01.407 [   RequireNewTx] ERROR         org.moqui.impl.entity.EntityDataLoaderImpl [] []
+ Error parsing HTTP request body JSON: groovy.json.JsonException: expecting '}' or ',' but got current char '"' with an int value of 34
+
+The current character read is '"' with an int value of 34
+expecting '}' or ',' but got current char '"' with an int value of 34
+line number 55
+index number 1423
+    "partName": "#105",
+....^
+groovy.json.JsonException: expecting '}' or ',' but got current char '"' with an int value of 34
+
+The current character read is '"' with an int value of 34
+expecting '}' or ',' but got current char '"' with an int value of 34
+line number 55
+index number 1423
+    "partName": "#105",
+....^
+	at org.apache.groovy.json.internal.JsonParserCharArray.complain(JsonParserCharArray.java:149) ~[moqui_temp8841157519985107800WEB-INF_lib_groovy-json-3.0.9.jar.:3.0.9]
+	at org.apache.groovy.json.internal.JsonParserCharArray.decodeJsonObject(JsonParserCharArray.java:140) ~[moqui_temp8841157519985107800WEB-INF_lib_groovy-json-3.0.9.jar.:3.0.9]
+	at org.apache.groovy.json.internal.JsonParserCharArray.decodeValueInternal(JsonParserCharArray.java:182) ~[moqui_temp8841157519985107800WEB-INF_lib_groovy-json-3.0.9.jar.:3.0.9]
+	at org.apache.groovy.json.internal.JsonParserCharArray.decodeJsonArray(JsonParserCharArray.java:322) ~[moqui_temp8841157519985107800WEB-INF_lib_groovy-json-3.0.9.jar.:3.0.9]
+	at org.apache.groovy.json.internal.JsonParserCharArray.decodeValueInternal(JsonParserCharArray.java:178) ~[moqui_temp8841157519985107800WEB-INF_lib_groovy-json-3.0.9.jar.:3.0.9]
+	at org.apache.groovy.json.internal.JsonParserCharArray.decodeValue(JsonParserCharArray.java:153) ~[moqui_temp8841157519985107800WEB-INF_lib_groovy-json-3.0.9.jar.:3.0.9]
+	at org.apache.groovy.json.internal.JsonParserCharArray.decodeFromChars(JsonParserCharArray.java:43) ~[moqui_temp8841157519985107800WEB-INF_lib_groovy-json-3.0.9.jar.:3.0.9]
+	at org.apache.groovy.json.internal.JsonParserCharArray.parse(JsonParserCharArray.java:380) ~[moqui_temp8841157519985107800WEB-INF_lib_groovy-json-3.0.9.jar.:3.0.9]
+	at org.apache.groovy.json.internal.BaseJsonParser.parse(BaseJsonParser.java:134) ~[moqui_temp8841157519985107800WEB-INF_lib_groovy-json-3.0.9.jar.:3.0.9]
+	at groovy.json.JsonSlurper.parse(JsonSlurper.java:220) ~[moqui_temp8841157519985107800WEB-INF_lib_groovy-json-3.0.9.jar.:3.0.9]
+	at org.moqui.impl.entity.EntityDataLoaderImpl$EntityJsonHandler.loadFile(EntityDataLoaderImpl.groovy:1049) ~[moqui_temp15831701731768152205WEB-INF_lib_moqui-framework-3.1.0-rc1.jar.:3.1.0-rc1]
+	at org.moqui.impl.entity.EntityDataLoaderImpl.loadSingleFile(EntityDataLoaderImpl.groovy:365) ~[moqui_temp15831701731768152205WEB-INF_lib_moqui-framework-3.1.0-rc1.jar.:3.1.0-rc1]
+	at org.moqui.impl.entity.EntityDataLoaderImpl$_internalRun_closure1.doCall(EntityDataLoaderImpl.groovy:317) ~[moqui_temp15831701731768152205WEB-INF_lib_moqui-framework-3.1.0-rc1.jar.:3.1.0-rc1]
+	at org.moqui.impl.entity.EntityDataLoaderImpl$_internalRun_closure1.call(EntityDataLoaderImpl.groovy) ~[moqui_temp15831701731768152205WEB-INF_lib_moqui-framework-3.1.0-rc1.jar.:3.1.0-rc1]
+	at org.moqui.impl.context.TransactionFacadeImpl$_runRequireNew_closure1.doCall(TransactionFacadeImpl.groovy:211) ~[moqui_temp15831701731768152205WEB-INF_lib_moqui-framework-3.1.0-rc1.jar.:3.1.0-rc1]
+	at org.moqui.impl.context.TransactionFacadeImpl$_runRequireNew_closure1.call(TransactionFacadeImpl.groovy) ~[moqui_temp15831701731768152205WEB-INF_lib_moqui-framework-3.1.0-rc1.jar.:3.1.0-rc1]
+	at groovy.lang.Closure.run(Closure.java:493) ~[moqui_temp3615108483837414053WEB-INF_lib_groovy-3.0.9.jar.:3.0.9]
+	at java.lang.Thread.run(Thread.java:829) ~[?:?]
+--- 2023-06-13 01:31:01.410 [   RequireNewTx] ERROR         org.moqui.impl.entity.EntityDataLoaderImpl [] []
+ Skipping to next file after error: org.moqui.BaseException: Error loading entity data from file:/home/dhruv/snadbox2/moqui/runtime/component/mantle-udm/data/OrderPartJSONData.json org.moqui.BaseException: Error parsing HTTP request body JSON: groovy.json.JsonException: expecting '}' or ',' but got current char '"' with an int value of 34
+
+The current character read is '"' with an int value of 34
+expecting '}' or ',' but got current char '"' with an int value of 34
+line number 55
+index number 1423
+    "partName": "#105",
+....^

@@ -1,0 +1,16 @@
+--- 2023-06-12 23:46:17.703 [           main] ERROR  org.moqui.impl.entity.EntityDatasourceFactoryImpl [] []
+ Error connecting to DataSource transactional (mysql), try 1 of 5: java.lang.ClassNotFoundException: Class [com.mysql.jdbc.jdbc2.optional.MysqlXADataSource] not found
+--- 2023-06-12 23:46:22.704 [           main] ERROR  org.moqui.impl.entity.EntityDatasourceFactoryImpl [] []
+ Error connecting to DataSource transactional (mysql), try 2 of 5: java.lang.ClassNotFoundException: Class [com.mysql.jdbc.jdbc2.optional.MysqlXADataSource] not found
+--- 2023-06-12 23:46:27.705 [           main] ERROR  org.moqui.impl.entity.EntityDatasourceFactoryImpl [] []
+ Error connecting to DataSource transactional (mysql), try 3 of 5: java.lang.ClassNotFoundException: Class [com.mysql.jdbc.jdbc2.optional.MysqlXADataSource] not found
+--- 2023-06-12 23:46:32.706 [           main] ERROR  org.moqui.impl.entity.EntityDatasourceFactoryImpl [] []
+ Error connecting to DataSource transactional (mysql), try 4 of 5: java.lang.ClassNotFoundException: Class [com.mysql.jdbc.jdbc2.optional.MysqlXADataSource] not found
+--- 2023-06-12 23:48:15.927 [           main] ERROR  org.moqui.impl.entity.EntityDatasourceFactoryImpl [] []
+ Error connecting to DataSource transactional (mysql), try 1 of 5: java.lang.ClassNotFoundException: Class [com.mysql.jdbc.jdbc2.optional.MysqlXADataSource] not found
+--- 2023-06-12 23:48:20.927 [           main] ERROR  org.moqui.impl.entity.EntityDatasourceFactoryImpl [] []
+ Error connecting to DataSource transactional (mysql), try 2 of 5: java.lang.ClassNotFoundException: Class [com.mysql.jdbc.jdbc2.optional.MysqlXADataSource] not found
+--- 2023-06-12 23:48:25.929 [           main] ERROR  org.moqui.impl.entity.EntityDatasourceFactoryImpl [] []
+ Error connecting to DataSource transactional (mysql), try 3 of 5: java.lang.ClassNotFoundException: Class [com.mysql.jdbc.jdbc2.optional.MysqlXADataSource] not found
+--- 2023-06-12 23:48:30.930 [           main] ERROR  org.moqui.impl.entity.EntityDatasourceFactoryImpl [] []
+ Error connecting to DataSource transactional (mysql), try 4 of 5: java.lang.ClassNotFoundException: Class [com.mysql.jdbc.jdbc2.optional.MysqlXADataSource] not found

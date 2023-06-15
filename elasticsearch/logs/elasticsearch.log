@@ -1,0 +1,84 @@
+[2023-06-14T12:25:35,132][INFO ][o.e.n.Node               ] [dhruv] version[7.10.2], pid[194518], build[oss/tar/747e1cc71def077253878a59143c1f785afa92b9/2021-01-13T00:42:12.435326Z], OS[Linux/5.10.0-1014-oem/amd64], JVM[Ubuntu/OpenJDK 64-Bit Server VM/11.0.19/11.0.19+7-post-Ubuntu-0ubuntu120.04.1]
+[2023-06-14T12:25:35,200][INFO ][o.e.n.Node               ] [dhruv] JVM home [/usr/lib/jvm/java-11-openjdk-amd64]
+[2023-06-14T12:25:35,240][INFO ][o.e.n.Node               ] [dhruv] JVM arguments [-Xshare:auto, -Des.networkaddress.cache.ttl=60, -Des.networkaddress.cache.negative.ttl=10, -XX:+AlwaysPreTouch, -Xss1m, -Djava.awt.headless=true, -Dfile.encoding=UTF-8, -Djna.nosys=true, -XX:-OmitStackTraceInFastThrow, -Dio.netty.noUnsafe=true, -Dio.netty.noKeySetOptimization=true, -Dio.netty.recycler.maxCapacityPerThread=0, -Dio.netty.allocator.numDirectArenas=0, -Dlog4j.shutdownHookEnabled=false, -Dlog4j2.disable.jmx=true, -Djava.locale.providers=SPI,COMPAT, -Xms1g, -Xmx1g, -XX:+UseConcMarkSweepGC, -XX:CMSInitiatingOccupancyFraction=75, -XX:+UseCMSInitiatingOccupancyOnly, -Djava.io.tmpdir=/tmp/elasticsearch-10200375325192229326, -XX:+HeapDumpOnOutOfMemoryError, -XX:HeapDumpPath=data, -XX:ErrorFile=logs/hs_err_pid%p.log, -Xlog:gc*,gc+age=trace,safepoint:file=logs/gc.log:utctime,pid,tags:filecount=32,filesize=64m, -XX:MaxDirectMemorySize=536870912, -Des.path.home=/home/dhruv/snadbox2/moqui/runtime/elasticsearch, -Des.path.conf=/home/dhruv/snadbox2/moqui/runtime/elasticsearch/config, -Des.distribution.flavor=oss, -Des.distribution.type=tar, -Des.bundled_jdk=false]
+[2023-06-14T12:25:37,550][INFO ][o.e.p.PluginsService     ] [dhruv] loaded module [aggs-matrix-stats]
+[2023-06-14T12:25:37,551][INFO ][o.e.p.PluginsService     ] [dhruv] loaded module [analysis-common]
+[2023-06-14T12:25:37,551][INFO ][o.e.p.PluginsService     ] [dhruv] loaded module [geo]
+[2023-06-14T12:25:37,551][INFO ][o.e.p.PluginsService     ] [dhruv] loaded module [ingest-common]
+[2023-06-14T12:25:37,552][INFO ][o.e.p.PluginsService     ] [dhruv] loaded module [ingest-geoip]
+[2023-06-14T12:25:37,552][INFO ][o.e.p.PluginsService     ] [dhruv] loaded module [ingest-user-agent]
+[2023-06-14T12:25:37,552][INFO ][o.e.p.PluginsService     ] [dhruv] loaded module [kibana]
+[2023-06-14T12:25:37,552][INFO ][o.e.p.PluginsService     ] [dhruv] loaded module [lang-expression]
+[2023-06-14T12:25:37,553][INFO ][o.e.p.PluginsService     ] [dhruv] loaded module [lang-mustache]
+[2023-06-14T12:25:37,553][INFO ][o.e.p.PluginsService     ] [dhruv] loaded module [lang-painless]
+[2023-06-14T12:25:37,554][INFO ][o.e.p.PluginsService     ] [dhruv] loaded module [mapper-extras]
+[2023-06-14T12:25:37,554][INFO ][o.e.p.PluginsService     ] [dhruv] loaded module [parent-join]
+[2023-06-14T12:25:37,554][INFO ][o.e.p.PluginsService     ] [dhruv] loaded module [percolator]
+[2023-06-14T12:25:37,555][INFO ][o.e.p.PluginsService     ] [dhruv] loaded module [rank-eval]
+[2023-06-14T12:25:37,555][INFO ][o.e.p.PluginsService     ] [dhruv] loaded module [reindex]
+[2023-06-14T12:25:37,555][INFO ][o.e.p.PluginsService     ] [dhruv] loaded module [repository-url]
+[2023-06-14T12:25:37,556][INFO ][o.e.p.PluginsService     ] [dhruv] loaded module [transport-netty4]
+[2023-06-14T12:25:37,556][INFO ][o.e.p.PluginsService     ] [dhruv] no plugins loaded
+[2023-06-14T12:25:37,610][INFO ][o.e.e.NodeEnvironment    ] [dhruv] using [1] data paths, mounts [[/ (/dev/nvme0n1p3)]], net usable_space [182.6gb], net total_space [225.1gb], types [ext4]
+[2023-06-14T12:25:37,611][INFO ][o.e.e.NodeEnvironment    ] [dhruv] heap size [989.8mb], compressed ordinary object pointers [true]
+[2023-06-14T12:25:37,775][INFO ][o.e.n.Node               ] [dhruv] node name [dhruv], node ID [eMY2SCOISVaMyTHHa7bBRQ], cluster name [elasticsearch], roles [master, remote_cluster_client, data, ingest]
+[2023-06-14T12:25:43,276][INFO ][o.e.t.NettyAllocator     ] [dhruv] creating NettyAllocator with the following configs: [name=unpooled, suggested_max_allocation_size=1mb, factors={es.unsafe.use_unpooled_allocator=null, g1gc_enabled=false, g1gc_region_size=0b, heap_size=989.8mb}]
+[2023-06-14T12:25:43,435][INFO ][o.e.d.DiscoveryModule    ] [dhruv] using discovery type [zen] and seed hosts providers [settings]
+[2023-06-14T12:25:43,929][WARN ][o.e.g.DanglingIndicesState] [dhruv] gateway.auto_import_dangling_indices is disabled, dangling indices will not be automatically detected or imported and must be managed manually
+[2023-06-14T12:25:44,165][INFO ][o.e.n.Node               ] [dhruv] initialized
+[2023-06-14T12:25:44,166][INFO ][o.e.n.Node               ] [dhruv] starting ...
+[2023-06-14T12:25:44,323][INFO ][o.e.t.TransportService   ] [dhruv] publish_address {127.0.0.1:9300}, bound_addresses {[::1]:9300}, {127.0.0.1:9300}
+[2023-06-14T12:25:44,600][WARN ][o.e.b.BootstrapChecks    ] [dhruv] max virtual memory areas vm.max_map_count [65530] is too low, increase to at least [262144]
+[2023-06-14T12:25:44,600][WARN ][o.e.b.BootstrapChecks    ] [dhruv] the default discovery settings are unsuitable for production use; at least one of [discovery.seed_hosts, discovery.seed_providers, cluster.initial_master_nodes] must be configured
+[2023-06-14T12:25:44,603][INFO ][o.e.c.c.Coordinator      ] [dhruv] cluster UUID [gcuXWbTBS9ybbBoJ-gq19g]
+[2023-06-14T12:25:44,621][INFO ][o.e.c.c.ClusterBootstrapService] [dhruv] no discovery configuration found, will perform best-effort cluster bootstrapping after [3s] unless existing master is discovered
+[2023-06-14T12:25:44,726][INFO ][o.e.c.s.MasterService    ] [dhruv] elected-as-master ([1] nodes joined)[{dhruv}{eMY2SCOISVaMyTHHa7bBRQ}{Y3CVQLdeTxSA3zMyu9qolA}{127.0.0.1}{127.0.0.1:9300}{dimr} elect leader, _BECOME_MASTER_TASK_, _FINISH_ELECTION_], term: 12, version: 179, delta: master node changed {previous [], current [{dhruv}{eMY2SCOISVaMyTHHa7bBRQ}{Y3CVQLdeTxSA3zMyu9qolA}{127.0.0.1}{127.0.0.1:9300}{dimr}]}
+[2023-06-14T12:25:44,807][INFO ][o.e.c.s.ClusterApplierService] [dhruv] master node changed {previous [], current [{dhruv}{eMY2SCOISVaMyTHHa7bBRQ}{Y3CVQLdeTxSA3zMyu9qolA}{127.0.0.1}{127.0.0.1:9300}{dimr}]}, term: 12, version: 179, reason: Publication{term=12, version=179}
+[2023-06-14T12:25:44,843][INFO ][o.e.h.AbstractHttpServerTransport] [dhruv] publish_address {127.0.0.1:9200}, bound_addresses {[::1]:9200}, {127.0.0.1:9200}
+[2023-06-14T12:25:44,844][INFO ][o.e.n.Node               ] [dhruv] started
+[2023-06-14T12:25:45,018][INFO ][o.e.g.GatewayService     ] [dhruv] recovered [17] indices into cluster_state
+[2023-06-14T12:25:46,486][INFO ][o.e.c.r.a.AllocationService] [dhruv] Cluster health status changed from [RED] to [YELLOW] (reason: [shards started [[moqui_logs][0]]]).
+[2023-06-14T16:39:09,570][INFO ][o.e.n.Node               ] [dhruv] stopping ...
+[2023-06-14T16:39:09,714][INFO ][o.e.n.Node               ] [dhruv] stopped
+[2023-06-14T16:39:09,715][INFO ][o.e.n.Node               ] [dhruv] closing ...
+[2023-06-14T16:39:09,725][INFO ][o.e.n.Node               ] [dhruv] closed
+[2023-06-14T18:11:51,084][INFO ][o.e.n.Node               ] [dhruv] version[7.10.2], pid[201634], build[oss/tar/747e1cc71def077253878a59143c1f785afa92b9/2021-01-13T00:42:12.435326Z], OS[Linux/5.10.0-1014-oem/amd64], JVM[Ubuntu/OpenJDK 64-Bit Server VM/11.0.19/11.0.19+7-post-Ubuntu-0ubuntu120.04.1]
+[2023-06-14T18:11:51,089][INFO ][o.e.n.Node               ] [dhruv] JVM home [/usr/lib/jvm/java-11-openjdk-amd64]
+[2023-06-14T18:11:51,104][INFO ][o.e.n.Node               ] [dhruv] JVM arguments [-Xshare:auto, -Des.networkaddress.cache.ttl=60, -Des.networkaddress.cache.negative.ttl=10, -XX:+AlwaysPreTouch, -Xss1m, -Djava.awt.headless=true, -Dfile.encoding=UTF-8, -Djna.nosys=true, -XX:-OmitStackTraceInFastThrow, -Dio.netty.noUnsafe=true, -Dio.netty.noKeySetOptimization=true, -Dio.netty.recycler.maxCapacityPerThread=0, -Dio.netty.allocator.numDirectArenas=0, -Dlog4j.shutdownHookEnabled=false, -Dlog4j2.disable.jmx=true, -Djava.locale.providers=SPI,COMPAT, -Xms1g, -Xmx1g, -XX:+UseConcMarkSweepGC, -XX:CMSInitiatingOccupancyFraction=75, -XX:+UseCMSInitiatingOccupancyOnly, -Djava.io.tmpdir=/tmp/elasticsearch-17787960398675139095, -XX:+HeapDumpOnOutOfMemoryError, -XX:HeapDumpPath=data, -XX:ErrorFile=logs/hs_err_pid%p.log, -Xlog:gc*,gc+age=trace,safepoint:file=logs/gc.log:utctime,pid,tags:filecount=32,filesize=64m, -XX:MaxDirectMemorySize=536870912, -Des.path.home=/home/dhruv/snadbox2/moqui/runtime/elasticsearch, -Des.path.conf=/home/dhruv/snadbox2/moqui/runtime/elasticsearch/config, -Des.distribution.flavor=oss, -Des.distribution.type=tar, -Des.bundled_jdk=false]
+[2023-06-14T18:11:52,140][INFO ][o.e.p.PluginsService     ] [dhruv] loaded module [aggs-matrix-stats]
+[2023-06-14T18:11:52,140][INFO ][o.e.p.PluginsService     ] [dhruv] loaded module [analysis-common]
+[2023-06-14T18:11:52,141][INFO ][o.e.p.PluginsService     ] [dhruv] loaded module [geo]
+[2023-06-14T18:11:52,141][INFO ][o.e.p.PluginsService     ] [dhruv] loaded module [ingest-common]
+[2023-06-14T18:11:52,141][INFO ][o.e.p.PluginsService     ] [dhruv] loaded module [ingest-geoip]
+[2023-06-14T18:11:52,142][INFO ][o.e.p.PluginsService     ] [dhruv] loaded module [ingest-user-agent]
+[2023-06-14T18:11:52,142][INFO ][o.e.p.PluginsService     ] [dhruv] loaded module [kibana]
+[2023-06-14T18:11:52,142][INFO ][o.e.p.PluginsService     ] [dhruv] loaded module [lang-expression]
+[2023-06-14T18:11:52,142][INFO ][o.e.p.PluginsService     ] [dhruv] loaded module [lang-mustache]
+[2023-06-14T18:11:52,143][INFO ][o.e.p.PluginsService     ] [dhruv] loaded module [lang-painless]
+[2023-06-14T18:11:52,143][INFO ][o.e.p.PluginsService     ] [dhruv] loaded module [mapper-extras]
+[2023-06-14T18:11:52,143][INFO ][o.e.p.PluginsService     ] [dhruv] loaded module [parent-join]
+[2023-06-14T18:11:52,143][INFO ][o.e.p.PluginsService     ] [dhruv] loaded module [percolator]
+[2023-06-14T18:11:52,143][INFO ][o.e.p.PluginsService     ] [dhruv] loaded module [rank-eval]
+[2023-06-14T18:11:52,144][INFO ][o.e.p.PluginsService     ] [dhruv] loaded module [reindex]
+[2023-06-14T18:11:52,144][INFO ][o.e.p.PluginsService     ] [dhruv] loaded module [repository-url]
+[2023-06-14T18:11:52,144][INFO ][o.e.p.PluginsService     ] [dhruv] loaded module [transport-netty4]
+[2023-06-14T18:11:52,145][INFO ][o.e.p.PluginsService     ] [dhruv] no plugins loaded
+[2023-06-14T18:11:52,176][INFO ][o.e.e.NodeEnvironment    ] [dhruv] using [1] data paths, mounts [[/ (/dev/nvme0n1p3)]], net usable_space [182.1gb], net total_space [225.1gb], types [ext4]
+[2023-06-14T18:11:52,177][INFO ][o.e.e.NodeEnvironment    ] [dhruv] heap size [989.8mb], compressed ordinary object pointers [true]
+[2023-06-14T18:11:52,313][INFO ][o.e.n.Node               ] [dhruv] node name [dhruv], node ID [eMY2SCOISVaMyTHHa7bBRQ], cluster name [elasticsearch], roles [master, remote_cluster_client, data, ingest]
+[2023-06-14T18:11:56,002][INFO ][o.e.t.NettyAllocator     ] [dhruv] creating NettyAllocator with the following configs: [name=unpooled, suggested_max_allocation_size=1mb, factors={es.unsafe.use_unpooled_allocator=null, g1gc_enabled=false, g1gc_region_size=0b, heap_size=989.8mb}]
+[2023-06-14T18:11:56,083][INFO ][o.e.d.DiscoveryModule    ] [dhruv] using discovery type [zen] and seed hosts providers [settings]
+[2023-06-14T18:11:56,311][WARN ][o.e.g.DanglingIndicesState] [dhruv] gateway.auto_import_dangling_indices is disabled, dangling indices will not be automatically detected or imported and must be managed manually
+[2023-06-14T18:11:56,464][INFO ][o.e.n.Node               ] [dhruv] initialized
+[2023-06-14T18:11:56,464][INFO ][o.e.n.Node               ] [dhruv] starting ...
+[2023-06-14T18:11:56,600][INFO ][o.e.t.TransportService   ] [dhruv] publish_address {127.0.0.1:9300}, bound_addresses {[::1]:9300}, {127.0.0.1:9300}
+[2023-06-14T18:11:56,803][WARN ][o.e.b.BootstrapChecks    ] [dhruv] max virtual memory areas vm.max_map_count [65530] is too low, increase to at least [262144]
+[2023-06-14T18:11:56,804][WARN ][o.e.b.BootstrapChecks    ] [dhruv] the default discovery settings are unsuitable for production use; at least one of [discovery.seed_hosts, discovery.seed_providers, cluster.initial_master_nodes] must be configured
+[2023-06-14T18:11:56,807][INFO ][o.e.c.c.Coordinator      ] [dhruv] cluster UUID [gcuXWbTBS9ybbBoJ-gq19g]
+[2023-06-14T18:11:56,824][INFO ][o.e.c.c.ClusterBootstrapService] [dhruv] no discovery configuration found, will perform best-effort cluster bootstrapping after [3s] unless existing master is discovered
+[2023-06-14T18:11:56,939][INFO ][o.e.c.s.MasterService    ] [dhruv] elected-as-master ([1] nodes joined)[{dhruv}{eMY2SCOISVaMyTHHa7bBRQ}{Toq9E3-jR7ythXc0dqN-1Q}{127.0.0.1}{127.0.0.1:9300}{dimr} elect leader, _BECOME_MASTER_TASK_, _FINISH_ELECTION_], term: 13, version: 196, delta: master node changed {previous [], current [{dhruv}{eMY2SCOISVaMyTHHa7bBRQ}{Toq9E3-jR7ythXc0dqN-1Q}{127.0.0.1}{127.0.0.1:9300}{dimr}]}
+[2023-06-14T18:11:57,013][INFO ][o.e.c.s.ClusterApplierService] [dhruv] master node changed {previous [], current [{dhruv}{eMY2SCOISVaMyTHHa7bBRQ}{Toq9E3-jR7ythXc0dqN-1Q}{127.0.0.1}{127.0.0.1:9300}{dimr}]}, term: 13, version: 196, reason: Publication{term=13, version=196}
+[2023-06-14T18:11:57,045][INFO ][o.e.h.AbstractHttpServerTransport] [dhruv] publish_address {127.0.0.1:9200}, bound_addresses {[::1]:9200}, {127.0.0.1:9200}
+[2023-06-14T18:11:57,046][INFO ][o.e.n.Node               ] [dhruv] started
+[2023-06-14T18:11:57,192][INFO ][o.e.g.GatewayService     ] [dhruv] recovered [17] indices into cluster_state
+[2023-06-14T18:11:58,463][INFO ][o.e.c.r.a.AllocationService] [dhruv] Cluster health status changed from [RED] to [YELLOW] (reason: [shards started [[moqui_logs][0]]]).

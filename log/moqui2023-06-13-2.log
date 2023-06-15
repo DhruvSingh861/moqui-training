@@ -1,0 +1,363 @@
+--- 2023-06-14 12:25:32.285 [           main] INFO                     org.eclipse.jetty.server.Server []
+ jetty-10.0.13; built: 2022-12-07T20:13:20.134Z; git: 1c2636ea05c0ca8de1ffd6ca7f3a98ac084c766d; jvm 11.0.19+7-post-Ubuntu-0ubuntu120.04.1
+--- 2023-06-14 12:25:32.332 [           main] INFO  lipse.jetty.server.session.DefaultSessionIdManager []
+ Session workerName=node0
+--- 2023-06-14 12:25:33.702 [           main] INFO  g.eclipse.jetty.webapp.StandardDescriptorProcessor []
+ NO JSP Support for /, did not find org.eclipse.jetty.jsp.JettyJspServlet
+--- 2023-06-14 12:25:34.309 [           main] INFO          org.moqui.impl.webapp.MoquiContextListener []
+ Loading Webapp 'webroot' (Moqui Root Webapp) on ROOT, located at: /home/dhruv/snadbox2/moqui/execwartmp/ROOT/webapp
+--- 2023-06-14 12:25:34.410 [           main] INFO  org.moqui.impl.context.ExecutionContextFactoryImpl []
+ Initializing Moqui Framework version 3.1.0-rc1
+ - runtime directory: /home/dhruv/snadbox2/moqui/runtime
+ - runtime config:    /home/dhruv/snadbox2/moqui/runtime/conf/MoquiDevConf.xml
+--- 2023-06-14 12:25:34.410 [           main] INFO  org.moqui.impl.context.ExecutionContextFactoryImpl []
+ Running on Java 11.0.19 VM 11.0.19+7-post-Ubuntu-0ubuntu120.04.1 Runtime 11.0.19+7-post-Ubuntu-0ubuntu120.04.1
+--- 2023-06-14 12:25:34.865 [           main] INFO  org.moqui.impl.context.ExecutionContextFactoryImpl []
+ Added component tools              at file:/home/dhruv/snadbox2/moqui/runtime/base-component/tools
+--- 2023-06-14 12:25:34.883 [           main] INFO  org.moqui.impl.context.ExecutionContextFactoryImpl []
+ Added component webroot            at file:/home/dhruv/snadbox2/moqui/runtime/base-component/webroot
+--- 2023-06-14 12:25:34.886 [           main] INFO  org.moqui.impl.context.ExecutionContextFactoryImpl []
+ Added component HiveMind           at file:/home/dhruv/snadbox2/moqui/runtime/component/HiveMind
+--- 2023-06-14 12:25:34.888 [           main] INFO  org.moqui.impl.context.ExecutionContextFactoryImpl []
+ Added component PopCommerce        at file:/home/dhruv/snadbox2/moqui/runtime/component/PopCommerce
+--- 2023-06-14 12:25:34.890 [           main] INFO  org.moqui.impl.context.ExecutionContextFactoryImpl []
+ Added component SimpleScreens      at file:/home/dhruv/snadbox2/moqui/runtime/component/SimpleScreens
+--- 2023-06-14 12:25:34.892 [           main] INFO  org.moqui.impl.context.ExecutionContextFactoryImpl []
+ Added component mantle-udm         at file:/home/dhruv/snadbox2/moqui/runtime/component/mantle-udm
+--- 2023-06-14 12:25:34.894 [           main] INFO  org.moqui.impl.context.ExecutionContextFactoryImpl []
+ Added component mantle-usl         at file:/home/dhruv/snadbox2/moqui/runtime/component/mantle-usl
+--- 2023-06-14 12:25:34.895 [           main] INFO  org.moqui.impl.context.ExecutionContextFactoryImpl []
+ Added component moqui-fop          at file:/home/dhruv/snadbox2/moqui/runtime/component/moqui-fop
+--- 2023-06-14 12:25:34.896 [           main] INFO  org.moqui.impl.context.ExecutionContextFactoryImpl []
+ Components after depends-on sort: [tools, webroot, moqui-fop, mantle-udm, mantle-usl, SimpleScreens, HiveMind, PopCommerce]
+--- 2023-06-14 12:25:34.909 [           main] INFO  org.moqui.impl.context.ExecutionContextFactoryImpl []
+ Merging MoquiConf.xml file from component tools
+--- 2023-06-14 12:25:34.932 [           main] INFO  org.moqui.impl.context.ExecutionContextFactoryImpl []
+ Merging MoquiConf.xml file from component moqui-fop
+--- 2023-06-14 12:25:34.945 [           main] INFO  org.moqui.impl.context.ExecutionContextFactoryImpl []
+ Merging MoquiConf.xml file from component mantle-udm
+--- 2023-06-14 12:25:34.949 [           main] INFO  org.moqui.impl.context.ExecutionContextFactoryImpl []
+ Merging MoquiConf.xml file from component SimpleScreens
+--- 2023-06-14 12:25:34.952 [           main] INFO  org.moqui.impl.context.ExecutionContextFactoryImpl []
+ Merging MoquiConf.xml file from component HiveMind
+--- 2023-06-14 12:25:34.966 [           main] INFO  org.moqui.impl.context.ExecutionContextFactoryImpl []
+ Merging MoquiConf.xml file from component PopCommerce
+--- 2023-06-14 12:25:34.971 [           main] INFO  org.moqui.impl.context.ExecutionContextFactoryImpl []
+ Merging runtime configuration at /home/dhruv/snadbox2/moqui/runtime/conf/MoquiDevConf.xml
+--- 2023-06-14 12:25:34.987 [           main] INFO  org.moqui.impl.context.ExecutionContextFactoryImpl []
+ Setting property instance_purpose from default with value [dev]
+--- 2023-06-14 12:25:34.987 [           main] INFO  org.moqui.impl.context.ExecutionContextFactoryImpl []
+ Setting property default_locale from default with value [en_US]
+--- 2023-06-14 12:25:34.987 [           main] INFO  org.moqui.impl.context.ExecutionContextFactoryImpl []
+ Setting property default_time_zone from default with value [US/Pacific]
+--- 2023-06-14 12:25:34.987 [           main] INFO  org.moqui.impl.context.ExecutionContextFactoryImpl []
+ Setting property database_time_zone from default with value [US/Pacific]
+--- 2023-06-14 12:25:34.987 [           main] INFO  org.moqui.impl.context.ExecutionContextFactoryImpl []
+ Setting property webapp_https_enabled from default with value [false]
+--- 2023-06-14 12:25:34.987 [           main] INFO  org.moqui.impl.context.ExecutionContextFactoryImpl []
+ Setting property webapp_allow_origins from default with value [*]
+--- 2023-06-14 12:25:34.987 [           main] INFO  org.moqui.impl.context.ExecutionContextFactoryImpl []
+ Setting property webapp_handle_cors from default with value [true]
+--- 2023-06-14 12:25:34.987 [           main] INFO  org.moqui.impl.context.ExecutionContextFactoryImpl []
+ Setting property webapp_status_ips from default with value [127.0.0.1]
+--- 2023-06-14 12:25:34.987 [           main] INFO  org.moqui.impl.context.ExecutionContextFactoryImpl []
+ Setting property webapp_require_session_token from default with value [true]
+--- 2023-06-14 12:25:34.988 [           main] INFO  org.moqui.impl.context.ExecutionContextFactoryImpl []
+ Setting property webapp_upload_executable_allow from default with value [false]
+--- 2023-06-14 12:25:34.988 [           main] INFO  org.moqui.impl.context.ExecutionContextFactoryImpl []
+ Setting property entity_ds_db_conf from default with value [mysql]
+--- 2023-06-14 12:25:34.988 [           main] INFO  org.moqui.impl.context.ExecutionContextFactoryImpl []
+ Setting property entity_ds_host from default with value [127.0.0.1]
+--- 2023-06-14 12:25:34.988 [           main] INFO  org.moqui.impl.context.ExecutionContextFactoryImpl []
+ Setting property entity_ds_database from default with value [moqui]
+--- 2023-06-14 12:25:35.032 [           main] INFO  org.moqui.impl.context.ExecutionContextFactoryImpl []
+ Setting property entity_ds_url from default with value [jdbc:h2:/home/dhruv/snadbox2/moqui/runtime/db/h2/moqui;lock_timeout=30000]
+--- 2023-06-14 12:25:35.032 [           main] INFO  org.moqui.impl.context.ExecutionContextFactoryImpl []
+ Setting property entity_ds_user from default with value [root]
+--- 2023-06-14 12:25:35.032 [           main] INFO  org.moqui.impl.context.ExecutionContextFactoryImpl []
+ Setting secret property entity_ds_password from default
+--- 2023-06-14 12:25:35.032 [           main] INFO  org.moqui.impl.context.ExecutionContextFactoryImpl []
+ Setting secret property entity_ds_crypt_pass from default
+--- 2023-06-14 12:25:35.032 [           main] INFO  org.moqui.impl.context.ExecutionContextFactoryImpl []
+ Setting secret property entity_ds_crypt_pass_old from default
+--- 2023-06-14 12:25:35.032 [           main] INFO  org.moqui.impl.context.ExecutionContextFactoryImpl []
+ Setting property entity_add_missing_runtime from default with value [false]
+--- 2023-06-14 12:25:35.032 [           main] INFO  org.moqui.impl.context.ExecutionContextFactoryImpl []
+ Setting property entity_add_missing_startup from default with value [true]
+--- 2023-06-14 12:25:35.032 [           main] INFO  org.moqui.impl.context.ExecutionContextFactoryImpl []
+ Setting property entity_lock_track from default with value [true]
+--- 2023-06-14 12:25:35.032 [           main] INFO  org.moqui.impl.context.ExecutionContextFactoryImpl []
+ Setting property entity_statement_timeout from default with value [false]
+--- 2023-06-14 12:25:35.032 [           main] INFO  org.moqui.impl.context.ExecutionContextFactoryImpl []
+ Setting property entity_empty_db_load from default with value [all]
+--- 2023-06-14 12:25:35.032 [           main] INFO  org.moqui.impl.context.ExecutionContextFactoryImpl []
+ Setting property entity_ds_c1_disabled from default with value [true]
+--- 2023-06-14 12:25:35.032 [           main] INFO  org.moqui.impl.context.ExecutionContextFactoryImpl []
+ Setting property entity_ds_c1_db_conf from default with value [mysql]
+--- 2023-06-14 12:25:35.035 [           main] INFO  org.moqui.impl.context.ExecutionContextFactoryImpl []
+ Setting property scheduled_job_check_time from default with value [60]
+--- 2023-06-14 12:25:35.036 [           main] INFO  org.moqui.impl.context.ExecutionContextFactoryImpl []
+ Setting property elasticsearch_url from default with value [http://127.0.0.1:9200]
+--- 2023-06-14 12:25:35.036 [           main] INFO  org.moqui.impl.context.ExecutionContextFactoryImpl []
+ Setting property kibana_host from default with value [127.0.0.1]
+--- 2023-06-14 12:25:35.036 [           main] INFO  org.moqui.impl.context.ExecutionContextFactoryImpl []
+ Setting property kibana_port from default with value [5601]
+--- 2023-06-14 12:25:35.038 [           main] INFO  org.moqui.impl.context.ExecutionContextFactoryImpl []
+ Found default_time_zone US/Pacific: sun.util.calendar.ZoneInfo[id="US/Pacific",offset=-28800000,dstSavings=3600000,useDaylight=true,transitions=185,lastRule=java.util.SimpleTimeZone[id=US/Pacific,offset=-28800000,dstSavings=3600000,useDaylight=true,startYear=0,startMode=3,startMonth=2,startDay=8,startDayOfWeek=1,startTime=7200000,startTimeMode=0,endMode=3,endMonth=10,endDay=1,endDayOfWeek=1,endTime=7200000,endTimeMode=0]]
+--- 2023-06-14 12:25:35.038 [           main] INFO  org.moqui.impl.context.ExecutionContextFactoryImpl []
+ Default locale en_US, time zone sun.util.calendar.ZoneInfo[id="US/Pacific",offset=-28800000,dstSavings=3600000,useDaylight=true,transitions=185,lastRule=java.util.SimpleTimeZone[id=US/Pacific,offset=-28800000,dstSavings=3600000,useDaylight=true,startYear=0,startMode=3,startMonth=2,startDay=8,startDayOfWeek=1,startTime=7200000,startTimeMode=0,endMode=3,endMonth=10,endDay=1,endDayOfWeek=1,endTime=7200000,endTimeMode=0]]
+--- 2023-06-13 23:55:35.078 [           main] INFO  org.moqui.impl.context.ExecutionContextFactoryImpl []
+ Initializing worker ThreadPoolExecutor: queue limit 65535, pool-core 16, pool-max 32, pool-alive 60s
+--- 2023-06-13 23:55:35.089 [           main] INFO  org.moqui.impl.context.ExecutionContextFactoryImpl []
+ Initializing MClassLoader context MoquiStart$StartClassLoader cur class MoquiStart$StartClassLoader system null
+--- 2023-06-13 23:55:35.107 [           main] INFO  org.moqui.impl.context.ExecutionContextFactoryImpl []
+ Initialized MClassLoader with parent MoquiStart$StartClassLoader
+--- 2023-06-13 23:55:35.127 [           main] INFO  org.moqui.impl.context.ExecutionContextFactoryImpl []
+ Added JARs from component moqui-fop: [antlr4-runtime-4.5.3.jar, avalon-framework-api-4.3.1.jar, avalon-framework-impl-4.3.1.jar, barcode4j-2.1.jar, barcode4j-fop-ext-2.1.jar, batik-anim-1.16.jar, batik-awt-util-1.16.jar, batik-bridge-1.16.jar, batik-constants-1.16.jar, batik-css-1.16.jar, batik-dom-1.16.jar, batik-ext-1.16.jar, batik-extension-1.16.jar, batik-gvt-1.16.jar, batik-i18n-1.16.jar, batik-parser-1.16.jar, batik-script-1.16.jar, batik-shared-resources-1.16.jar, batik-svg-dom-1.16.jar, batik-svggen-1.16.jar, batik-transcoder-1.16.jar, batik-util-1.16.jar, batik-xml-1.16.jar, cssbox-4.17.jar, cssbox-pdf-1.0-SNAPSHOT.jar, fontbox-2.0.27.jar, fop-core-2.8.jar, fop-events-2.8.jar, fop-util-2.8.jar, jstyleparser-3.5.jar, moqui-fop-1.1.3.jar, nekohtml-1.9.22.jar, pdfbox-2.0.27.jar, qdox-1.12.jar, unbescape-1.1.6.RELEASE.jar, xercesImpl-2.12.2.jar, xml-apis-1.4.01.jar, xml-apis-ext-1.3.04.jar, xmlgraphics-commons-2.8.jar]
+--- 2023-06-13 23:55:35.129 [           main] INFO  org.moqui.impl.context.ExecutionContextFactoryImpl []
+ Added JARs from component mantle-udm: [mantle-udm-2.2.0.jar, mysql-connector-java-5.1.47.jar]
+--- 2023-06-13 23:55:35.129 [           main] INFO  org.moqui.impl.context.ExecutionContextFactoryImpl []
+ Initialized ClassLoaders in 47ms
+--- 2023-06-13 23:55:35.134 [           main] INFO  org.moqui.impl.context.ExecutionContextFactoryImpl []
+ Not loading disabled ToolFactory with class: org.moqui.impl.tools.JackrabbitRunToolFactory
+--- 2023-06-13 23:55:35.134 [           main] INFO  org.moqui.impl.context.ExecutionContextFactoryImpl []
+ Not loading disabled ToolFactory with class: org.moqui.impl.tools.SubEthaSmtpToolFactory
+--- 2023-06-13 23:55:35.139 [           main] INFO  org.moqui.impl.context.ExecutionContextFactoryImpl []
+ Loading ToolFactory with class: org.moqui.impl.tools.MCacheToolFactory
+--- 2023-06-13 23:55:35.146 [           main] INFO  org.moqui.impl.context.ExecutionContextFactoryImpl []
+ Loading ToolFactory with class: org.moqui.impl.tools.H2ServerToolFactory
+--- 2023-06-13 23:55:35.153 [           main] INFO  org.moqui.impl.context.ExecutionContextFactoryImpl []
+ Loading ToolFactory with class: org.moqui.fop.FopToolFactory
+--- 2023-06-13 23:55:35.177 [           main] INFO  org.moqui.impl.context.ExecutionContextFactoryImpl []
+ Cache Facade initialized
+--- 2023-06-13 23:55:35.694 [           main] INFO           org.moqui.impl.context.ResourceFacadeImpl []
+ Using xsl-fo-handler-factory FOP (org.moqui.fop.FopToolFactory)
+--- 2023-06-13 23:55:35.694 [           main] INFO  org.moqui.impl.context.ExecutionContextFactoryImpl []
+ Resource Facade initialized
+--- 2023-06-13 23:55:35.827 [           main] WARN                           bitronix.tm.Configuration []
+ Cannot get the unique server ID for this JVM ('bitronix.tm.serverId'). Make sure it is configured and you use only US-ASCII characters. Will use IP address instead (unsafe for production usage!).
+--- 2023-06-13 23:55:36.035 [           main] INFO        org.moqui.impl.context.TransactionFacadeImpl []
+ Internal transaction manager initialized: UserTransaction class bitronix.tm.BitronixTransactionManager, TransactionManager class bitronix.tm.BitronixTransactionManager
+--- 2023-06-13 23:55:36.036 [           main] INFO  org.moqui.impl.context.ExecutionContextFactoryImpl []
+ Transaction Facade initialized
+--- 2023-06-13 23:55:36.175 [           main] INFO              org.moqui.impl.entity.EntityFacadeImpl []
+ Database time zone is sun.util.calendar.ZoneInfo[id="US/Pacific",offset=-28800000,dstSavings=3600000,useDaylight=true,transitions=185,lastRule=java.util.SimpleTimeZone[id=US/Pacific,offset=-28800000,dstSavings=3600000,useDaylight=true,startYear=0,startMode=3,startMonth=2,startDay=8,startDayOfWeek=1,startTime=7200000,startTimeMode=0,endMode=3,endMonth=10,endDay=1,endDayOfWeek=1,endTime=7200000,endTimeMode=0]]
+--- 2023-06-13 23:55:36.792 [           main] INFO  org.moqui.impl.context.TransactionInternalBitronix []
+ Initializing DataSource transactional_DS (mysql) with properties: [useUnicode:true, databaseName:moqui, port:3306, serverName:127.0.0.1, pinGlobalTxToPhysicalConnection:true, autoReconnectForPools:true, encoding:UTF-8, useCursorFetch:true, user:root]
+--- 2023-06-13 23:55:38.080 [           main] INFO  org.moqui.impl.context.TransactionInternalBitronix []
+ Init DataSource transactional_DS (mysql) isolation READ_COMMITTED (2), max pool 140
+--- 2023-06-13 23:55:38.098 [           main] INFO              org.moqui.impl.entity.EntityFacadeImpl []
+ Skipping disabled datasource transactional#clone1
+--- 2023-06-13 23:55:38.127 [           main] INFO                   org.moqui.impl.entity.EntityCache []
+ Entity Cache initialized, distributed cache invalidate enabled: false
+--- 2023-06-13 23:55:38.146 [           main] INFO  org.moqui.impl.context.ExecutionContextFactoryImpl []
+ Entity Facade initialized
+--- 2023-06-13 23:55:38.465 [           main] INFO                      org.moqui.impl.service.RestApi []
+ Loaded REST API from moqui.rest.xml (83 paths, 89 methods)
+--- 2023-06-13 23:55:38.538 [           main] INFO                      org.moqui.impl.service.RestApi []
+ Loaded REST API from mantle.rest.xml (392 paths, 416 methods)
+--- 2023-06-13 23:55:38.539 [           main] INFO                      org.moqui.impl.service.RestApi []
+ Loaded REST API files, 2 roots, in 298ms
+--- 2023-06-13 23:55:38.541 [           main] INFO            org.moqui.impl.service.ServiceFacadeImpl []
+ Setting Service Job worker pool size to 16 based on available processors * 2
+--- 2023-06-13 23:55:38.541 [           main] INFO            org.moqui.impl.service.ServiceFacadeImpl []
+ Initializing Service Job ThreadPoolExecutor: queue limit 0, pool-core 2, pool-max 16, pool-alive 120s
+--- 2023-06-13 23:55:38.546 [           main] INFO  org.moqui.impl.context.ExecutionContextFactoryImpl []
+ Service Facade initialized
+--- 2023-06-13 23:55:38.580 [           main] INFO  org.moqui.impl.context.ExecutionContextFactoryImpl []
+ Screen Facade initialized
+--- 2023-06-13 23:55:38.580 [           main] INFO              org.moqui.impl.entity.EntityFacadeImpl []
+ Loading entity definitions
+--- 2023-06-13 23:55:38.822 [           main] INFO              org.moqui.impl.entity.EntityFacadeImpl []
+ Found entities in 42 files in 242ms
+--- 2023-06-13 23:55:39.406 [           main] INFO              org.moqui.impl.entity.EntityFacadeImpl []
+ Found 0 view-entity definitions in database (DbViewEntity records)
+--- 2023-06-13 23:55:40.055 [           main] INFO                     org.moqui.impl.entity.FieldInfo []
+ Replacing column name CONDITION with replace name THE_CONDITION for entity moqui.screen.form.DbFormField
+--- 2023-06-13 23:55:40.085 [           main] INFO                     org.moqui.impl.entity.FieldInfo []
+ Replacing column name CONDITION with replace name THE_CONDITION for entity moqui.screen.form.FormResponseAnsAndDbFormField
+--- 2023-06-13 23:55:40.332 [           main] INFO              org.moqui.impl.entity.EntityFacadeImpl []
+ Loaded 870 entity definitions in 1751ms
+--- 2023-06-13 23:55:40.462 [           main] INFO              org.moqui.impl.entity.EntityFacadeImpl []
+ Checking tables for entities in groups [transactional]
+--- 2023-06-13 23:55:42.497 [           main] INFO              org.moqui.impl.entity.EntityFacadeImpl []
+ Checked tables for all entities in 2.164 seconds
+--- 2023-06-13 23:55:42.517 [           main] INFO              org.moqui.impl.entity.EntityFacadeImpl []
+ Loaded 25 Entity ECA rules from 5 .eecas.xml files, 0 rules have no id, 25 EECA rules active
+--- 2023-06-13 23:55:42.620 [           main] INFO            org.moqui.impl.service.ServiceFacadeImpl []
+ Loaded 60 Service ECA rules from 10 .secas.xml files, 0 rules have no id, 60 SECA rules active
+--- 2023-06-13 23:55:42.634 [           main] INFO            org.moqui.impl.service.ServiceFacadeImpl []
+ No distributed-factory specified, distributed async service calls will be run local only
+--- 2023-06-13 23:55:42.655 [           main] INFO            org.moqui.impl.service.ServiceFacadeImpl []
+ Starting Scheduled Service Job Runner, checking for jobs every 60 seconds after a 120 second initial delay
+--- 2023-06-13 23:55:42.690 [           main] INFO  org.moqui.impl.context.ExecutionContextFactoryImpl []
+ Initializing ToolFactory: MCache
+--- 2023-06-13 23:55:42.690 [           main] INFO  org.moqui.impl.context.ExecutionContextFactoryImpl []
+ Initializing ToolFactory: H2Server
+--- 2023-06-13 23:55:42.691 [           main] INFO  org.moqui.impl.context.ExecutionContextFactoryImpl []
+ Initializing ToolFactory: FOP
+--- 2023-06-13 23:55:43.575 [           main] INFO            org.moqui.impl.context.ElasticFacadeImpl []
+ Initializing ElasticFacade Client for cluster default at http://127.0.0.1:9200
+--- 2023-06-13 23:55:43.701 [           main] WARN  rg.eclipse.jetty.util.ssl.SslContextFactory.config []
+ Trusting all certificates configured for Client@65a2755e[provider=null,keyStore=null,trustStore=null]
+--- 2023-06-13 23:55:43.703 [           main] WARN  rg.eclipse.jetty.util.ssl.SslContextFactory.config []
+ No Client EndPointIdentificationAlgorithm configured for Client@65a2755e[provider=null,keyStore=null,trustStore=null]
+--- 2023-06-13 23:55:43.789 [           main] WARN            org.moqui.impl.context.ElasticFacadeImpl []
+ Error connecting to ElasticSearch cluster default at http://127.0.0.1:9200, try 1 of 20: org.moqui.BaseException: Error calling HTTP request to http://127.0.0.1:9200/
+--- 2023-06-13 23:55:44.791 [           main] WARN            org.moqui.impl.context.ElasticFacadeImpl []
+ Error connecting to ElasticSearch cluster default at http://127.0.0.1:9200, try 2 of 20: org.moqui.BaseException: Error calling HTTP request to http://127.0.0.1:9200/
+--- 2023-06-13 23:55:46.036 [           main] INFO            org.moqui.impl.context.ElasticFacadeImpl []
+ Connected to ElasticSearch cluster default at http://127.0.0.1:9200 distribution elasticsearch version 7.10.2, ES earlier than 7.0? false
+[name:dhruv, cluster_name:elasticsearch, cluster_uuid:gcuXWbTBS9ybbBoJ-gq19g, version:[number:7.10.2, build_flavor:oss, build_type:tar, build_hash:747e1cc71def077253878a59143c1f785afa92b9, build_date:2021-01-13T00:42:12.435326Z, build_snapshot:false, lucene_version:8.7.0, minimum_wire_compatibility_version:6.8.0, minimum_index_compatibility_version:6.0.0-beta1], tagline:You Know, for Search]
+--- 2023-06-13 23:55:46.036 [           main] INFO            org.moqui.impl.context.ElasticFacadeImpl []
+ Initializing ElasticSearchLogger with cluster default
+--- 2023-06-13 23:55:46.120 [           main] INFO  org.moqui.impl.context.ExecutionContextFactoryImpl []
+ Elastic Facade initialized
+--- 2023-06-13 23:55:46.120 [           main] INFO  org.moqui.impl.context.ExecutionContextFactoryImpl []
+ Execution Context Factory initialized in 11.782 seconds
+--- 2023-06-13 23:55:46.165 [           main] INFO  org.moqui.impl.context.ExecutionContextFactoryImpl []
+ Found 1798 Enumeration records, NOT loading empty-db-load data types (all)
+--- 2023-06-13 23:55:46.313 [           main] INFO  org.moqui.impl.context.ExecutionContextFactoryImpl []
+ Initializing webapp webroot http://null:null https://null:null https enabled? false
+--- 2023-06-13 23:55:46.322 [           main] INFO          org.moqui.impl.webapp.MoquiContextListener []
+ Added webapp filter ElasticRequestLogFilter on: [/*], [REQUEST]
+--- 2023-06-13 23:55:46.327 [           main] INFO          org.moqui.impl.webapp.MoquiContextListener []
+ Added webapp filter ElasticAuthFilter on: [/elastic/*], []
+--- 2023-06-13 23:55:46.327 [           main] INFO          org.moqui.impl.webapp.MoquiContextListener []
+ Added webapp filter KibanaAuthFilter on: [/kibana/*], []
+--- 2023-06-13 23:55:46.332 [           main] INFO          org.moqui.impl.webapp.MoquiContextListener []
+ Added webapp listener org.moqui.impl.webapp.MoquiSessionListener
+--- 2023-06-13 23:55:46.355 [           main] INFO          org.moqui.impl.webapp.MoquiContextListener []
+ Added servlet MoquiServlet on: [/*]
+--- 2023-06-13 23:55:46.359 [           main] INFO          org.moqui.impl.webapp.MoquiContextListener []
+ Added servlet MoquiFopServlet on: [/fop/*]
+--- 2023-06-13 23:55:46.382 [           main] INFO          org.moqui.impl.webapp.MoquiContextListener []
+ Added servlet ElasticSearchProxy on: [/elastic/*]
+--- 2023-06-13 23:55:46.398 [           main] INFO          org.moqui.impl.webapp.MoquiContextListener []
+ Added servlet KibanaProxy on: [/kibana/*]
+--- 2023-06-13 23:55:46.404 [           main] INFO          org.moqui.impl.webapp.MoquiContextListener []
+ Added servlet HtmlRenderServlet on: [/htmlr/*]
+--- 2023-06-13 23:55:46.408 [           main] INFO          org.moqui.impl.webapp.MoquiContextListener []
+ Added servlet H2Console on: [/h2/*]
+--- 2023-06-13 23:55:46.409 [           main] INFO          org.moqui.impl.webapp.MoquiContextListener []
+ Found WebSocket ServerContainer org.eclipse.jetty.websocket.javax.server.internal.JavaxWebSocketServerContainer
+--- 2023-06-13 23:55:46.435 [           main] INFO          org.moqui.impl.webapp.MoquiContextListener []
+ Added WebSocket endpoint /notws for class org.moqui.impl.webapp.NotificationEndpoint
+--- 2023-06-13 23:55:46.435 [           main] INFO          org.moqui.impl.webapp.MoquiContextListener []
+ Added WebSocket endpoint /groovysh for class org.moqui.impl.webapp.GroovyShellEndpoint
+--- 2023-06-13 23:55:46.435 [           main] INFO          org.moqui.impl.webapp.MoquiContextListener []
+ Moqui Framework initialized in 12.353 seconds
+--- 2023-06-13 23:55:46.503 [           main] INFO               org.moqui.impl.webapp.MoquiFopServlet []
+ MoquiFopServlet initialized for webapp webroot
+--- 2023-06-13 23:55:46.503 [           main] INFO                  org.moqui.impl.webapp.MoquiServlet []
+ MoquiServlet initialized for webapp webroot
+--- 2023-06-13 23:55:46.504 [           main] INFO     org.eclipse.jetty.server.handler.ContextHandler []
+ Started o.e.j.w.WebAppContext@7e242b4d{Moqui Root Webapp,/,file:///home/dhruv/snadbox2/moqui/execwartmp/ROOT/webapp/,AVAILABLE}{file:/home/dhruv/snadbox2/moqui/moqui.war}
+--- 2023-06-13 23:55:46.512 [           main] INFO          org.eclipse.jetty.server.AbstractConnector []
+ Started ServerConnector@673be18f{HTTP/1.1, (http/1.1)}{0.0.0.0:8080}
+--- 2023-06-13 23:55:46.521 [           main] INFO                     org.eclipse.jetty.server.Server []
+ Started Server@2d1dee39{STARTING}[10.0.13,sto=30000] @15516ms
+--- 2023-06-13 23:55:46.591 [qtp348055829-23] WARN                    org.moqui.impl.util.SimpleSigner []
+ Could not initialize signing key qz-private-key.pem: org.moqui.BaseException: Could not find signing key resource qz-private-key.pem on classpath
+--- 2023-06-13 23:55:46.913 [qtp348055829-23] INFO               org.moqui.impl.context.UserFacadeImpl []
+ Got invalid visitorId [674f6454-dc17-4d2e-845c-2e921283cd5f] in moqui.visitor cookie in session [node0yfn2vqv8zucpoy4wz49ews941], throwing away and making a new one
+--- 2023-06-13 23:55:46.914 [qtp348055829-22] INFO               org.moqui.impl.context.UserFacadeImpl []
+ Got invalid visitorId [674f6454-dc17-4d2e-845c-2e921283cd5f] in moqui.visitor cookie in session [node0oueosl2gb50io32jqttusg7d0], throwing away and making a new one
+--- 2023-06-13 23:55:46.996 [qtp348055829-23] INFO              org.moqui.impl.entity.EntityFacadeImpl []
+ Created 1500 automatic reverse relationships
+--- 2023-06-13 23:55:47.109 [qtp348055829-23] INFO                org.moqui.impl.entity.EntityDataFeed []
+ Built entity.data.feed.info cache in 178ms, entries for 62 entities
+--- 2023-06-13 23:55:47.206 [qtp348055829-18] INFO               org.moqui.impl.context.UserFacadeImpl []
+ Got invalid visitorId [674f6454-dc17-4d2e-845c-2e921283cd5f] in moqui.visitor cookie in session [node0180bebkwf3qi9thryfbzmwxiy2], throwing away and making a new one
+--- 2023-06-13 23:55:47.608 [qtp348055829-23] INFO                org.moqui.impl.context.WebFacadeImpl []
+ Streamed 1150 bytes from location component://webroot/screen/webroot/favicon.ico
+--- 2023-06-13 23:55:47.685 [qtp348055829-18] INFO              org.moqui.impl.screen.ScreenRenderImpl []
+ Redirecting to /Login instead of rendering [qapps]
+--- 2023-06-13 23:55:47.696 [qtp348055829-18] INFO              org.moqui.impl.screen.ScreenRenderImpl []
+ qapps [] in 467ms (text/html;charset=utf-8) session node0180bebkwf3qi9thryfbzmwxiy2
+--- 2023-06-13 23:55:48.511 [qtp348055829-18] INFO              org.moqui.impl.screen.ScreenRenderImpl []
+ Login [] in 810ms (text/html;charset=utf-8) session node0180bebkwf3qi9thryfbzmwxiy2
+--- 2023-06-13 23:55:48.679 [qtp348055829-46] INFO                org.moqui.impl.context.WebFacadeImpl []
+ Streamed 1150 bytes from location component://webroot/screen/webroot/favicon.ico
+--- 2023-06-13 23:55:48.688 [qtp348055829-18] INFO                org.moqui.impl.context.WebFacadeImpl []
+ Streamed 1150 bytes from location component://webroot/screen/webroot/favicon.ico
+--- 2023-06-13 23:55:50.491 [qtp348055829-46] WARN                 org.moqui.impl.util.MoquiShiroRealm []
+ Web login with IPv6 client IP 0:0:0:0:0:0:0:1 for userId EX_JOHN_DOE, not checking ipAllowed
+--- 2023-06-13 23:55:50.518 [  MoquiWorker-2] WARN              org.moqui.impl.context.ContextJavaUtil []
+ Potential lock conflict entity moqui.server.Visit pk 100002 thread MoquiWorker-2 TX 23 began 2023-06-13 23:55:50.518 at: 
+00: AT_ENTITY:moqui.security.UserLoginHistory (AUTHZA_CREATE:create) 0ms TX 23
+== OTHER LOCK 0 thread qtp348055829-46 TX 21 began 2023-06-13 23:55:50.228 at: 
+00: AT_ENTITY:moqui.server.Visit (AUTHZA_UPDATE:update) 154ms TX 21
+01: AT_XML_SCREEN_TRANS:component://webroot/screen/webroot/Login.xml/login (AUTHZA_VIEW:text/html) 290ms TX 21
+02: AT_XML_SCREEN:component://webroot/screen/webroot/Login.xml (AUTHZA_VIEW) 290ms TX 21
+03: AT_XML_SCREEN:component://webroot/screen/webroot.xml (AUTHZA_VIEW) 290ms TX 21
+--- 2023-06-13 23:55:50.541 [qtp348055829-46] WARN                         org.moqui.util.WebUtilities []
+ Tried getAttributeNames() on invalidated session node0180bebkwf3qi9thryfbzmwxiy2: java.lang.IllegalStateException: Invalid for read: id=node0180bebkwf3qi9thryfbzmwxiy2 created=1686725747192 accessed=1686725750204 lastaccessed=1686725748683 maxInactiveMs=3600000 expiry=1686729350204
+--- 2023-06-13 23:55:50.541 [qtp348055829-46] WARN                         org.moqui.util.WebUtilities []
+ Tried getAttributeNames() on invalidated session node0180bebkwf3qi9thryfbzmwxiy2: java.lang.IllegalStateException: Invalid for read: id=node0180bebkwf3qi9thryfbzmwxiy2 created=1686725747192 accessed=1686725750204 lastaccessed=1686725748683 maxInactiveMs=3600000 expiry=1686729350204
+--- 2023-06-13 23:55:50.541 [qtp348055829-46] INFO              org.moqui.impl.screen.ScreenRenderImpl []
+ Transition Login/login in 314ms, redirecting to screen path URL: http://localhost:8080/qapps
+--- 2023-06-13 23:55:50.623 [  MoquiWorker-1] INFO            org.moqui.impl.context.MessageFacadeImpl []
+ [info] Geo IP lookup disabled
+--- 2023-06-13 23:55:50.683 [qtp348055829-46] INFO              org.moqui.impl.screen.ScreenRenderImpl []
+ qapps [] in 125ms (text/html;charset=utf-8) session node0j6c07gg7gz3c1x0tqd5z83gdf3
+--- 2023-06-13 23:55:51.100 [qtp348055829-20] INFO                org.moqui.impl.context.WebFacadeImpl []
+ Streamed 1150 bytes from location component://webroot/screen/webroot/favicon.ico
+--- 2023-06-13 23:55:51.552 [qtp348055829-48] INFO                org.moqui.impl.context.WebFacadeImpl []
+ Service REST for GET to /rest/s1/mantle/my/userOrgInfo headers [Cookie, Accept, X-Requested-With, Connection, User-Agent, Referer, Sec-Fetch-Site, Sec-Fetch-Dest, Host, Accept-Encoding, Sec-Fetch-Mode, sec-ch-ua, sec-ch-ua-mobile, sec-ch-ua-platform, Sec-GPC, Accept-Language] parameters []
+--- 2023-06-13 23:55:51.564 [qtp348055829-48] INFO                      org.moqui.impl.service.RestApi []
+ Loaded REST API from mantle.rest.xml (392 paths, 416 methods)
+--- 2023-06-13 23:55:51.564 [qtp348055829-48] INFO                      org.moqui.impl.service.RestApi []
+ Loaded REST API files, 2 roots, in 11ms
+--- 2023-06-13 23:55:53.263 [qtp348055829-18] INFO              org.moqui.impl.screen.ScreenRenderImpl []
+ apps/AppList [] in 280ms (text/html;charset=utf-8) session node0j6c07gg7gz3c1x0tqd5z83gdf3
+--- 2023-06-13 23:55:55.111 [qtp348055829-20] INFO                org.moqui.impl.context.WebFacadeImpl []
+ Streamed 1150 bytes from location component://webroot/screen/webroot/favicon.ico
+--- 2023-06-13 23:55:55.542 [qtp348055829-18] INFO                      org.moqui.impl.service.RestApi []
+ Loaded REST API from moqui.rest.xml (83 paths, 89 methods)
+--- 2023-06-13 23:55:55.544 [qtp348055829-18] INFO                      org.moqui.impl.service.RestApi []
+ Loaded REST API from mantle.rest.xml (392 paths, 416 methods)
+--- 2023-06-13 23:55:55.544 [qtp348055829-18] INFO                      org.moqui.impl.service.RestApi []
+ Loaded REST API files, 2 roots, in 10ms
+--- 2023-06-13 23:55:55.885 [qtp348055829-18] INFO              org.moqui.impl.screen.ScreenRenderImpl []
+ apps/tools/dashboard [] in 476ms (text/html;charset=utf-8) session node0j6c07gg7gz3c1x0tqd5z83gdf3
+--- 2023-06-13 23:56:05.695 [qtp348055829-48] INFO                org.moqui.impl.context.WebFacadeImpl []
+ Streamed 1150 bytes from location component://webroot/screen/webroot/favicon.ico
+--- 2023-06-13 23:56:06.744 [qtp348055829-23] INFO                org.moqui.impl.context.WebFacadeImpl []
+ Streamed 1150 bytes from location component://webroot/screen/webroot/favicon.ico
+--- 2023-06-13 23:56:07.405 [qtp348055829-48] INFO              org.moqui.impl.screen.ScreenRenderImpl []
+ apps/tools/Entity/DataEdit/EntityList [] in 416ms (text/html;charset=utf-8) session node0j6c07gg7gz3c1x0tqd5z83gdf3
+--- 2023-06-13 23:56:08.351 [qtp348055829-46] INFO              org.moqui.impl.screen.ScreenRenderImpl []
+ apps/tools/Service/ServiceReference [] in 2166ms (text/html;charset=utf-8) session node0j6c07gg7gz3c1x0tqd5z83gdf3
+--- 2023-06-13 23:56:10.825 [qtp348055829-47] INFO                org.moqui.impl.context.WebFacadeImpl []
+ Streamed 1150 bytes from location component://webroot/screen/webroot/favicon.ico
+--- 2023-06-13 23:56:11.051 [qtp348055829-48] INFO              org.moqui.impl.screen.ScreenRenderImpl []
+ apps/tools/Entity/DataEdit/EntityList [submitButton:submitButton, viewOption:all, filterRegexp:Party] in 211ms (text/html;charset=utf-8) session node0j6c07gg7gz3c1x0tqd5z83gdf3
+--- 2023-06-13 23:57:42.746 [oquiScheduled-2] INFO           org.moqui.impl.service.ScheduledJobRunner []
+ Running job autoApprove_OrdersDelayed run 100000 (last run null, schedule 2023-06-13T23:45-07:00[US/Pacific])
+--- 2023-06-13 23:57:42.782 [oquiScheduled-2] INFO           org.moqui.impl.service.ScheduledJobRunner []
+ Running job clean_ArtifactData_daily run 100001 (last run null, schedule 2023-06-13T02:00-07:00[US/Pacific])
+--- 2023-06-13 23:57:42.799 [oquiScheduled-2] INFO           org.moqui.impl.service.ScheduledJobRunner []
+ Running job clean_PrintJobData_daily run 100002 (last run null, schedule 2023-06-13T02:00-07:00[US/Pacific])
+--- 2023-06-13 23:57:42.813 [oquiScheduled-2] INFO           org.moqui.impl.service.ScheduledJobRunner []
+ Running job clean_ServiceJobRun_daily run 100003 (last run null, schedule 2023-06-13T02:00-07:00[US/Pacific])
+--- 2023-06-13 23:57:42.841 [oquiScheduled-2] INFO           org.moqui.impl.service.ScheduledJobRunner []
+ Running job create_RecurringOrders run 100004 (last run null, schedule 2023-06-13T02:00-07:00[US/Pacific])
+--- 2023-06-13 23:57:42.853 [oquiScheduled-2] INFO           org.moqui.impl.service.ScheduledJobRunner []
+ Running job recalculate_GlAccountOrgSummaries run 100005 (last run null, schedule 2023-06-13T23:00-07:00[US/Pacific])
+--- 2023-06-13 23:57:42.866 [oquiScheduled-2] INFO           org.moqui.impl.service.ScheduledJobRunner []
+ Running job render_ScheduledScreens_frequent run 100006 (last run null, schedule 2023-06-13T23:45-07:00[US/Pacific])
+--- 2023-06-13 23:57:42.875 [oquiScheduled-2] INFO           org.moqui.impl.service.ScheduledJobRunner []
+ Ran 7 Service Jobs starting 2023-06-13T23:57:42.692147-07:00[US/Pacific] - active: 7, paused: 12; on this server using 7 of 16 job slots
+--- 2023-06-13 23:57:43.001 [     MoquiJob-1] INFO             org.moqui.impl.context.LoggerFacadeImpl []
+ Removed 0 PrintJob records more than 7 days old
+--- 2023-06-13 23:57:43.001 [     MoquiJob-2] INFO             org.moqui.impl.context.LoggerFacadeImpl []
+ Removed 0 ArtifactHit records and 0 ArtifactHitBin records more than 90 days old
+--- 2023-06-13 23:57:43.046 [     MoquiJob-2] INFO             org.moqui.impl.context.LoggerFacadeImpl []
+ Removed 0 ServiceJobRun records.
+--- 2023-06-13 23:57:43.680 [     MoquiJob-2] INFO             org.moqui.impl.context.LoggerFacadeImpl []
+ [Recalculate GlAccountOrgSummaries] lastRunTime null, 3 time periods, organizations: [ORG_ZIZI_CORP]
+--- 2023-06-13 23:57:44.089 [     MoquiJob-2] INFO            org.moqui.impl.context.MessageFacadeImpl []
+ [info] Updated GL Account Org Summaries for orgs [ORG_ZIZI_CORP] in 441ms; updated 0 Organization and 0 Period summary records
+--- 2023-06-13 23:57:44.616 [  MoquiWorker-3] WARN             org.moqui.impl.context.LoggerFacadeImpl []
+ Not saving or sending email for ScheduledScreen PopcAccRecAging: noResultsAbort Y _formListRendered true _formListResultCount 0

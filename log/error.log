@@ -1,0 +1,1171 @@
+--- 2023-06-14 00:19:24.746 [tp348055829-107] ERROR                   org.moqui.impl.actions.XmlAction [] []
+ Error parsing groovy String at [tutorial.order.OrderServices.get#FemalePersons]:
+1 : import static org.moqui.util.ObjectUtilities.*
+2 : import static org.moqui.util.CollectionUtilities.*
+3 : import static org.moqui.util.StringUtilities.*
+4 : import java.sql.Timestamp
+5 : import java.sql.Time
+6 : import java.time.*
+7 : // these are in the context by default: ExecutionContext ec, Map<String, Object> context, Map<String, Object> result
+8 :     if () {
+9 :     personsList_xafind = ec.entity.find("mantle.order.Person")
+10 :             
+11 :             personsList = personsList_xafind.list()
+12 :     }
+13 : 
+14 : // make sure the last statement is not considered the return value
+15 : return;
+
+
+--- 2023-06-14 00:19:24.796 [tp348055829-107] ERROR           org.moqui.impl.context.MessageFacadeImpl [] []
+ startup failed:
+tutorial_order_OrderServices_get_FemalePersons: 8: Unexpected input: ')' @ line 8, column 9.
+       if () {
+           ^
+
+1 error
+
+--- 2023-06-14 00:23:47.237 [tp348055829-106] ERROR                   org.moqui.impl.actions.XmlAction [] []
+ Error parsing groovy String at [tutorial.order.OrderServices.get#FemalePersons]:
+1 : import static org.moqui.util.ObjectUtilities.*
+2 : import static org.moqui.util.CollectionUtilities.*
+3 : import static org.moqui.util.StringUtilities.*
+4 : import java.sql.Timestamp
+5 : import java.sql.Time
+6 : import java.time.*
+7 : // these are in the context by default: ExecutionContext ec, Map<String, Object> context, Map<String, Object> result
+8 :     if () {
+9 :     personsList_xafind = ec.entity.find("mantle.party.Person")
+10 :             
+11 :             personsList = personsList_xafind.list()
+12 :     }
+13 : 
+14 : // make sure the last statement is not considered the return value
+15 : return;
+
+
+--- 2023-06-14 00:23:47.242 [tp348055829-106] ERROR           org.moqui.impl.context.MessageFacadeImpl [] []
+ startup failed:
+tutorial_order_OrderServices_get_FemalePersons: 8: Unexpected input: ')' @ line 8, column 9.
+       if () {
+           ^
+
+1 error
+
+--- 2023-06-14 02:27:09.675 [tp348055829-140] ERROR           org.moqui.impl.context.MessageFacadeImpl [] []
+ {serviceNamePretty=Mantle Account Bai Services Import Bai Version 2, form=null, field=paymentMethodId, fieldPretty=Payment Method ID, serviceName=mantle.account.BaiServices.import#BaiVersion2, formPretty=, message=Field cannot be empty}
+--- 2023-06-14 02:27:09.675 [tp348055829-140] ERROR           org.moqui.impl.context.MessageFacadeImpl [] []
+ {serviceNamePretty=Mantle Account Bai Services Import Bai Version 2, form=null, field=baiString, fieldPretty=Bai String, serviceName=mantle.account.BaiServices.import#BaiVersion2, formPretty=, message=Field cannot be empty}
+--- 2023-06-14 02:27:45.365 [tp348055829-140] ERROR           org.moqui.impl.context.MessageFacadeImpl [] []
+ {serviceNamePretty=Mantle Account Invoice Services Get Invoice Print Info, form=null, field=invoiceId, fieldPretty=Invoice ID, serviceName=mantle.account.InvoiceServices.get#InvoicePrintInfo, formPretty=, message=Field cannot be empty}
+--- 2023-06-14 02:27:49.037 [qtp348055829-18] ERROR                   org.moqui.impl.actions.XmlAction [] []
+ Error running groovy script (java.lang.NullPointerException: Cannot get property 'fromPartyId' on null object): 
+1 : import static org.moqui.util.ObjectUtilities.*
+2 : import static org.moqui.util.CollectionUtilities.*
+3 : import static org.moqui.util.StringUtilities.*
+4 : import java.sql.Timestamp
+5 : import java.sql.Time
+6 : import java.time.*
+7 : // these are in the context by default: ExecutionContext ec, Map<String, Object> context, Map<String, Object> result
+8 :     if (true) {
+9 :         org.moqui.entity.EntityValue find_one_result = ec.entity.find("mantle.account.invoice.Invoice")
+10 :                 .condition(context).one()
+11 :         if (invoice instanceof Map && !(invoice instanceof org.moqui.entity.EntityValue)) { if (find_one_result) invoice.putAll(find_one_result) } else { invoice = find_one_result }
+12 :     }
+13 :     if (true) {
+14 :         org.moqui.entity.EntityValue find_one_result = ec.entity.find("moqui.basic.StatusItem")
+15 :                 .condition("statusId", invoice?.statusId).one()
+16 :         if (currentStatus instanceof Map && !(currentStatus instanceof org.moqui.entity.EntityValue)) { if (find_one_result) currentStatus.putAll(find_one_result) } else { currentStatus = find_one_result }
+17 :     }
+18 :     if (true) {
+19 :         def call_service_result = ec.service.sync().name("mantle.account.InvoiceServices.get#InvoiceTotal")
+20 :             .parameters([invoiceId:invoiceId]).call()
+21 :         if (context != null) { if (call_service_result) context.putAll(call_service_result) } else { context = call_service_result }
+22 :         if (ec.message.hasError()) return
+23 :     }
+24 :     settlementTerm = invoice?.findRelatedOne("mantle.account.invoice.SettlementTerm", null, null)
+25 :     orderItemBillingList_xafind = ec.entity.find("mantle.order.OrderItemBilling").orderBy("invoiceItemSeqId")
+26 :             .condition((org.moqui.entity.EntityCondition) ec.entity.conditionFactory.makeActionConditionDirect("invoiceId", "equals", invoiceId, null, null, false, false, false, "false"))
+27 :             orderItemBillingList = orderItemBillingList_xafind.list()
+28 :     orderIdSet = (new TreeSet(orderItemBillingList*.orderId))
+29 :     paymentApplicationList_xafind = ec.entity.find("mantle.account.payment.PaymentApplication").orderBy("appliedDate")
+30 :             .condition((org.moqui.entity.EntityCondition) ec.entity.conditionFactory.makeCondition([(org.moqui.entity.EntityCondition) ec.entity.conditionFactory.makeActionConditionDirect("invoiceId", "equals", invoiceId, null, null, false, false, false, "false"), (org.moqui.entity.EntityCondition) ec.entity.conditionFactory.makeActionConditionDirect("toInvoiceId", "equals", invoiceId, null, null, false, false, false, "false")], org.moqui.impl.entity.EntityConditionFactoryImpl.getJoinOperator("or")))
+31 :             paymentApplicationList = paymentApplicationList_xafind.list()
+32 :     invoiceItemList_xafind = ec.entity.find("mantle.account.invoice.InvoiceItem").orderBy("invoiceItemSeqId")
+33 :             .condition((org.moqui.entity.EntityCondition) ec.entity.conditionFactory.makeActionConditionDirect("invoiceId", "equals", invoiceId, null, null, false, false, false, "false")).condition((org.moqui.entity.EntityCondition) ec.entity.conditionFactory.makeActionConditionDirect("isAdjustment", "equals", isAdjustment, "N", null, false, false, true, "false"))
+34 :             invoiceItemList = invoiceItemList_xafind.list()
+35 :     topItemList = (invoiceItemList.findAll({ it.parentItemSeqId == null }))
+36 :     adjustmentItemList_xafind = ec.entity.find("mantle.account.invoice.InvoiceItem").orderBy("invoiceItemSeqId")
+37 :             .condition((org.moqui.entity.EntityCondition) ec.entity.conditionFactory.makeActionConditionDirect("invoiceId", "equals", invoiceId, null, null, false, false, false, "false")).condition((org.moqui.entity.EntityCondition) ec.entity.conditionFactory.makeActionConditionDirect("isAdjustment", "equals", isAdjustment, "Y", null, false, false, false, "false"))
+38 :             adjustmentItemList = adjustmentItemList_xafind.list()
+39 :     noAdjustmentTotal = (0.0)
+40 :     if (true) {
+41 :         int invoiceItem_index = 0
+42 :         Iterator _invoiceItemIterator = invoiceItemList.iterator()
+43 :         // behave differently for EntityListIterator, avoid using hasNext()
+44 :         boolean invoiceItemIsEli = (_invoiceItemIterator instanceof org.moqui.entity.EntityListIterator)
+45 :         while (invoiceItemIsEli || _invoiceItemIterator.hasNext()) {
+46 :             invoiceItem = _invoiceItemIterator.next()
+47 :             if (invoiceItemIsEli && invoiceItem == null) break
+48 :             if (!invoiceItemIsEli) invoiceItem_has_next = _invoiceItemIterator.hasNext()
+49 : 
+50 :             // begin iterator internal block
+51 :     noAdjustmentTotal = (noAdjustmentTotal + ((invoiceItem.quantity != null ? invoiceItem.quantity : 1.0) * (invoiceItem.amount ?: 0.0)))
+52 :             // end iterator internal block for list invoiceItemList
+53 : 
+54 :             invoiceItem_index++
+55 :         }
+56 :         if(invoiceItemIsEli) _invoiceItemIterator.close()
+57 :     }
+58 :     noAdjustmentTotal = ((noAdjustmentTotal as BigDecimal).setScale(2, BigDecimal.ROUND_HALF_UP))
+59 :     adjustmentTotal = (0.0)
+60 :     if (true) {
+61 :         int invoiceItem_index = 0
+62 :         Iterator _invoiceItemIterator = adjustmentItemList.iterator()
+63 :         // behave differently for EntityListIterator, avoid using hasNext()
+64 :         boolean invoiceItemIsEli = (_invoiceItemIterator instanceof org.moqui.entity.EntityListIterator)
+65 :         while (invoiceItemIsEli || _invoiceItemIterator.hasNext()) {
+66 :             invoiceItem = _invoiceItemIterator.next()
+67 :             if (invoiceItemIsEli && invoiceItem == null) break
+68 :             if (!invoiceItemIsEli) invoiceItem_has_next = _invoiceItemIterator.hasNext()
+69 : 
+70 :             // begin iterator internal block
+71 :     adjustmentTotal = (adjustmentTotal + ((invoiceItem.quantity != null ? invoiceItem.quantity : 1.0) * (invoiceItem.amount ?: 0.0)))
+72 :             // end iterator internal block for list adjustmentItemList
+73 : 
+74 :             invoiceItem_index++
+75 :         }
+76 :         if(invoiceItemIsEli) _invoiceItemIterator.close()
+77 :     }
+78 :     adjustmentTotal = ((adjustmentTotal as BigDecimal).setScale(2, BigDecimal.ROUND_HALF_UP))
+79 :     hasProductItems = (false)
+80 :     hasTimeEntryItems = (false)
+81 :     itemTypeSummaryMapMap = ([:])
+82 :     if (true) {
+83 :         int invoiceItem_index = 0
+84 :         Iterator _invoiceItemIterator = invoiceItemList.iterator()
+85 :         // behave differently for EntityListIterator, avoid using hasNext()
+86 :         boolean invoiceItemIsEli = (_invoiceItemIterator instanceof org.moqui.entity.EntityListIterator)
+87 :         while (invoiceItemIsEli || _invoiceItemIterator.hasNext()) {
+88 :             invoiceItem = _invoiceItemIterator.next()
+89 :             if (invoiceItemIsEli && invoiceItem == null) break
+90 :             if (!invoiceItemIsEli) invoiceItem_has_next = _invoiceItemIterator.hasNext()
+91 : 
+92 :             // begin iterator internal block
+93 :     mapKey = (invoiceItem.itemTypeEnumId)
+94 :     if (invoiceItem.itemTypeEnumId == 'ItemTimeEntry') {
+95 :     mapKey = (mapKey + '::' + invoiceItem.amount)
+96 :     hasTimeEntryItems = (true)
+97 :     }
+98 : 
+99 :     if (invoiceItem.productId) {
+100 :     hasProductItems = (true)
+101 :     }
+102 : 
+103 :     itemTypeSummaryMap = (itemTypeSummaryMapMap.get(mapKey))
+104 :     if (!itemTypeSummaryMap) {
+105 :     itemTypeSummaryMap = ([itemTypeEnumId:invoiceItem.itemTypeEnumId, quantity:0, total:0])
+106 :     if (invoiceItem.itemTypeEnumId == 'ItemTimeEntry') {
+107 :     itemTypeSummaryMap.amount = (invoiceItem.amount)
+108 :     }
+109 : 
+110 : 
+111 : // begin inline script
+112 : itemTypeSummaryMapMap.put(mapKey, itemTypeSummaryMap)
+113 : // end inline script
+114 :     }
+115 : 
+116 :     itemTypeSummaryMap.quantity = (itemTypeSummaryMap.quantity + (invoiceItem.quantity ?: 1))
+117 :     itemTypeSummaryMap.total = (itemTypeSummaryMap.total + ((invoiceItem.quantity ?: 1) * (invoiceItem.amount ?: 0)))
+118 :             // end iterator internal block for list invoiceItemList
+119 : 
+120 :             invoiceItem_index++
+121 :         }
+122 :         if(invoiceItemIsEli) _invoiceItemIterator.close()
+123 :     }
+124 :     itemTypeSummaryMapList = (itemTypeSummaryMapMap.values())
+125 :     if (true) {
+126 :         org.moqui.entity.EntityValue find_one_result = ec.entity.find("mantle.party.PartyDetail")
+127 :                 .condition("partyId", invoice.fromPartyId).one()
+128 :         if (fromParty instanceof Map && !(fromParty instanceof org.moqui.entity.EntityValue)) { if (find_one_result) fromParty.putAll(find_one_result) } else { fromParty = find_one_result }
+129 :     }
+130 :     if (true) {
+131 :         def call_service_result = ec.service.sync().name("mantle.party.ContactServices.get#PartyContactInfo")
+132 :             .parameters([partyId:invoice.fromPartyId, postalContactMechPurposeId:'PostalPayment',                         telecomContactMechPurposeId:'PhonePayment', faxContactMechPurposeId:'PhonePaymentFax',                         emailContactMechPurposeId:'EmailPayment']).call()
+133 :         if (fromContactInfo != null) { if (call_service_result) fromContactInfo.putAll(call_service_result) } else { fromContactInfo = call_service_result }
+134 :         if (ec.message.hasError()) return
+135 :     }
+136 :     if (true) {
+137 :         def call_service_result = ec.service.sync().name("mantle.party.PartyServices.get#PartyContentLocation")
+138 :             .parameters([partyId:invoice.fromPartyId, partyContentTypeEnumIdList:['PcntLogoImage', 'PcntPrimaryImage']]).call()
+139 :         if (logoImageOut != null) { if (call_service_result) logoImageOut.putAll(call_service_result) } else { logoImageOut = call_service_result }
+140 :         if (ec.message.hasError()) return
+141 :     }
+142 :     logoImageLocation = (logoImageOut.contentLocation)
+143 :     if (true) {
+144 :         def call_service_result = ec.service.sync().name("mantle.party.PartyServices.get#PartyContentLocation")
+145 :             .parameters([partyId:invoice.fromPartyId, partyContentTypeEnumIdList:['PcntInvoiceMessageFrom'], getText:true]).call()
+146 :         if (messageFromOut != null) { if (call_service_result) messageFromOut.putAll(call_service_result) } else { messageFromOut = call_service_result }
+147 :         if (ec.message.hasError()) return
+148 :     }
+149 :     fromPartyMessage = (messageFromOut.contentText)
+150 :     if (true) {
+151 :         def call_service_result = ec.service.sync().name("mantle.party.PartyServices.get#PartyContentLocation")
+152 :             .parameters([partyId:invoice.toPartyId, partyContentTypeEnumIdList:['PcntInvoiceMessageTo'], getText:true]).call()
+153 :         if (messageToOut != null) { if (call_service_result) messageToOut.putAll(call_service_result) } else { messageToOut = call_service_result }
+154 :         if (ec.message.hasError()) return
+155 :     }
+156 :     toPartyMessage = (messageToOut.contentText)
+157 :     ec.logger.log("warn", """toPartyMessage: ${toPartyMessage}""", null)
+158 :     if (true) {
+159 :         org.moqui.entity.EntityValue find_one_result = ec.entity.find("mantle.party.PartyDetail")
+160 :                 .condition("partyId", invoice.toPartyId).one()
+161 :         if (toParty instanceof Map && !(toParty instanceof org.moqui.entity.EntityValue)) { if (find_one_result) toParty.putAll(find_one_result) } else { toParty = find_one_result }
+162 :     }
+163 :     if (true) {
+164 :         def call_service_result = ec.service.sync().name("mantle.party.ContactServices.get#PartyContactInfo")
+165 :             .parameters([partyId:invoice.toPartyId, postalContactMechPurposeId:'PostalBilling',                         telecomContactMechPurposeId:'PhoneBilling', emailContactMechPurposeId:'EmailBilling']).call()
+166 :         if (toContactInfo != null) { if (call_service_result) toContactInfo.putAll(call_service_result) } else { toContactInfo = call_service_result }
+167 :         if (ec.message.hasError()) return
+168 :     }
+169 :     toBillingRelList_xafind = ec.entity.find("mantle.party.PartyRelationship")
+170 :             .condition((org.moqui.entity.EntityCondition) ec.entity.conditionFactory.makeConditionDate("fromDate", "thruDate", null, false, "false")).condition((org.moqui.entity.EntityCondition) ec.entity.conditionFactory.makeActionConditionDirect("toPartyId", "equals", invoice.toPartyId, null, null, false, false, false, "false")).condition((org.moqui.entity.EntityCondition) ec.entity.conditionFactory.makeActionConditionDirect("fromRoleTypeId", "equals", fromRoleTypeId, "ClientBilling", null, false, false, false, "false"))
+171 :             toBillingRelList = toBillingRelList_xafind.list()
+172 :     if (true) {
+173 :         org.moqui.entity.EntityValue find_one_result = ec.entity.find("mantle.party.PartyDetail")
+174 :                 .condition("partyId", toBillingRelList?.first?.fromPartyId).one()
+175 :         if (toBillingRep instanceof Map && !(toBillingRep instanceof org.moqui.entity.EntityValue)) { if (find_one_result) toBillingRep.putAll(find_one_result) } else { toBillingRep = find_one_result }
+176 :     }
+177 :     finalizedStatusHistoryList_xafind = ec.entity.find("moqui.entity.EntityAuditLog").orderBy("-changedDate")
+178 :             .condition((org.moqui.entity.EntityCondition) ec.entity.conditionFactory.makeActionConditionDirect("changedEntityName", "equals", changedEntityName, "mantle.account.invoice.Invoice", null, false, false, false, "false")).condition((org.moqui.entity.EntityCondition) ec.entity.conditionFactory.makeActionConditionDirect("changedFieldName", "equals", changedFieldName, "statusId", null, false, false, false, "false")).condition((org.moqui.entity.EntityCondition) ec.entity.conditionFactory.makeActionConditionDirect("pkPrimaryValue", "equals", invoiceId, null, null, false, false, false, "false")).condition((org.moqui.entity.EntityCondition) ec.entity.conditionFactory.makeActionConditionDirect("newValueText", "equals", newValueText, "InvoiceFinalized", null, false, false, false, "false"))
+179 :             finalizedStatusHistoryList = finalizedStatusHistoryList_xafind.list()
+180 :     templateLocation = (null)
+181 :     if (true) {
+182 :         def call_service_result = ec.service.sync().name("mantle.account.InvoiceServices.find#InvoiceProductStores")
+183 :             .parameters(context).call()
+184 :         if (context != null) { if (call_service_result) context.putAll(call_service_result) } else { context = call_service_result }
+185 :         if (ec.message.hasError()) return
+186 :     }
+187 :     if (productStoreIdSet) {
+188 :     productStoreSettingList_xafind = ec.entity.find("mantle.product.store.ProductStoreSetting").useCache(true).orderBy("-fromDate")
+189 :             .condition((org.moqui.entity.EntityCondition) ec.entity.conditionFactory.makeActionConditionDirect("productStoreId", "equals", productStoreIdSet.first(), null, null, false, false, false, "false")).condition((org.moqui.entity.EntityCondition) ec.entity.conditionFactory.makeActionConditionDirect("settingTypeEnumId", "equals", settingTypeEnumId, "Psst${templateSettingSuffix}", null, false, false, false, "false"))
+190 :             productStoreSettingList = productStoreSettingList_xafind.list()
+191 :                 productStoreSettingList = productStoreSettingList.filterByDate("fromDate", "thruDate", null, false)
+192 :     if (productStoreSettingList) {
+193 :     templateLocation = (productStoreSettingList[0].settingValue)
+194 :     }
+195 : 
+196 :     }
+197 : 
+198 :     if (!templateLocation && invoice.fromPartyId) {
+199 :     if (true) {
+200 :         def call_service_result = ec.service.sync().name("mantle.party.PartyServices.get#PartySettingValue")
+201 :             .parameters([partyId:invoice.fromPartyId, partySettingTypeId:('Org' + templateSettingSuffix)]).call()
+202 :         if (ptySettingOut != null) { if (call_service_result) ptySettingOut.putAll(call_service_result) } else { ptySettingOut = call_service_result }
+203 :         if (ec.message.hasError()) return
+204 :     }
+205 :     templateLocation = (ptySettingOut?.settingValue)
+206 :     }
+207 : 
+208 : // make sure the last statement is not considered the return value
+209 : return;
+
+
+--- 2023-06-14 02:27:49.041 [qtp348055829-18] ERROR           org.moqui.impl.context.MessageFacadeImpl [] []
+ Cannot get property 'fromPartyId' on null object
+--- 2023-06-14 02:27:56.227 [tp348055829-140] ERROR                   org.moqui.impl.actions.XmlAction [] []
+ Error running groovy script (java.lang.NullPointerException: Cannot get property 'fromPartyId' on null object): 
+1 : import static org.moqui.util.ObjectUtilities.*
+2 : import static org.moqui.util.CollectionUtilities.*
+3 : import static org.moqui.util.StringUtilities.*
+4 : import java.sql.Timestamp
+5 : import java.sql.Time
+6 : import java.time.*
+7 : // these are in the context by default: ExecutionContext ec, Map<String, Object> context, Map<String, Object> result
+8 :     if (true) {
+9 :         org.moqui.entity.EntityValue find_one_result = ec.entity.find("mantle.account.invoice.Invoice")
+10 :                 .condition(context).one()
+11 :         if (invoice instanceof Map && !(invoice instanceof org.moqui.entity.EntityValue)) { if (find_one_result) invoice.putAll(find_one_result) } else { invoice = find_one_result }
+12 :     }
+13 :     if (true) {
+14 :         org.moqui.entity.EntityValue find_one_result = ec.entity.find("moqui.basic.StatusItem")
+15 :                 .condition("statusId", invoice?.statusId).one()
+16 :         if (currentStatus instanceof Map && !(currentStatus instanceof org.moqui.entity.EntityValue)) { if (find_one_result) currentStatus.putAll(find_one_result) } else { currentStatus = find_one_result }
+17 :     }
+18 :     if (true) {
+19 :         def call_service_result = ec.service.sync().name("mantle.account.InvoiceServices.get#InvoiceTotal")
+20 :             .parameters([invoiceId:invoiceId]).call()
+21 :         if (context != null) { if (call_service_result) context.putAll(call_service_result) } else { context = call_service_result }
+22 :         if (ec.message.hasError()) return
+23 :     }
+24 :     settlementTerm = invoice?.findRelatedOne("mantle.account.invoice.SettlementTerm", null, null)
+25 :     orderItemBillingList_xafind = ec.entity.find("mantle.order.OrderItemBilling").orderBy("invoiceItemSeqId")
+26 :             .condition((org.moqui.entity.EntityCondition) ec.entity.conditionFactory.makeActionConditionDirect("invoiceId", "equals", invoiceId, null, null, false, false, false, "false"))
+27 :             orderItemBillingList = orderItemBillingList_xafind.list()
+28 :     orderIdSet = (new TreeSet(orderItemBillingList*.orderId))
+29 :     paymentApplicationList_xafind = ec.entity.find("mantle.account.payment.PaymentApplication").orderBy("appliedDate")
+30 :             .condition((org.moqui.entity.EntityCondition) ec.entity.conditionFactory.makeCondition([(org.moqui.entity.EntityCondition) ec.entity.conditionFactory.makeActionConditionDirect("invoiceId", "equals", invoiceId, null, null, false, false, false, "false"), (org.moqui.entity.EntityCondition) ec.entity.conditionFactory.makeActionConditionDirect("toInvoiceId", "equals", invoiceId, null, null, false, false, false, "false")], org.moqui.impl.entity.EntityConditionFactoryImpl.getJoinOperator("or")))
+31 :             paymentApplicationList = paymentApplicationList_xafind.list()
+32 :     invoiceItemList_xafind = ec.entity.find("mantle.account.invoice.InvoiceItem").orderBy("invoiceItemSeqId")
+33 :             .condition((org.moqui.entity.EntityCondition) ec.entity.conditionFactory.makeActionConditionDirect("invoiceId", "equals", invoiceId, null, null, false, false, false, "false")).condition((org.moqui.entity.EntityCondition) ec.entity.conditionFactory.makeActionConditionDirect("isAdjustment", "equals", isAdjustment, "N", null, false, false, true, "false"))
+34 :             invoiceItemList = invoiceItemList_xafind.list()
+35 :     topItemList = (invoiceItemList.findAll({ it.parentItemSeqId == null }))
+36 :     adjustmentItemList_xafind = ec.entity.find("mantle.account.invoice.InvoiceItem").orderBy("invoiceItemSeqId")
+37 :             .condition((org.moqui.entity.EntityCondition) ec.entity.conditionFactory.makeActionConditionDirect("invoiceId", "equals", invoiceId, null, null, false, false, false, "false")).condition((org.moqui.entity.EntityCondition) ec.entity.conditionFactory.makeActionConditionDirect("isAdjustment", "equals", isAdjustment, "Y", null, false, false, false, "false"))
+38 :             adjustmentItemList = adjustmentItemList_xafind.list()
+39 :     noAdjustmentTotal = (0.0)
+40 :     if (true) {
+41 :         int invoiceItem_index = 0
+42 :         Iterator _invoiceItemIterator = invoiceItemList.iterator()
+43 :         // behave differently for EntityListIterator, avoid using hasNext()
+44 :         boolean invoiceItemIsEli = (_invoiceItemIterator instanceof org.moqui.entity.EntityListIterator)
+45 :         while (invoiceItemIsEli || _invoiceItemIterator.hasNext()) {
+46 :             invoiceItem = _invoiceItemIterator.next()
+47 :             if (invoiceItemIsEli && invoiceItem == null) break
+48 :             if (!invoiceItemIsEli) invoiceItem_has_next = _invoiceItemIterator.hasNext()
+49 : 
+50 :             // begin iterator internal block
+51 :     noAdjustmentTotal = (noAdjustmentTotal + ((invoiceItem.quantity != null ? invoiceItem.quantity : 1.0) * (invoiceItem.amount ?: 0.0)))
+52 :             // end iterator internal block for list invoiceItemList
+53 : 
+54 :             invoiceItem_index++
+55 :         }
+56 :         if(invoiceItemIsEli) _invoiceItemIterator.close()
+57 :     }
+58 :     noAdjustmentTotal = ((noAdjustmentTotal as BigDecimal).setScale(2, BigDecimal.ROUND_HALF_UP))
+59 :     adjustmentTotal = (0.0)
+60 :     if (true) {
+61 :         int invoiceItem_index = 0
+62 :         Iterator _invoiceItemIterator = adjustmentItemList.iterator()
+63 :         // behave differently for EntityListIterator, avoid using hasNext()
+64 :         boolean invoiceItemIsEli = (_invoiceItemIterator instanceof org.moqui.entity.EntityListIterator)
+65 :         while (invoiceItemIsEli || _invoiceItemIterator.hasNext()) {
+66 :             invoiceItem = _invoiceItemIterator.next()
+67 :             if (invoiceItemIsEli && invoiceItem == null) break
+68 :             if (!invoiceItemIsEli) invoiceItem_has_next = _invoiceItemIterator.hasNext()
+69 : 
+70 :             // begin iterator internal block
+71 :     adjustmentTotal = (adjustmentTotal + ((invoiceItem.quantity != null ? invoiceItem.quantity : 1.0) * (invoiceItem.amount ?: 0.0)))
+72 :             // end iterator internal block for list adjustmentItemList
+73 : 
+74 :             invoiceItem_index++
+75 :         }
+76 :         if(invoiceItemIsEli) _invoiceItemIterator.close()
+77 :     }
+78 :     adjustmentTotal = ((adjustmentTotal as BigDecimal).setScale(2, BigDecimal.ROUND_HALF_UP))
+79 :     hasProductItems = (false)
+80 :     hasTimeEntryItems = (false)
+81 :     itemTypeSummaryMapMap = ([:])
+82 :     if (true) {
+83 :         int invoiceItem_index = 0
+84 :         Iterator _invoiceItemIterator = invoiceItemList.iterator()
+85 :         // behave differently for EntityListIterator, avoid using hasNext()
+86 :         boolean invoiceItemIsEli = (_invoiceItemIterator instanceof org.moqui.entity.EntityListIterator)
+87 :         while (invoiceItemIsEli || _invoiceItemIterator.hasNext()) {
+88 :             invoiceItem = _invoiceItemIterator.next()
+89 :             if (invoiceItemIsEli && invoiceItem == null) break
+90 :             if (!invoiceItemIsEli) invoiceItem_has_next = _invoiceItemIterator.hasNext()
+91 : 
+92 :             // begin iterator internal block
+93 :     mapKey = (invoiceItem.itemTypeEnumId)
+94 :     if (invoiceItem.itemTypeEnumId == 'ItemTimeEntry') {
+95 :     mapKey = (mapKey + '::' + invoiceItem.amount)
+96 :     hasTimeEntryItems = (true)
+97 :     }
+98 : 
+99 :     if (invoiceItem.productId) {
+100 :     hasProductItems = (true)
+101 :     }
+102 : 
+103 :     itemTypeSummaryMap = (itemTypeSummaryMapMap.get(mapKey))
+104 :     if (!itemTypeSummaryMap) {
+105 :     itemTypeSummaryMap = ([itemTypeEnumId:invoiceItem.itemTypeEnumId, quantity:0, total:0])
+106 :     if (invoiceItem.itemTypeEnumId == 'ItemTimeEntry') {
+107 :     itemTypeSummaryMap.amount = (invoiceItem.amount)
+108 :     }
+109 : 
+110 : 
+111 : // begin inline script
+112 : itemTypeSummaryMapMap.put(mapKey, itemTypeSummaryMap)
+113 : // end inline script
+114 :     }
+115 : 
+116 :     itemTypeSummaryMap.quantity = (itemTypeSummaryMap.quantity + (invoiceItem.quantity ?: 1))
+117 :     itemTypeSummaryMap.total = (itemTypeSummaryMap.total + ((invoiceItem.quantity ?: 1) * (invoiceItem.amount ?: 0)))
+118 :             // end iterator internal block for list invoiceItemList
+119 : 
+120 :             invoiceItem_index++
+121 :         }
+122 :         if(invoiceItemIsEli) _invoiceItemIterator.close()
+123 :     }
+124 :     itemTypeSummaryMapList = (itemTypeSummaryMapMap.values())
+125 :     if (true) {
+126 :         org.moqui.entity.EntityValue find_one_result = ec.entity.find("mantle.party.PartyDetail")
+127 :                 .condition("partyId", invoice.fromPartyId).one()
+128 :         if (fromParty instanceof Map && !(fromParty instanceof org.moqui.entity.EntityValue)) { if (find_one_result) fromParty.putAll(find_one_result) } else { fromParty = find_one_result }
+129 :     }
+130 :     if (true) {
+131 :         def call_service_result = ec.service.sync().name("mantle.party.ContactServices.get#PartyContactInfo")
+132 :             .parameters([partyId:invoice.fromPartyId, postalContactMechPurposeId:'PostalPayment',                         telecomContactMechPurposeId:'PhonePayment', faxContactMechPurposeId:'PhonePaymentFax',                         emailContactMechPurposeId:'EmailPayment']).call()
+133 :         if (fromContactInfo != null) { if (call_service_result) fromContactInfo.putAll(call_service_result) } else { fromContactInfo = call_service_result }
+134 :         if (ec.message.hasError()) return
+135 :     }
+136 :     if (true) {
+137 :         def call_service_result = ec.service.sync().name("mantle.party.PartyServices.get#PartyContentLocation")
+138 :             .parameters([partyId:invoice.fromPartyId, partyContentTypeEnumIdList:['PcntLogoImage', 'PcntPrimaryImage']]).call()
+139 :         if (logoImageOut != null) { if (call_service_result) logoImageOut.putAll(call_service_result) } else { logoImageOut = call_service_result }
+140 :         if (ec.message.hasError()) return
+141 :     }
+142 :     logoImageLocation = (logoImageOut.contentLocation)
+143 :     if (true) {
+144 :         def call_service_result = ec.service.sync().name("mantle.party.PartyServices.get#PartyContentLocation")
+145 :             .parameters([partyId:invoice.fromPartyId, partyContentTypeEnumIdList:['PcntInvoiceMessageFrom'], getText:true]).call()
+146 :         if (messageFromOut != null) { if (call_service_result) messageFromOut.putAll(call_service_result) } else { messageFromOut = call_service_result }
+147 :         if (ec.message.hasError()) return
+148 :     }
+149 :     fromPartyMessage = (messageFromOut.contentText)
+150 :     if (true) {
+151 :         def call_service_result = ec.service.sync().name("mantle.party.PartyServices.get#PartyContentLocation")
+152 :             .parameters([partyId:invoice.toPartyId, partyContentTypeEnumIdList:['PcntInvoiceMessageTo'], getText:true]).call()
+153 :         if (messageToOut != null) { if (call_service_result) messageToOut.putAll(call_service_result) } else { messageToOut = call_service_result }
+154 :         if (ec.message.hasError()) return
+155 :     }
+156 :     toPartyMessage = (messageToOut.contentText)
+157 :     ec.logger.log("warn", """toPartyMessage: ${toPartyMessage}""", null)
+158 :     if (true) {
+159 :         org.moqui.entity.EntityValue find_one_result = ec.entity.find("mantle.party.PartyDetail")
+160 :                 .condition("partyId", invoice.toPartyId).one()
+161 :         if (toParty instanceof Map && !(toParty instanceof org.moqui.entity.EntityValue)) { if (find_one_result) toParty.putAll(find_one_result) } else { toParty = find_one_result }
+162 :     }
+163 :     if (true) {
+164 :         def call_service_result = ec.service.sync().name("mantle.party.ContactServices.get#PartyContactInfo")
+165 :             .parameters([partyId:invoice.toPartyId, postalContactMechPurposeId:'PostalBilling',                         telecomContactMechPurposeId:'PhoneBilling', emailContactMechPurposeId:'EmailBilling']).call()
+166 :         if (toContactInfo != null) { if (call_service_result) toContactInfo.putAll(call_service_result) } else { toContactInfo = call_service_result }
+167 :         if (ec.message.hasError()) return
+168 :     }
+169 :     toBillingRelList_xafind = ec.entity.find("mantle.party.PartyRelationship")
+170 :             .condition((org.moqui.entity.EntityCondition) ec.entity.conditionFactory.makeConditionDate("fromDate", "thruDate", null, false, "false")).condition((org.moqui.entity.EntityCondition) ec.entity.conditionFactory.makeActionConditionDirect("toPartyId", "equals", invoice.toPartyId, null, null, false, false, false, "false")).condition((org.moqui.entity.EntityCondition) ec.entity.conditionFactory.makeActionConditionDirect("fromRoleTypeId", "equals", fromRoleTypeId, "ClientBilling", null, false, false, false, "false"))
+171 :             toBillingRelList = toBillingRelList_xafind.list()
+172 :     if (true) {
+173 :         org.moqui.entity.EntityValue find_one_result = ec.entity.find("mantle.party.PartyDetail")
+174 :                 .condition("partyId", toBillingRelList?.first?.fromPartyId).one()
+175 :         if (toBillingRep instanceof Map && !(toBillingRep instanceof org.moqui.entity.EntityValue)) { if (find_one_result) toBillingRep.putAll(find_one_result) } else { toBillingRep = find_one_result }
+176 :     }
+177 :     finalizedStatusHistoryList_xafind = ec.entity.find("moqui.entity.EntityAuditLog").orderBy("-changedDate")
+178 :             .condition((org.moqui.entity.EntityCondition) ec.entity.conditionFactory.makeActionConditionDirect("changedEntityName", "equals", changedEntityName, "mantle.account.invoice.Invoice", null, false, false, false, "false")).condition((org.moqui.entity.EntityCondition) ec.entity.conditionFactory.makeActionConditionDirect("changedFieldName", "equals", changedFieldName, "statusId", null, false, false, false, "false")).condition((org.moqui.entity.EntityCondition) ec.entity.conditionFactory.makeActionConditionDirect("pkPrimaryValue", "equals", invoiceId, null, null, false, false, false, "false")).condition((org.moqui.entity.EntityCondition) ec.entity.conditionFactory.makeActionConditionDirect("newValueText", "equals", newValueText, "InvoiceFinalized", null, false, false, false, "false"))
+179 :             finalizedStatusHistoryList = finalizedStatusHistoryList_xafind.list()
+180 :     templateLocation = (null)
+181 :     if (true) {
+182 :         def call_service_result = ec.service.sync().name("mantle.account.InvoiceServices.find#InvoiceProductStores")
+183 :             .parameters(context).call()
+184 :         if (context != null) { if (call_service_result) context.putAll(call_service_result) } else { context = call_service_result }
+185 :         if (ec.message.hasError()) return
+186 :     }
+187 :     if (productStoreIdSet) {
+188 :     productStoreSettingList_xafind = ec.entity.find("mantle.product.store.ProductStoreSetting").useCache(true).orderBy("-fromDate")
+189 :             .condition((org.moqui.entity.EntityCondition) ec.entity.conditionFactory.makeActionConditionDirect("productStoreId", "equals", productStoreIdSet.first(), null, null, false, false, false, "false")).condition((org.moqui.entity.EntityCondition) ec.entity.conditionFactory.makeActionConditionDirect("settingTypeEnumId", "equals", settingTypeEnumId, "Psst${templateSettingSuffix}", null, false, false, false, "false"))
+190 :             productStoreSettingList = productStoreSettingList_xafind.list()
+191 :                 productStoreSettingList = productStoreSettingList.filterByDate("fromDate", "thruDate", null, false)
+192 :     if (productStoreSettingList) {
+193 :     templateLocation = (productStoreSettingList[0].settingValue)
+194 :     }
+195 : 
+196 :     }
+197 : 
+198 :     if (!templateLocation && invoice.fromPartyId) {
+199 :     if (true) {
+200 :         def call_service_result = ec.service.sync().name("mantle.party.PartyServices.get#PartySettingValue")
+201 :             .parameters([partyId:invoice.fromPartyId, partySettingTypeId:('Org' + templateSettingSuffix)]).call()
+202 :         if (ptySettingOut != null) { if (call_service_result) ptySettingOut.putAll(call_service_result) } else { ptySettingOut = call_service_result }
+203 :         if (ec.message.hasError()) return
+204 :     }
+205 :     templateLocation = (ptySettingOut?.settingValue)
+206 :     }
+207 : 
+208 : // make sure the last statement is not considered the return value
+209 : return;
+
+
+--- 2023-06-14 02:27:56.230 [tp348055829-140] ERROR           org.moqui.impl.context.MessageFacadeImpl [] []
+ Cannot get property 'fromPartyId' on null object
+--- 2023-06-14 02:28:00.031 [qtp348055829-18] ERROR                   org.moqui.impl.actions.XmlAction [] []
+ Error running groovy script (java.lang.NullPointerException: Cannot get property 'fromPartyId' on null object): 
+1 : import static org.moqui.util.ObjectUtilities.*
+2 : import static org.moqui.util.CollectionUtilities.*
+3 : import static org.moqui.util.StringUtilities.*
+4 : import java.sql.Timestamp
+5 : import java.sql.Time
+6 : import java.time.*
+7 : // these are in the context by default: ExecutionContext ec, Map<String, Object> context, Map<String, Object> result
+8 :     if (true) {
+9 :         org.moqui.entity.EntityValue find_one_result = ec.entity.find("mantle.account.invoice.Invoice")
+10 :                 .condition(context).one()
+11 :         if (invoice instanceof Map && !(invoice instanceof org.moqui.entity.EntityValue)) { if (find_one_result) invoice.putAll(find_one_result) } else { invoice = find_one_result }
+12 :     }
+13 :     if (true) {
+14 :         org.moqui.entity.EntityValue find_one_result = ec.entity.find("moqui.basic.StatusItem")
+15 :                 .condition("statusId", invoice?.statusId).one()
+16 :         if (currentStatus instanceof Map && !(currentStatus instanceof org.moqui.entity.EntityValue)) { if (find_one_result) currentStatus.putAll(find_one_result) } else { currentStatus = find_one_result }
+17 :     }
+18 :     if (true) {
+19 :         def call_service_result = ec.service.sync().name("mantle.account.InvoiceServices.get#InvoiceTotal")
+20 :             .parameters([invoiceId:invoiceId]).call()
+21 :         if (context != null) { if (call_service_result) context.putAll(call_service_result) } else { context = call_service_result }
+22 :         if (ec.message.hasError()) return
+23 :     }
+24 :     settlementTerm = invoice?.findRelatedOne("mantle.account.invoice.SettlementTerm", null, null)
+25 :     orderItemBillingList_xafind = ec.entity.find("mantle.order.OrderItemBilling").orderBy("invoiceItemSeqId")
+26 :             .condition((org.moqui.entity.EntityCondition) ec.entity.conditionFactory.makeActionConditionDirect("invoiceId", "equals", invoiceId, null, null, false, false, false, "false"))
+27 :             orderItemBillingList = orderItemBillingList_xafind.list()
+28 :     orderIdSet = (new TreeSet(orderItemBillingList*.orderId))
+29 :     paymentApplicationList_xafind = ec.entity.find("mantle.account.payment.PaymentApplication").orderBy("appliedDate")
+30 :             .condition((org.moqui.entity.EntityCondition) ec.entity.conditionFactory.makeCondition([(org.moqui.entity.EntityCondition) ec.entity.conditionFactory.makeActionConditionDirect("invoiceId", "equals", invoiceId, null, null, false, false, false, "false"), (org.moqui.entity.EntityCondition) ec.entity.conditionFactory.makeActionConditionDirect("toInvoiceId", "equals", invoiceId, null, null, false, false, false, "false")], org.moqui.impl.entity.EntityConditionFactoryImpl.getJoinOperator("or")))
+31 :             paymentApplicationList = paymentApplicationList_xafind.list()
+32 :     invoiceItemList_xafind = ec.entity.find("mantle.account.invoice.InvoiceItem").orderBy("invoiceItemSeqId")
+33 :             .condition((org.moqui.entity.EntityCondition) ec.entity.conditionFactory.makeActionConditionDirect("invoiceId", "equals", invoiceId, null, null, false, false, false, "false")).condition((org.moqui.entity.EntityCondition) ec.entity.conditionFactory.makeActionConditionDirect("isAdjustment", "equals", isAdjustment, "N", null, false, false, true, "false"))
+34 :             invoiceItemList = invoiceItemList_xafind.list()
+35 :     topItemList = (invoiceItemList.findAll({ it.parentItemSeqId == null }))
+36 :     adjustmentItemList_xafind = ec.entity.find("mantle.account.invoice.InvoiceItem").orderBy("invoiceItemSeqId")
+37 :             .condition((org.moqui.entity.EntityCondition) ec.entity.conditionFactory.makeActionConditionDirect("invoiceId", "equals", invoiceId, null, null, false, false, false, "false")).condition((org.moqui.entity.EntityCondition) ec.entity.conditionFactory.makeActionConditionDirect("isAdjustment", "equals", isAdjustment, "Y", null, false, false, false, "false"))
+38 :             adjustmentItemList = adjustmentItemList_xafind.list()
+39 :     noAdjustmentTotal = (0.0)
+40 :     if (true) {
+41 :         int invoiceItem_index = 0
+42 :         Iterator _invoiceItemIterator = invoiceItemList.iterator()
+43 :         // behave differently for EntityListIterator, avoid using hasNext()
+44 :         boolean invoiceItemIsEli = (_invoiceItemIterator instanceof org.moqui.entity.EntityListIterator)
+45 :         while (invoiceItemIsEli || _invoiceItemIterator.hasNext()) {
+46 :             invoiceItem = _invoiceItemIterator.next()
+47 :             if (invoiceItemIsEli && invoiceItem == null) break
+48 :             if (!invoiceItemIsEli) invoiceItem_has_next = _invoiceItemIterator.hasNext()
+49 : 
+50 :             // begin iterator internal block
+51 :     noAdjustmentTotal = (noAdjustmentTotal + ((invoiceItem.quantity != null ? invoiceItem.quantity : 1.0) * (invoiceItem.amount ?: 0.0)))
+52 :             // end iterator internal block for list invoiceItemList
+53 : 
+54 :             invoiceItem_index++
+55 :         }
+56 :         if(invoiceItemIsEli) _invoiceItemIterator.close()
+57 :     }
+58 :     noAdjustmentTotal = ((noAdjustmentTotal as BigDecimal).setScale(2, BigDecimal.ROUND_HALF_UP))
+59 :     adjustmentTotal = (0.0)
+60 :     if (true) {
+61 :         int invoiceItem_index = 0
+62 :         Iterator _invoiceItemIterator = adjustmentItemList.iterator()
+63 :         // behave differently for EntityListIterator, avoid using hasNext()
+64 :         boolean invoiceItemIsEli = (_invoiceItemIterator instanceof org.moqui.entity.EntityListIterator)
+65 :         while (invoiceItemIsEli || _invoiceItemIterator.hasNext()) {
+66 :             invoiceItem = _invoiceItemIterator.next()
+67 :             if (invoiceItemIsEli && invoiceItem == null) break
+68 :             if (!invoiceItemIsEli) invoiceItem_has_next = _invoiceItemIterator.hasNext()
+69 : 
+70 :             // begin iterator internal block
+71 :     adjustmentTotal = (adjustmentTotal + ((invoiceItem.quantity != null ? invoiceItem.quantity : 1.0) * (invoiceItem.amount ?: 0.0)))
+72 :             // end iterator internal block for list adjustmentItemList
+73 : 
+74 :             invoiceItem_index++
+75 :         }
+76 :         if(invoiceItemIsEli) _invoiceItemIterator.close()
+77 :     }
+78 :     adjustmentTotal = ((adjustmentTotal as BigDecimal).setScale(2, BigDecimal.ROUND_HALF_UP))
+79 :     hasProductItems = (false)
+80 :     hasTimeEntryItems = (false)
+81 :     itemTypeSummaryMapMap = ([:])
+82 :     if (true) {
+83 :         int invoiceItem_index = 0
+84 :         Iterator _invoiceItemIterator = invoiceItemList.iterator()
+85 :         // behave differently for EntityListIterator, avoid using hasNext()
+86 :         boolean invoiceItemIsEli = (_invoiceItemIterator instanceof org.moqui.entity.EntityListIterator)
+87 :         while (invoiceItemIsEli || _invoiceItemIterator.hasNext()) {
+88 :             invoiceItem = _invoiceItemIterator.next()
+89 :             if (invoiceItemIsEli && invoiceItem == null) break
+90 :             if (!invoiceItemIsEli) invoiceItem_has_next = _invoiceItemIterator.hasNext()
+91 : 
+92 :             // begin iterator internal block
+93 :     mapKey = (invoiceItem.itemTypeEnumId)
+94 :     if (invoiceItem.itemTypeEnumId == 'ItemTimeEntry') {
+95 :     mapKey = (mapKey + '::' + invoiceItem.amount)
+96 :     hasTimeEntryItems = (true)
+97 :     }
+98 : 
+99 :     if (invoiceItem.productId) {
+100 :     hasProductItems = (true)
+101 :     }
+102 : 
+103 :     itemTypeSummaryMap = (itemTypeSummaryMapMap.get(mapKey))
+104 :     if (!itemTypeSummaryMap) {
+105 :     itemTypeSummaryMap = ([itemTypeEnumId:invoiceItem.itemTypeEnumId, quantity:0, total:0])
+106 :     if (invoiceItem.itemTypeEnumId == 'ItemTimeEntry') {
+107 :     itemTypeSummaryMap.amount = (invoiceItem.amount)
+108 :     }
+109 : 
+110 : 
+111 : // begin inline script
+112 : itemTypeSummaryMapMap.put(mapKey, itemTypeSummaryMap)
+113 : // end inline script
+114 :     }
+115 : 
+116 :     itemTypeSummaryMap.quantity = (itemTypeSummaryMap.quantity + (invoiceItem.quantity ?: 1))
+117 :     itemTypeSummaryMap.total = (itemTypeSummaryMap.total + ((invoiceItem.quantity ?: 1) * (invoiceItem.amount ?: 0)))
+118 :             // end iterator internal block for list invoiceItemList
+119 : 
+120 :             invoiceItem_index++
+121 :         }
+122 :         if(invoiceItemIsEli) _invoiceItemIterator.close()
+123 :     }
+124 :     itemTypeSummaryMapList = (itemTypeSummaryMapMap.values())
+125 :     if (true) {
+126 :         org.moqui.entity.EntityValue find_one_result = ec.entity.find("mantle.party.PartyDetail")
+127 :                 .condition("partyId", invoice.fromPartyId).one()
+128 :         if (fromParty instanceof Map && !(fromParty instanceof org.moqui.entity.EntityValue)) { if (find_one_result) fromParty.putAll(find_one_result) } else { fromParty = find_one_result }
+129 :     }
+130 :     if (true) {
+131 :         def call_service_result = ec.service.sync().name("mantle.party.ContactServices.get#PartyContactInfo")
+132 :             .parameters([partyId:invoice.fromPartyId, postalContactMechPurposeId:'PostalPayment',                         telecomContactMechPurposeId:'PhonePayment', faxContactMechPurposeId:'PhonePaymentFax',                         emailContactMechPurposeId:'EmailPayment']).call()
+133 :         if (fromContactInfo != null) { if (call_service_result) fromContactInfo.putAll(call_service_result) } else { fromContactInfo = call_service_result }
+134 :         if (ec.message.hasError()) return
+135 :     }
+136 :     if (true) {
+137 :         def call_service_result = ec.service.sync().name("mantle.party.PartyServices.get#PartyContentLocation")
+138 :             .parameters([partyId:invoice.fromPartyId, partyContentTypeEnumIdList:['PcntLogoImage', 'PcntPrimaryImage']]).call()
+139 :         if (logoImageOut != null) { if (call_service_result) logoImageOut.putAll(call_service_result) } else { logoImageOut = call_service_result }
+140 :         if (ec.message.hasError()) return
+141 :     }
+142 :     logoImageLocation = (logoImageOut.contentLocation)
+143 :     if (true) {
+144 :         def call_service_result = ec.service.sync().name("mantle.party.PartyServices.get#PartyContentLocation")
+145 :             .parameters([partyId:invoice.fromPartyId, partyContentTypeEnumIdList:['PcntInvoiceMessageFrom'], getText:true]).call()
+146 :         if (messageFromOut != null) { if (call_service_result) messageFromOut.putAll(call_service_result) } else { messageFromOut = call_service_result }
+147 :         if (ec.message.hasError()) return
+148 :     }
+149 :     fromPartyMessage = (messageFromOut.contentText)
+150 :     if (true) {
+151 :         def call_service_result = ec.service.sync().name("mantle.party.PartyServices.get#PartyContentLocation")
+152 :             .parameters([partyId:invoice.toPartyId, partyContentTypeEnumIdList:['PcntInvoiceMessageTo'], getText:true]).call()
+153 :         if (messageToOut != null) { if (call_service_result) messageToOut.putAll(call_service_result) } else { messageToOut = call_service_result }
+154 :         if (ec.message.hasError()) return
+155 :     }
+156 :     toPartyMessage = (messageToOut.contentText)
+157 :     ec.logger.log("warn", """toPartyMessage: ${toPartyMessage}""", null)
+158 :     if (true) {
+159 :         org.moqui.entity.EntityValue find_one_result = ec.entity.find("mantle.party.PartyDetail")
+160 :                 .condition("partyId", invoice.toPartyId).one()
+161 :         if (toParty instanceof Map && !(toParty instanceof org.moqui.entity.EntityValue)) { if (find_one_result) toParty.putAll(find_one_result) } else { toParty = find_one_result }
+162 :     }
+163 :     if (true) {
+164 :         def call_service_result = ec.service.sync().name("mantle.party.ContactServices.get#PartyContactInfo")
+165 :             .parameters([partyId:invoice.toPartyId, postalContactMechPurposeId:'PostalBilling',                         telecomContactMechPurposeId:'PhoneBilling', emailContactMechPurposeId:'EmailBilling']).call()
+166 :         if (toContactInfo != null) { if (call_service_result) toContactInfo.putAll(call_service_result) } else { toContactInfo = call_service_result }
+167 :         if (ec.message.hasError()) return
+168 :     }
+169 :     toBillingRelList_xafind = ec.entity.find("mantle.party.PartyRelationship")
+170 :             .condition((org.moqui.entity.EntityCondition) ec.entity.conditionFactory.makeConditionDate("fromDate", "thruDate", null, false, "false")).condition((org.moqui.entity.EntityCondition) ec.entity.conditionFactory.makeActionConditionDirect("toPartyId", "equals", invoice.toPartyId, null, null, false, false, false, "false")).condition((org.moqui.entity.EntityCondition) ec.entity.conditionFactory.makeActionConditionDirect("fromRoleTypeId", "equals", fromRoleTypeId, "ClientBilling", null, false, false, false, "false"))
+171 :             toBillingRelList = toBillingRelList_xafind.list()
+172 :     if (true) {
+173 :         org.moqui.entity.EntityValue find_one_result = ec.entity.find("mantle.party.PartyDetail")
+174 :                 .condition("partyId", toBillingRelList?.first?.fromPartyId).one()
+175 :         if (toBillingRep instanceof Map && !(toBillingRep instanceof org.moqui.entity.EntityValue)) { if (find_one_result) toBillingRep.putAll(find_one_result) } else { toBillingRep = find_one_result }
+176 :     }
+177 :     finalizedStatusHistoryList_xafind = ec.entity.find("moqui.entity.EntityAuditLog").orderBy("-changedDate")
+178 :             .condition((org.moqui.entity.EntityCondition) ec.entity.conditionFactory.makeActionConditionDirect("changedEntityName", "equals", changedEntityName, "mantle.account.invoice.Invoice", null, false, false, false, "false")).condition((org.moqui.entity.EntityCondition) ec.entity.conditionFactory.makeActionConditionDirect("changedFieldName", "equals", changedFieldName, "statusId", null, false, false, false, "false")).condition((org.moqui.entity.EntityCondition) ec.entity.conditionFactory.makeActionConditionDirect("pkPrimaryValue", "equals", invoiceId, null, null, false, false, false, "false")).condition((org.moqui.entity.EntityCondition) ec.entity.conditionFactory.makeActionConditionDirect("newValueText", "equals", newValueText, "InvoiceFinalized", null, false, false, false, "false"))
+179 :             finalizedStatusHistoryList = finalizedStatusHistoryList_xafind.list()
+180 :     templateLocation = (null)
+181 :     if (true) {
+182 :         def call_service_result = ec.service.sync().name("mantle.account.InvoiceServices.find#InvoiceProductStores")
+183 :             .parameters(context).call()
+184 :         if (context != null) { if (call_service_result) context.putAll(call_service_result) } else { context = call_service_result }
+185 :         if (ec.message.hasError()) return
+186 :     }
+187 :     if (productStoreIdSet) {
+188 :     productStoreSettingList_xafind = ec.entity.find("mantle.product.store.ProductStoreSetting").useCache(true).orderBy("-fromDate")
+189 :             .condition((org.moqui.entity.EntityCondition) ec.entity.conditionFactory.makeActionConditionDirect("productStoreId", "equals", productStoreIdSet.first(), null, null, false, false, false, "false")).condition((org.moqui.entity.EntityCondition) ec.entity.conditionFactory.makeActionConditionDirect("settingTypeEnumId", "equals", settingTypeEnumId, "Psst${templateSettingSuffix}", null, false, false, false, "false"))
+190 :             productStoreSettingList = productStoreSettingList_xafind.list()
+191 :                 productStoreSettingList = productStoreSettingList.filterByDate("fromDate", "thruDate", null, false)
+192 :     if (productStoreSettingList) {
+193 :     templateLocation = (productStoreSettingList[0].settingValue)
+194 :     }
+195 : 
+196 :     }
+197 : 
+198 :     if (!templateLocation && invoice.fromPartyId) {
+199 :     if (true) {
+200 :         def call_service_result = ec.service.sync().name("mantle.party.PartyServices.get#PartySettingValue")
+201 :             .parameters([partyId:invoice.fromPartyId, partySettingTypeId:('Org' + templateSettingSuffix)]).call()
+202 :         if (ptySettingOut != null) { if (call_service_result) ptySettingOut.putAll(call_service_result) } else { ptySettingOut = call_service_result }
+203 :         if (ec.message.hasError()) return
+204 :     }
+205 :     templateLocation = (ptySettingOut?.settingValue)
+206 :     }
+207 : 
+208 : // make sure the last statement is not considered the return value
+209 : return;
+
+
+--- 2023-06-14 02:28:00.034 [qtp348055829-18] ERROR           org.moqui.impl.context.MessageFacadeImpl [] []
+ Cannot get property 'fromPartyId' on null object
+--- 2023-06-14 02:30:09.696 [tp348055829-140] ERROR                   org.moqui.impl.actions.XmlAction [] []
+ Error running groovy script (java.lang.NullPointerException: Cannot get property 'unitAmount' on null object): 
+1 : import static org.moqui.util.ObjectUtilities.*
+2 : import static org.moqui.util.CollectionUtilities.*
+3 : import static org.moqui.util.StringUtilities.*
+4 : import java.sql.Timestamp
+5 : import java.sql.Time
+6 : import java.time.*
+7 : // these are in the context by default: ExecutionContext ec, Map<String, Object> context, Map<String, Object> result
+8 :     combinedAmount = (((orderItem.unitAmount ?: 0.0) * (orderItem.selectedAmount ?: 1.0)))
+9 :     combinedQuantity = ((orderItem.quantity != null ? orderItem.quantity : 1.0) * (orderItem.selectedAmount ?: 1.0))
+10 :     itemTotal = ((combinedQuantity * (orderItem.unitAmount as BigDecimal ?: 0.0)).setScale(2, BigDecimal.ROUND_HALF_UP))
+11 :     if (getChildrenTotals) {
+12 :     childOrderItemList_xafind = ec.entity.find("mantle.order.OrderItem")
+13 :             .condition((org.moqui.entity.EntityCondition) ec.entity.conditionFactory.makeActionConditionDirect("orderId", "equals", orderItem.orderId, null, null, false, false, false, "false")).condition((org.moqui.entity.EntityCondition) ec.entity.conditionFactory.makeActionConditionDirect("parentItemSeqId", "equals", orderItem.orderItemSeqId, null, null, false, false, false, "false"))
+14 :             childOrderItemList = childOrderItemList_xafind.list()
+15 :     childrenTotal = (0.0)
+16 :     hasPromo = (false)
+17 :     promoQuantityUsed = (0.0)
+18 :     if (true) {
+19 :         int childOrderItem_index = 0
+20 :         Iterator _childOrderItemIterator = childOrderItemList.iterator()
+21 :         // behave differently for EntityListIterator, avoid using hasNext()
+22 :         boolean childOrderItemIsEli = (_childOrderItemIterator instanceof org.moqui.entity.EntityListIterator)
+23 :         while (childOrderItemIsEli || _childOrderItemIterator.hasNext()) {
+24 :             childOrderItem = _childOrderItemIterator.next()
+25 :             if (childOrderItemIsEli && childOrderItem == null) break
+26 :             if (!childOrderItemIsEli) childOrderItem_has_next = _childOrderItemIterator.hasNext()
+27 : 
+28 :             // begin iterator internal block
+29 :     if (true) {
+30 :         def call_service_result = ec.service.sync().name("mantle.order.OrderServices.get#OrderItemTotal")
+31 :             .parameters([orderItem:childOrderItem, getChildrenTotals:true]).call()
+32 :          getOitResult = call_service_result 
+33 :         if (ec.message.hasError()) return
+34 :     }
+35 :     childrenTotal = (childrenTotal + getOitResult.itemPlusChildrenTotal)
+36 :     if (childOrderItem.isPromo == 'Y' || getOitResult.hasPromo) {
+37 :     hasPromo = (true)
+38 :     }
+39 : 
+40 :     promoQuantityUsed = (promoQuantityUsed + (childOrderItem.promoQuantity ?: 0.0) + getOitResult.promoQuantityUsed)
+41 :             // end iterator internal block for list childOrderItemList
+42 : 
+43 :             childOrderItem_index++
+44 :         }
+45 :         if(childOrderItemIsEli) _childOrderItemIterator.close()
+46 :     }
+47 :     itemPlusChildrenTotal = (itemTotal + childrenTotal)
+48 :     childItemCount = (childOrderItemList.size())
+49 :     }
+50 : 
+51 : // make sure the last statement is not considered the return value
+52 : return;
+
+
+--- 2023-06-14 02:30:09.699 [tp348055829-140] ERROR           org.moqui.impl.context.MessageFacadeImpl [] []
+ Cannot get property 'unitAmount' on null object
+--- 2023-06-14 02:30:15.289 [tp348055829-264] ERROR                   org.moqui.impl.actions.XmlAction [] []
+ Error running groovy script (groovy.lang.MissingPropertyException: No such property: unitAmount for class: java.lang.String): 
+1 : import static org.moqui.util.ObjectUtilities.*
+2 : import static org.moqui.util.CollectionUtilities.*
+3 : import static org.moqui.util.StringUtilities.*
+4 : import java.sql.Timestamp
+5 : import java.sql.Time
+6 : import java.time.*
+7 : // these are in the context by default: ExecutionContext ec, Map<String, Object> context, Map<String, Object> result
+8 :     combinedAmount = (((orderItem.unitAmount ?: 0.0) * (orderItem.selectedAmount ?: 1.0)))
+9 :     combinedQuantity = ((orderItem.quantity != null ? orderItem.quantity : 1.0) * (orderItem.selectedAmount ?: 1.0))
+10 :     itemTotal = ((combinedQuantity * (orderItem.unitAmount as BigDecimal ?: 0.0)).setScale(2, BigDecimal.ROUND_HALF_UP))
+11 :     if (getChildrenTotals) {
+12 :     childOrderItemList_xafind = ec.entity.find("mantle.order.OrderItem")
+13 :             .condition((org.moqui.entity.EntityCondition) ec.entity.conditionFactory.makeActionConditionDirect("orderId", "equals", orderItem.orderId, null, null, false, false, false, "false")).condition((org.moqui.entity.EntityCondition) ec.entity.conditionFactory.makeActionConditionDirect("parentItemSeqId", "equals", orderItem.orderItemSeqId, null, null, false, false, false, "false"))
+14 :             childOrderItemList = childOrderItemList_xafind.list()
+15 :     childrenTotal = (0.0)
+16 :     hasPromo = (false)
+17 :     promoQuantityUsed = (0.0)
+18 :     if (true) {
+19 :         int childOrderItem_index = 0
+20 :         Iterator _childOrderItemIterator = childOrderItemList.iterator()
+21 :         // behave differently for EntityListIterator, avoid using hasNext()
+22 :         boolean childOrderItemIsEli = (_childOrderItemIterator instanceof org.moqui.entity.EntityListIterator)
+23 :         while (childOrderItemIsEli || _childOrderItemIterator.hasNext()) {
+24 :             childOrderItem = _childOrderItemIterator.next()
+25 :             if (childOrderItemIsEli && childOrderItem == null) break
+26 :             if (!childOrderItemIsEli) childOrderItem_has_next = _childOrderItemIterator.hasNext()
+27 : 
+28 :             // begin iterator internal block
+29 :     if (true) {
+30 :         def call_service_result = ec.service.sync().name("mantle.order.OrderServices.get#OrderItemTotal")
+31 :             .parameters([orderItem:childOrderItem, getChildrenTotals:true]).call()
+32 :          getOitResult = call_service_result 
+33 :         if (ec.message.hasError()) return
+34 :     }
+35 :     childrenTotal = (childrenTotal + getOitResult.itemPlusChildrenTotal)
+36 :     if (childOrderItem.isPromo == 'Y' || getOitResult.hasPromo) {
+37 :     hasPromo = (true)
+38 :     }
+39 : 
+40 :     promoQuantityUsed = (promoQuantityUsed + (childOrderItem.promoQuantity ?: 0.0) + getOitResult.promoQuantityUsed)
+41 :             // end iterator internal block for list childOrderItemList
+42 : 
+43 :             childOrderItem_index++
+44 :         }
+45 :         if(childOrderItemIsEli) _childOrderItemIterator.close()
+46 :     }
+47 :     itemPlusChildrenTotal = (itemTotal + childrenTotal)
+48 :     childItemCount = (childOrderItemList.size())
+49 :     }
+50 : 
+51 : // make sure the last statement is not considered the return value
+52 : return;
+
+
+--- 2023-06-14 02:30:15.293 [tp348055829-264] ERROR           org.moqui.impl.context.MessageFacadeImpl [] []
+ No such property: unitAmount for class: java.lang.String
+--- 2023-06-14 02:30:19.195 [tp348055829-140] ERROR                   org.moqui.impl.actions.XmlAction [] []
+ Error running groovy script (groovy.lang.MissingPropertyException: No such property: unitAmount for class: java.lang.String): 
+1 : import static org.moqui.util.ObjectUtilities.*
+2 : import static org.moqui.util.CollectionUtilities.*
+3 : import static org.moqui.util.StringUtilities.*
+4 : import java.sql.Timestamp
+5 : import java.sql.Time
+6 : import java.time.*
+7 : // these are in the context by default: ExecutionContext ec, Map<String, Object> context, Map<String, Object> result
+8 :     combinedAmount = (((orderItem.unitAmount ?: 0.0) * (orderItem.selectedAmount ?: 1.0)))
+9 :     combinedQuantity = ((orderItem.quantity != null ? orderItem.quantity : 1.0) * (orderItem.selectedAmount ?: 1.0))
+10 :     itemTotal = ((combinedQuantity * (orderItem.unitAmount as BigDecimal ?: 0.0)).setScale(2, BigDecimal.ROUND_HALF_UP))
+11 :     if (getChildrenTotals) {
+12 :     childOrderItemList_xafind = ec.entity.find("mantle.order.OrderItem")
+13 :             .condition((org.moqui.entity.EntityCondition) ec.entity.conditionFactory.makeActionConditionDirect("orderId", "equals", orderItem.orderId, null, null, false, false, false, "false")).condition((org.moqui.entity.EntityCondition) ec.entity.conditionFactory.makeActionConditionDirect("parentItemSeqId", "equals", orderItem.orderItemSeqId, null, null, false, false, false, "false"))
+14 :             childOrderItemList = childOrderItemList_xafind.list()
+15 :     childrenTotal = (0.0)
+16 :     hasPromo = (false)
+17 :     promoQuantityUsed = (0.0)
+18 :     if (true) {
+19 :         int childOrderItem_index = 0
+20 :         Iterator _childOrderItemIterator = childOrderItemList.iterator()
+21 :         // behave differently for EntityListIterator, avoid using hasNext()
+22 :         boolean childOrderItemIsEli = (_childOrderItemIterator instanceof org.moqui.entity.EntityListIterator)
+23 :         while (childOrderItemIsEli || _childOrderItemIterator.hasNext()) {
+24 :             childOrderItem = _childOrderItemIterator.next()
+25 :             if (childOrderItemIsEli && childOrderItem == null) break
+26 :             if (!childOrderItemIsEli) childOrderItem_has_next = _childOrderItemIterator.hasNext()
+27 : 
+28 :             // begin iterator internal block
+29 :     if (true) {
+30 :         def call_service_result = ec.service.sync().name("mantle.order.OrderServices.get#OrderItemTotal")
+31 :             .parameters([orderItem:childOrderItem, getChildrenTotals:true]).call()
+32 :          getOitResult = call_service_result 
+33 :         if (ec.message.hasError()) return
+34 :     }
+35 :     childrenTotal = (childrenTotal + getOitResult.itemPlusChildrenTotal)
+36 :     if (childOrderItem.isPromo == 'Y' || getOitResult.hasPromo) {
+37 :     hasPromo = (true)
+38 :     }
+39 : 
+40 :     promoQuantityUsed = (promoQuantityUsed + (childOrderItem.promoQuantity ?: 0.0) + getOitResult.promoQuantityUsed)
+41 :             // end iterator internal block for list childOrderItemList
+42 : 
+43 :             childOrderItem_index++
+44 :         }
+45 :         if(childOrderItemIsEli) _childOrderItemIterator.close()
+46 :     }
+47 :     itemPlusChildrenTotal = (itemTotal + childrenTotal)
+48 :     childItemCount = (childOrderItemList.size())
+49 :     }
+50 : 
+51 : // make sure the last statement is not considered the return value
+52 : return;
+
+
+--- 2023-06-14 02:30:19.202 [tp348055829-140] ERROR           org.moqui.impl.context.MessageFacadeImpl [] []
+ No such property: unitAmount for class: java.lang.String
+--- 2023-06-14 03:40:05.659 [tp348055829-362] ERROR                   org.moqui.impl.actions.XmlAction [] []
+ Error running groovy script (org.moqui.entity.EntityException: Error in find, field MARITAL_STATUS_ENUM_ID does not exist in entity mantle.party.Person): 
+1 : import static org.moqui.util.ObjectUtilities.*
+2 : import static org.moqui.util.CollectionUtilities.*
+3 : import static org.moqui.util.StringUtilities.*
+4 : import java.sql.Timestamp
+5 : import java.sql.Time
+6 : import java.time.*
+7 : // these are in the context by default: ExecutionContext ec, Map<String, Object> context, Map<String, Object> result
+8 :     personsList_xafind = ec.entity.find("mantle.party.Person")
+9 :             .condition((org.moqui.entity.EntityCondition) ec.entity.conditionFactory.makeActionConditionDirect("MARITAL_STATUS_ENUM_ID", "equals", MARITAL_STATUS_ENUM_ID, "MarsMarried", null, false, false, false, "false"))
+10 :             personsList = personsList_xafind.list()
+11 : // make sure the last statement is not considered the return value
+12 : return;
+
+
+--- 2023-06-14 03:40:05.664 [tp348055829-362] ERROR           org.moqui.impl.context.MessageFacadeImpl [] []
+ Error in find, field MARITAL_STATUS_ENUM_ID does not exist in entity mantle.party.Person
+--- 2023-06-14 03:40:44.681 [tp348055829-359] ERROR                   org.moqui.impl.actions.XmlAction [] []
+ Error running groovy script (org.moqui.entity.EntityException: Error in find, field marital_status_enum_id does not exist in entity mantle.party.Person): 
+1 : import static org.moqui.util.ObjectUtilities.*
+2 : import static org.moqui.util.CollectionUtilities.*
+3 : import static org.moqui.util.StringUtilities.*
+4 : import java.sql.Timestamp
+5 : import java.sql.Time
+6 : import java.time.*
+7 : // these are in the context by default: ExecutionContext ec, Map<String, Object> context, Map<String, Object> result
+8 :     personsList_xafind = ec.entity.find("mantle.party.Person")
+9 :             .condition((org.moqui.entity.EntityCondition) ec.entity.conditionFactory.makeActionConditionDirect("marital_status_enum_id", "equals", marital_status_enum_id, "MarsMarried", null, false, false, false, "false"))
+10 :             personsList = personsList_xafind.list()
+11 : // make sure the last statement is not considered the return value
+12 : return;
+
+
+--- 2023-06-14 03:40:44.685 [tp348055829-359] ERROR           org.moqui.impl.context.MessageFacadeImpl [] []
+ Error in find, field marital_status_enum_id does not exist in entity mantle.party.Person
+--- 2023-06-14 06:02:04.383 [qtp348055829-76] ERROR                   org.moqui.impl.actions.XmlAction [] []
+ Error running groovy script (org.moqui.entity.EntityNotFoundException: No definition found for entity-name [mantle.order.Order]): 
+1 : import static org.moqui.util.ObjectUtilities.*
+2 : import static org.moqui.util.CollectionUtilities.*
+3 : import static org.moqui.util.StringUtilities.*
+4 : import java.sql.Timestamp
+5 : import java.sql.Time
+6 : import java.time.*
+7 : // these are in the context by default: ExecutionContext ec, Map<String, Object> context, Map<String, Object> result
+8 :     orderItemDetails_xafind = ec.entity.find("mantle.order.Order")
+9 :             .condition((org.moqui.entity.EntityCondition) ec.entity.conditionFactory.makeActionConditionDirect("orderId", "equals", orderId, "100102", null, false, false, false, "false")).condition((org.moqui.entity.EntityCondition) ec.entity.conditionFactory.makeActionConditionDirect("orderPartSeqId", "equals", orderPartSeqId, "01", null, false, false, false, "false"))
+10 :             orderItemDetails = orderItemDetails_xafind.list()
+11 : // make sure the last statement is not considered the return value
+12 : return;
+
+
+--- 2023-06-14 06:02:04.391 [qtp348055829-76] ERROR           org.moqui.impl.context.MessageFacadeImpl [] []
+ No definition found for entity-name [mantle.order.Order]
+--- 2023-06-14 06:03:40.518 [qtp348055829-76] ERROR                   org.moqui.impl.actions.XmlAction [] []
+ Error running groovy script (org.moqui.entity.EntityNotFoundException: No definition found for entity-name [mantle.Order.OrderItem]): 
+1 : import static org.moqui.util.ObjectUtilities.*
+2 : import static org.moqui.util.CollectionUtilities.*
+3 : import static org.moqui.util.StringUtilities.*
+4 : import java.sql.Timestamp
+5 : import java.sql.Time
+6 : import java.time.*
+7 : // these are in the context by default: ExecutionContext ec, Map<String, Object> context, Map<String, Object> result
+8 :     orderItemDetails_xafind = ec.entity.find("mantle.Order.OrderItem")
+9 :             .condition((org.moqui.entity.EntityCondition) ec.entity.conditionFactory.makeActionConditionDirect("orderId", "equals", orderId, "100102", null, false, false, false, "false")).condition((org.moqui.entity.EntityCondition) ec.entity.conditionFactory.makeActionConditionDirect("orderPartSeqId", "equals", orderPartSeqId, "01", null, false, false, false, "false"))
+10 :             orderItemDetails = orderItemDetails_xafind.list()
+11 : // make sure the last statement is not considered the return value
+12 : return;
+
+
+--- 2023-06-14 06:03:40.522 [qtp348055829-76] ERROR           org.moqui.impl.context.MessageFacadeImpl [] []
+ No definition found for entity-name [mantle.Order.OrderItem]
+--- 2023-06-14 06:03:50.400 [qtp348055829-27] ERROR                   org.moqui.impl.actions.XmlAction [] []
+ Error running groovy script (org.moqui.entity.EntityException: No entity found with name mantle.Order.OrderItem): 
+1 : import static org.moqui.util.ObjectUtilities.*
+2 : import static org.moqui.util.CollectionUtilities.*
+3 : import static org.moqui.util.StringUtilities.*
+4 : import java.sql.Timestamp
+5 : import java.sql.Time
+6 : import java.time.*
+7 : // these are in the context by default: ExecutionContext ec, Map<String, Object> context, Map<String, Object> result
+8 :     orderItemDetails_xafind = ec.entity.find("mantle.Order.OrderItem")
+9 :             .condition((org.moqui.entity.EntityCondition) ec.entity.conditionFactory.makeActionConditionDirect("orderId", "equals", orderId, "100102", null, false, false, false, "false")).condition((org.moqui.entity.EntityCondition) ec.entity.conditionFactory.makeActionConditionDirect("orderPartSeqId", "equals", orderPartSeqId, "01", null, false, false, false, "false"))
+10 :             orderItemDetails = orderItemDetails_xafind.list()
+11 : // make sure the last statement is not considered the return value
+12 : return;
+
+
+--- 2023-06-14 06:03:50.407 [qtp348055829-27] ERROR           org.moqui.impl.context.MessageFacadeImpl [] []
+ No entity found with name mantle.Order.OrderItem
+--- 2023-06-14 06:37:45.916 [qtp348055829-20] ERROR                   org.moqui.impl.actions.XmlAction [] []
+ Error running groovy script (org.moqui.entity.EntityException: Error in find, field facility does not exist in entity mantle.order.OrderPart): 
+1 : import static org.moqui.util.ObjectUtilities.*
+2 : import static org.moqui.util.CollectionUtilities.*
+3 : import static org.moqui.util.StringUtilities.*
+4 : import java.sql.Timestamp
+5 : import java.sql.Time
+6 : import java.time.*
+7 : // these are in the context by default: ExecutionContext ec, Map<String, Object> context, Map<String, Object> result
+8 :     orderPartDetails_xafind = ec.entity.find("mantle.order.OrderPart").selectField("orderId").selectField("orderPartSeqId").selectField("facilityId").selectField("customerPartyId")
+9 :             .condition((org.moqui.entity.EntityCondition) ec.entity.conditionFactory.makeActionConditionDirect("facility", "equals", facility, "ZIRET_WH", null, false, false, false, "false"))
+10 :             orderPartDetails = orderPartDetails_xafind.list()
+11 : // make sure the last statement is not considered the return value
+12 : return;
+
+
+--- 2023-06-14 06:37:45.918 [qtp348055829-20] ERROR           org.moqui.impl.context.MessageFacadeImpl [] []
+ Error in find, field facility does not exist in entity mantle.order.OrderPart
+--- 2023-06-14 06:38:03.846 [qtp348055829-27] ERROR                   org.moqui.impl.actions.XmlAction [] []
+ Error running groovy script (org.moqui.entity.EntityException: Error in find, field facility does not exist in entity mantle.order.OrderPart): 
+1 : import static org.moqui.util.ObjectUtilities.*
+2 : import static org.moqui.util.CollectionUtilities.*
+3 : import static org.moqui.util.StringUtilities.*
+4 : import java.sql.Timestamp
+5 : import java.sql.Time
+6 : import java.time.*
+7 : // these are in the context by default: ExecutionContext ec, Map<String, Object> context, Map<String, Object> result
+8 :     orderPartDetails_xafind = ec.entity.find("mantle.order.OrderPart").selectField("orderId").selectField("orderPartSeqId").selectField("facilityId").selectField("customerPartyId")
+9 :             .condition((org.moqui.entity.EntityCondition) ec.entity.conditionFactory.makeActionConditionDirect("facility", "equals", facility, "ZIRET_WH", null, false, false, false, "false"))
+10 :             orderPartDetails = orderPartDetails_xafind.list()
+11 : // make sure the last statement is not considered the return value
+12 : return;
+
+
+--- 2023-06-14 06:38:03.850 [qtp348055829-27] ERROR           org.moqui.impl.context.MessageFacadeImpl [] []
+ Error in find, field facility does not exist in entity mantle.order.OrderPart
+--- 2023-06-14 06:38:53.132 [tp348055829-105] ERROR                   org.moqui.impl.actions.XmlAction [] []
+ Error running groovy script (org.moqui.entity.EntityException: Error in find, field facility does not exist in entity mantle.order.OrderPart): 
+1 : import static org.moqui.util.ObjectUtilities.*
+2 : import static org.moqui.util.CollectionUtilities.*
+3 : import static org.moqui.util.StringUtilities.*
+4 : import java.sql.Timestamp
+5 : import java.sql.Time
+6 : import java.time.*
+7 : // these are in the context by default: ExecutionContext ec, Map<String, Object> context, Map<String, Object> result
+8 :     orderPartDetails_xafind = ec.entity.find("mantle.order.OrderPart").selectField("orderId").selectField("orderPartSeqId").selectField("facilityId").selectField("customerPartyId")
+9 :             .condition((org.moqui.entity.EntityCondition) ec.entity.conditionFactory.makeActionConditionDirect("facility", "equals", facility, "ZIRET_WH", null, false, false, false, "false"))
+10 :             orderPartDetails = orderPartDetails_xafind.list()
+11 : // make sure the last statement is not considered the return value
+12 : return;
+
+
+--- 2023-06-14 06:38:53.137 [tp348055829-105] ERROR           org.moqui.impl.context.MessageFacadeImpl [] []
+ Error in find, field facility does not exist in entity mantle.order.OrderPart
+--- 2023-06-14 06:40:44.385 [qtp348055829-70] ERROR                   org.moqui.impl.actions.XmlAction [] []
+ Error running groovy script (org.moqui.entity.EntityNotFoundException: No definition found for entity-name [mantle.order]): 
+1 : import static org.moqui.util.ObjectUtilities.*
+2 : import static org.moqui.util.CollectionUtilities.*
+3 : import static org.moqui.util.StringUtilities.*
+4 : import java.sql.Timestamp
+5 : import java.sql.Time
+6 : import java.time.*
+7 : // these are in the context by default: ExecutionContext ec, Map<String, Object> context, Map<String, Object> result
+8 :     orderPartDetails_xafind = ec.entity.find("mantle.order").selectField("orderId").selectField("orderPartSeqId").selectField("facilityId").selectField("customerPartyId")
+9 :             .condition((org.moqui.entity.EntityCondition) ec.entity.conditionFactory.makeActionConditionDirect("facility", "equals", facility, "ZIRET_WH", null, false, false, false, "false"))
+10 :             orderPartDetails = orderPartDetails_xafind.list()
+11 : // make sure the last statement is not considered the return value
+12 : return;
+
+
+--- 2023-06-14 06:40:44.389 [qtp348055829-70] ERROR           org.moqui.impl.context.MessageFacadeImpl [] []
+ No definition found for entity-name [mantle.order]
+--- 2023-06-14 06:40:54.175 [qtp348055829-76] ERROR                   org.moqui.impl.actions.XmlAction [] []
+ Error running groovy script (org.moqui.entity.EntityException: No entity found with name mantle.order): 
+1 : import static org.moqui.util.ObjectUtilities.*
+2 : import static org.moqui.util.CollectionUtilities.*
+3 : import static org.moqui.util.StringUtilities.*
+4 : import java.sql.Timestamp
+5 : import java.sql.Time
+6 : import java.time.*
+7 : // these are in the context by default: ExecutionContext ec, Map<String, Object> context, Map<String, Object> result
+8 :     orderPartDetails_xafind = ec.entity.find("mantle.order").selectField("orderId").selectField("orderPartSeqId").selectField("facilityId").selectField("customerPartyId")
+9 :             .condition((org.moqui.entity.EntityCondition) ec.entity.conditionFactory.makeActionConditionDirect("facility", "equals", facility, "ZIRET_WH", null, false, false, false, "false"))
+10 :             orderPartDetails = orderPartDetails_xafind.list()
+11 : // make sure the last statement is not considered the return value
+12 : return;
+
+
+--- 2023-06-14 06:40:54.178 [qtp348055829-76] ERROR           org.moqui.impl.context.MessageFacadeImpl [] []
+ No entity found with name mantle.order
+--- 2023-06-14 06:40:58.503 [qtp348055829-27] ERROR                   org.moqui.impl.actions.XmlAction [] []
+ Error running groovy script (org.moqui.entity.EntityNotFoundException: No definition found for entity-name [mantle.Order]): 
+1 : import static org.moqui.util.ObjectUtilities.*
+2 : import static org.moqui.util.CollectionUtilities.*
+3 : import static org.moqui.util.StringUtilities.*
+4 : import java.sql.Timestamp
+5 : import java.sql.Time
+6 : import java.time.*
+7 : // these are in the context by default: ExecutionContext ec, Map<String, Object> context, Map<String, Object> result
+8 :     orderPartDetails_xafind = ec.entity.find("mantle.Order").selectField("orderId").selectField("orderPartSeqId").selectField("facilityId").selectField("customerPartyId")
+9 :             .condition((org.moqui.entity.EntityCondition) ec.entity.conditionFactory.makeActionConditionDirect("facility", "equals", facility, "ZIRET_WH", null, false, false, false, "false"))
+10 :             orderPartDetails = orderPartDetails_xafind.list()
+11 : // make sure the last statement is not considered the return value
+12 : return;
+
+
+--- 2023-06-14 06:40:58.507 [qtp348055829-27] ERROR           org.moqui.impl.context.MessageFacadeImpl [] []
+ No definition found for entity-name [mantle.Order]
+--- 2023-06-14 06:41:34.947 [tp348055829-155] ERROR                   org.moqui.impl.actions.XmlAction [] []
+ Error running groovy script (org.moqui.entity.EntityException: Error in find, field facility does not exist in entity mantle.order.OrderPart): 
+1 : import static org.moqui.util.ObjectUtilities.*
+2 : import static org.moqui.util.CollectionUtilities.*
+3 : import static org.moqui.util.StringUtilities.*
+4 : import java.sql.Timestamp
+5 : import java.sql.Time
+6 : import java.time.*
+7 : // these are in the context by default: ExecutionContext ec, Map<String, Object> context, Map<String, Object> result
+8 :     orderPartDetails_xafind = ec.entity.find("orderParts").selectField("orderId").selectField("orderPartSeqId").selectField("facilityId").selectField("customerPartyId")
+9 :             .condition((org.moqui.entity.EntityCondition) ec.entity.conditionFactory.makeActionConditionDirect("facility", "equals", facility, "ZIRET_WH", null, false, false, false, "false"))
+10 :             orderPartDetails = orderPartDetails_xafind.list()
+11 : // make sure the last statement is not considered the return value
+12 : return;
+
+
+--- 2023-06-14 06:41:34.951 [tp348055829-155] ERROR           org.moqui.impl.context.MessageFacadeImpl [] []
+ Error in find, field facility does not exist in entity mantle.order.OrderPart
+--- 2023-06-14 06:41:40.538 [tp348055829-154] ERROR                   org.moqui.impl.actions.XmlAction [] []
+ Error running groovy script (org.moqui.entity.EntityException: Error in find, field facility does not exist in entity mantle.order.OrderPart): 
+1 : import static org.moqui.util.ObjectUtilities.*
+2 : import static org.moqui.util.CollectionUtilities.*
+3 : import static org.moqui.util.StringUtilities.*
+4 : import java.sql.Timestamp
+5 : import java.sql.Time
+6 : import java.time.*
+7 : // these are in the context by default: ExecutionContext ec, Map<String, Object> context, Map<String, Object> result
+8 :     orderPartDetails_xafind = ec.entity.find("orderParts").selectField("orderId").selectField("orderPartSeqId").selectField("facilityId").selectField("customerPartyId")
+9 :             .condition((org.moqui.entity.EntityCondition) ec.entity.conditionFactory.makeActionConditionDirect("facility", "equals", facility, "ZIRET_WH", null, false, false, false, "false"))
+10 :             orderPartDetails = orderPartDetails_xafind.list()
+11 : // make sure the last statement is not considered the return value
+12 : return;
+
+
+--- 2023-06-14 06:41:40.540 [tp348055829-154] ERROR           org.moqui.impl.context.MessageFacadeImpl [] []
+ Error in find, field facility does not exist in entity mantle.order.OrderPart
+--- 2023-06-14 06:41:58.826 [tp348055829-151] ERROR                   org.moqui.impl.actions.XmlAction [] []
+ Error running groovy script (org.moqui.entity.EntityNotFoundException: No definition found for entity-name [orderPart]): 
+1 : import static org.moqui.util.ObjectUtilities.*
+2 : import static org.moqui.util.CollectionUtilities.*
+3 : import static org.moqui.util.StringUtilities.*
+4 : import java.sql.Timestamp
+5 : import java.sql.Time
+6 : import java.time.*
+7 : // these are in the context by default: ExecutionContext ec, Map<String, Object> context, Map<String, Object> result
+8 :     orderPartDetails_xafind = ec.entity.find("orderPart").selectField("orderId").selectField("orderPartSeqId").selectField("facilityId").selectField("customerPartyId")
+9 :             .condition((org.moqui.entity.EntityCondition) ec.entity.conditionFactory.makeActionConditionDirect("facility", "equals", facility, "ZIRET_WH", null, false, false, false, "false"))
+10 :             orderPartDetails = orderPartDetails_xafind.list()
+11 : // make sure the last statement is not considered the return value
+12 : return;
+
+
+--- 2023-06-14 06:41:58.831 [tp348055829-151] ERROR           org.moqui.impl.context.MessageFacadeImpl [] []
+ No definition found for entity-name [orderPart]
+--- 2023-06-14 06:42:13.192 [qtp348055829-27] ERROR                   org.moqui.impl.actions.XmlAction [] []
+ Error running groovy script (org.moqui.entity.EntityException: Error in find, field facility does not exist in entity mantle.order.OrderPart): 
+1 : import static org.moqui.util.ObjectUtilities.*
+2 : import static org.moqui.util.CollectionUtilities.*
+3 : import static org.moqui.util.StringUtilities.*
+4 : import java.sql.Timestamp
+5 : import java.sql.Time
+6 : import java.time.*
+7 : // these are in the context by default: ExecutionContext ec, Map<String, Object> context, Map<String, Object> result
+8 :     orderPartDetails_xafind = ec.entity.find("orderParts").selectField("orderId").selectField("orderPartSeqId").selectField("facilityId").selectField("customerPartyId")
+9 :             .condition((org.moqui.entity.EntityCondition) ec.entity.conditionFactory.makeActionConditionDirect("facility", "equals", facility, "ZIRET_WH", null, false, false, false, "false"))
+10 :             orderPartDetails = orderPartDetails_xafind.list()
+11 : // make sure the last statement is not considered the return value
+12 : return;
+
+
+--- 2023-06-14 06:42:13.195 [qtp348055829-27] ERROR           org.moqui.impl.context.MessageFacadeImpl [] []
+ Error in find, field facility does not exist in entity mantle.order.OrderPart
+--- 2023-06-14 06:42:58.287 [qtp348055829-20] ERROR                   org.moqui.impl.actions.XmlAction [] []
+ Error running groovy script (org.moqui.entity.EntityException: Error in find, field facility does not exist in entity mantle.order.OrderPart): 
+1 : import static org.moqui.util.ObjectUtilities.*
+2 : import static org.moqui.util.CollectionUtilities.*
+3 : import static org.moqui.util.StringUtilities.*
+4 : import java.sql.Timestamp
+5 : import java.sql.Time
+6 : import java.time.*
+7 : // these are in the context by default: ExecutionContext ec, Map<String, Object> context, Map<String, Object> result
+8 :     orderPartDetails_xafind = ec.entity.find("mantle.order.OrderPart").selectField("orderId").selectField("orderPartSeqId").selectField("facilityId").selectField("customerPartyId")
+9 :             .condition((org.moqui.entity.EntityCondition) ec.entity.conditionFactory.makeActionConditionDirect("facility", "equals", facility, "ZIRET_WH", null, false, false, false, "false"))
+10 :             orderPartDetails = orderPartDetails_xafind.list()
+11 : // make sure the last statement is not considered the return value
+12 : return;
+
+
+--- 2023-06-14 06:42:58.290 [qtp348055829-20] ERROR           org.moqui.impl.context.MessageFacadeImpl [] []
+ Error in find, field facility does not exist in entity mantle.order.OrderPart
+--- 2023-06-14 20:52:37.493 [qtp348055829-20] ERROR           org.moqui.impl.context.MessageFacadeImpl [] []
+ Password incorrect for username john.doe
+--- 2023-06-14 20:52:43.072 [qtp348055829-27] ERROR           org.moqui.impl.context.MessageFacadeImpl [] []
+ Password incorrect for username john.doe
